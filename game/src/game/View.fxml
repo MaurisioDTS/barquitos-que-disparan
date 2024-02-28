@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.ViewController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.ViewController">
+   <children>
+       <Button fx:id="button" layoutX="512.0" layoutY="598.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="256.0" text="dale don dale pa que se muevan lo yale" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="177.0" AnchorPane.leftAnchor="512.0" AnchorPane.rightAnchor="512.0" AnchorPane.topAnchor="598.0" />
+       <Label fx:id="label" layoutX="127.0" layoutY="109.0" minHeight="16" minWidth="69" prefHeight="98.0" prefWidth="1092.0" textAlignment="RIGHT">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="70.0" />
+         </font>
+      </Label>
+      <ProgressBar id="progress" fx:id="progress" layoutX="241.0" layoutY="473.0" prefHeight="19.0" prefWidth="864.0" progress="0.0" />
+   </children>
 </AnchorPane>
