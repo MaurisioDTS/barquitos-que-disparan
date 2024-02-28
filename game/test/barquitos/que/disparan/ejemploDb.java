@@ -12,5 +12,7 @@ public class ejemploDb {
             
             System.out.println(Bd.consultaModificacion(gestor,consulta));    
             gestor.cerrar_Conexion(true);
+
+            //tonto el que escriba
     }
 }
