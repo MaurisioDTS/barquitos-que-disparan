@@ -14,5 +14,6 @@ public class ejemploDb {
             gestor.cerrar_Conexion(true);
 
             //tonto el que escriba
+            //mas tonto aun
     }
 }

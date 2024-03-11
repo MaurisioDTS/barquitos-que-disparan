@@ -23,6 +23,7 @@ public class Game extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);
     }
     public static void main(String[] args) {
         launch(args);
