@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.ViewController">
+   <children>
+      <ImageView fitHeight="815.0" fitWidth="1296.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../res/img/background.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </ImageView>
+      <ImageView fitHeight="584.0" fitWidth="1033.0" layoutX="422.0" layoutY="145.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../../res/img/ship.png" />
+         </image>
+      </ImageView>
+       <Button defaultButton="true" layoutX="53.0" layoutY="400.0" onAction="#battle" prefHeight="87.0" prefWidth="308.0" text="BATALLA" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="919.0" AnchorPane.topAnchor="400.0">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font></Button>
+       <Label fx:id="label" layoutX="127.0" layoutY="109.0" minHeight="16" minWidth="69" prefHeight="98.0" prefWidth="1092.0" text="Barquitos que disparan!!1!1!!!!" textAlignment="RIGHT" textOverrun="CLIP">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="70.0" />
+         </font>
+      </Label>
+      <Button layoutX="53.0" layoutY="511.0" onAction="#settings" prefHeight="87.0" prefWidth="260.0" text="Ajustes" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="202.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="919.0" AnchorPane.topAnchor="511.0">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Button>
+      <Button layoutX="1216.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="50.0" text="X" AnchorPane.bottomAnchor="736.0" AnchorPane.leftAnchor="1216.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
