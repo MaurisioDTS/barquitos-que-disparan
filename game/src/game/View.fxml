@@ -7,11 +7,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.ViewController">
    <children>
-      <ImageView fitHeight="815.0" fitWidth="1296.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bg" fitHeight="815.0" fitWidth="1296.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../res/img/background.png" />
          </image>
@@ -46,5 +47,6 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
+      <SVGPath content="M404.5,269.5V103.7h-19.8v165.8h-69.8V167.3H295v102.2h-36.9l-65.2-147h-32.4L151.2,61H82.4L73,122.5H41.7v147H0L36.5,429    h334.6L490,269.5H404.5z M100.1,80.8h33.4l6.3,41.7H93.9L100.1,80.8z M62.6,143.4h116.7l20.9,46.9H62.6V143.4z M209.1,210.1    l26.5,59.4h-173v-59.4H209.1z M361.8,408.1H53.2L25,289.3h425.3L361.8,408.1z" layoutX="569.0" layoutY="250.0" />
    </children>
 </AnchorPane>
