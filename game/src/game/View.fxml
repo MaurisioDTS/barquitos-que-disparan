@@ -27,7 +27,7 @@
             <Image url="@../../res/img/ship.png" />
          </image>
       </ImageView>
-       <Button defaultButton="true" layoutX="53.0" layoutY="400.0" onAction="#battle" prefHeight="87.0" prefWidth="308.0" text="BATALLA" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="919.0" AnchorPane.topAnchor="400.0">
+       <Button defaultButton="true" layoutX="60.0" layoutY="408.0" onAction="#battle" prefHeight="87.0" prefWidth="308.0" text="BATALLA" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="305.0" AnchorPane.leftAnchor="60.0">
          <font>
             <Font name="System Bold" size="40.0" />
          </font></Button>
@@ -36,12 +36,12 @@
             <Font name="Comic Sans MS Bold Italic" size="70.0" />
          </font>
       </Label>
-      <Button layoutX="53.0" layoutY="511.0" onAction="#settings" prefHeight="87.0" prefWidth="260.0" text="Ajustes" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="202.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="919.0" AnchorPane.topAnchor="511.0">
+      <Button layoutX="60.0" layoutY="536.0" onAction="#settings" prefHeight="87.0" prefWidth="260.0" text="Ajustes" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="177.0" AnchorPane.leftAnchor="60.0">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Button>
-      <Button layoutX="1216.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="50.0" text="X" AnchorPane.bottomAnchor="736.0" AnchorPane.leftAnchor="1216.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <Button layoutX="1215.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="50.0" text="X" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
