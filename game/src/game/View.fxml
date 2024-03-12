@@ -36,12 +36,12 @@
             <Font name="Comic Sans MS Bold Italic" size="70.0" />
          </font>
       </Label>
-      <Button layoutX="53.0" layoutY="512.0" onAction="#settings" prefHeight="87.0" prefWidth="260.0" text="Ajustes" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+      <Button layoutX="53.0" layoutY="511.0" onAction="#settings" prefHeight="87.0" prefWidth="260.0" text="Ajustes" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="202.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="919.0" AnchorPane.topAnchor="511.0">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Button>
-      <Button layoutX="1216.0" layoutY="14.0" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="50.0" text="X">
+      <Button layoutX="1216.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="50.0" text="X" AnchorPane.bottomAnchor="736.0" AnchorPane.leftAnchor="1216.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
