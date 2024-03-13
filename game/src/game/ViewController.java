@@ -1,24 +1,20 @@
 package game;
 
-import java.io.FileInputStream;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-public class ViewController implements Initializable {
-
+public class ViewController implements Initializable{
     @FXML
-    Media intro = new Media(Paths.get("res/audio/test.mp3").toUri().toString());
+    Media intro = new Media(Paths.get("res/audio/test.wav").toUri().toString());
+    @FXML
     MediaPlayer m=new MediaPlayer(intro);
-  
-    Image bg=new Image(Paths.get("res/img/backgroud.png").toUri().toString());
-    
+        
     @FXML
     private void stop(ActionEvent Event){
         System.out.println("Exiting...");
@@ -26,8 +22,7 @@ public class ViewController implements Initializable {
     }
     @FXML
     private void fs(ActionEvent Event){
-        System.out.println("togglin screen...");
-        
+        System.out.println("togglin screen...");   
     }
     // 5 horas y 47 minutos para esta mierda que nisiquiera funciona bien.
     @FXML
@@ -40,7 +35,7 @@ public class ViewController implements Initializable {
         System.out.println("Settings");
     }
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb){
         // TODO
     }
 }
