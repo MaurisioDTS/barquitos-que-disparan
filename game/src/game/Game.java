@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Game extends Application {
     @Override
     public void start(Stage stage) throws Exception {        
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Scenes/View.fxml")));
         
         Scene scene = new Scene(root);
         
