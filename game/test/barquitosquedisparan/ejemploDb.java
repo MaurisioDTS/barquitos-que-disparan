@@ -1,4 +1,4 @@
-package barquitosquedisparan.que.disparan;
+package barquitosquedisparan;
 import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
@@ -12,10 +12,5 @@ public class ejemploDb {
             
             System.out.println(Bd.consultaModificacion(gestor,consulta));    
             gestor.cerrar_Conexion(true);
-
-            //tonto el que escriba
-            //mas tonto aun
-            //R
-            //Ruben gilipollas
     }
 }
