@@ -12,20 +12,20 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.ViewController">
    <children>
-      <ImageView fx:id="bg" fitHeight="800.0" fitWidth="1280.0" pickOnBounds="true" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="bg" fitHeight="815.0" fitWidth="1296.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../res/img/background.png" />
+         </image>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
          <rotationAxis>
             <Point3D />
          </rotationAxis>
-         <image>
-            <Image url="@img/sea.png" />
-         </image>
       </ImageView>
-      <ImageView fitHeight="706.0" fitWidth="1113.0" layoutX="368.0" layoutY="91.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" smooth="false">
+      <ImageView fitHeight="584.0" fitWidth="1033.0" layoutX="422.0" layoutY="145.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" smooth="false">
          <image>
-            <Image url="@img/ship.png" />
+            <Image url="@../../res/img/ship.png" />
          </image>
       </ImageView>
        <Button defaultButton="true" layoutX="60.0" layoutY="408.0" onAction="#battle" prefHeight="87.0" prefWidth="308.0" text="BATALLA" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="305.0" AnchorPane.leftAnchor="60.0">
