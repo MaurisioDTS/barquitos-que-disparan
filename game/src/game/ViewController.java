@@ -48,7 +48,18 @@ public class ViewController implements Initializable{
         else
             stage.setFullScreen(false);
     }
-    
+    @FXML
+void onFullScreenExecuted(ActionEvent event) {
+    Stage stage = (Stage) btnFullScreen.getScene().getWindow();
+    stage.setFullScreen(true);
+
+    if (stage.isFullScreen()) {
+        controlBox.setVisible(false);
+    } else {
+        controlBox.setVisible(true);
+    }
+
+}
     @Override
     public void initialize(URL url, ResourceBundle rb){
         // TODO
