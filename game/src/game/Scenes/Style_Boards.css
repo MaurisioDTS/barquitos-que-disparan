@@ -1,9 +1,9 @@
-.tablero_Jugador1{
+.boardP1{
     -fx-background-image:url("sea_board.png");
     -fx-background-size: auto;
 }
 
-.tablero_Jugador2{
+.boardP2{
     -fx-background-image:url("sea_board.png");
     -fx-background-size: auto;
 }
