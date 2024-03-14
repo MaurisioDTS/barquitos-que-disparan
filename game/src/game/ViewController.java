@@ -10,11 +10,13 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 public class ViewController implements Initializable{
+    
+    /** mi propia creación me da por detrás
     @FXML
     Media intro = new Media(Paths.get("res/audio/test.wav").toUri().toString());
     @FXML
     MediaPlayer m=new MediaPlayer(intro);
-        
+    **/   
     @FXML
     private void stop(ActionEvent Event){
         System.out.println("Exiting...");
@@ -28,7 +30,7 @@ public class ViewController implements Initializable{
     @FXML
     private void battle(ActionEvent Event){
         System.out.println("Battle");
-        m.play();
+       // m.play();
     }
     @FXML
     private void settings(ActionEvent Event){
