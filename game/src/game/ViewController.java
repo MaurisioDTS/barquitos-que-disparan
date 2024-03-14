@@ -44,7 +44,7 @@ public class ViewController implements Initializable{
     private void fullScreen(ActionEvent Event){
         System.out.println("Full Screen");
         if(cbFs.isSelected())
-            stage.setFullScreen(true);
+            root.setFullScreen(true);
         else
             stage.setFullScreen(false);
     }
