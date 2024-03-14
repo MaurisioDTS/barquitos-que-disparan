@@ -6,8 +6,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.fxml.FXML;
+import javafx.scene.*;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -19,6 +21,12 @@ public class ViewController implements Initializable{
     @FXML
     MediaPlayer m=new MediaPlayer(intro);
     **/
+    @FXML
+    AnchorPane anchorPane=new AnchorPane();
+    @FXML
+    CheckBox cbFs=new CheckBox();
+    @FXML
+    Button apply=new Button();
     @FXML
     private void stop(ActionEvent Event){
         System.out.println("Exiting...");
@@ -39,27 +47,14 @@ public class ViewController implements Initializable{
         System.out.println("Settings");
     }
     @FXML
-    CheckBox cbFs=new CheckBox();
-    @FXML
-    private void fullScreen(ActionEvent Event){
+    private void setSettings(ActionEvent Event){
+        Stage stage = (Stage) anchorPane.getScene().getWindow();
         System.out.println("Full Screen");
         if(cbFs.isSelected())
-            root.setFullScreen(true);
+            stage.setFullScreen(true);
         else
             stage.setFullScreen(false);
     }
-    @FXML
-void onFullScreenExecuted(ActionEvent event) {
-    Stage stage = (Stage) btnFullScreen.getScene().getWindow();
-    stage.setFullScreen(true);
-
-    if (stage.isFullScreen()) {
-        controlBox.setVisible(false);
-    } else {
-        controlBox.setVisible(true);
-    }
-
-}
     @Override
     public void initialize(URL url, ResourceBundle rb){
         // TODO
