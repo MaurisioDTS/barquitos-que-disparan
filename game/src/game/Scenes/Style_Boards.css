@@ -1,0 +1,10 @@
+.tablero_Jugador1{
+    -fx-background-image:url("sea_board.png");
+    -fx-background-size: auto;
+}
+
+.tablero_Jugador2{
+    -fx-background-image:url("sea_board.png");
+    -fx-background-size: auto;
+}
+
