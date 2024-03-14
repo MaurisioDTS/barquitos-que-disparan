@@ -2,10 +2,9 @@ package game;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.application.Application; 
-import javafx.scene.Scene; 
-import javafx.stage.Stage;  
-
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import java.util.Objects;
 
 public class Game extends Application {
@@ -17,8 +16,8 @@ public class Game extends Application {
         
         stage.setScene(scene);
         stage.show();
-        stage.setFullScreen(true);
     }
+    
     public static void main(String[] args) {
         launch(args);
     }

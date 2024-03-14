@@ -6,17 +6,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.291">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6e2fc" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Volver" />
-      <Label layoutX="14.0" layoutY="6.0" text="Idioma" />
-      <ChoiceBox layoutX="14.0" layoutY="27.0" prefWidth="150.0" />
-      <Label layoutX="15.0" layoutY="63.0" text="Volumen" />
-      <Slider layoutX="14.0" layoutY="83.0" value="50.0" />
-      <CheckBox layoutX="15.0" layoutY="110.0" mnemonicParsing="false" selected="true" text="Pantalla Completa" />
+      <Label layoutX="14.0" layoutY="14.0" text="Idioma" />
+      <ChoiceBox layoutX="14.0" layoutY="37.0" prefWidth="150.0" />
+      <Label layoutX="14.0" layoutY="74.0" text="Volumen" />
+      <Slider layoutX="14.0" layoutY="97.0" value="50.0" />
+      <Button layoutX="14.0" layoutY="681.0" mnemonicParsing="false" text="Volver" AnchorPane.bottomAnchor="14.0" />
+      <CheckBox fx:id="cbFs" layoutX="15.0" layoutY="120.0" mnemonicParsing="false" onAction="#fullScreen" selected="true" text="Pantalla Completa" />
    </children>
 </AnchorPane>

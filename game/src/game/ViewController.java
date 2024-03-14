@@ -4,9 +4,10 @@ import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.scene.control.*;
 import javafx.fxml.FXML;
+import javafx.stage.Stage;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -17,7 +18,7 @@ public class ViewController implements Initializable{
     Media intro = new Media(Paths.get("res/audio/test.wav").toUri().toString());
     @FXML
     MediaPlayer m=new MediaPlayer(intro);
-    **/   
+    **/
     @FXML
     private void stop(ActionEvent Event){
         System.out.println("Exiting...");
@@ -37,6 +38,17 @@ public class ViewController implements Initializable{
     private void settings(ActionEvent Event){
         System.out.println("Settings");
     }
+    @FXML
+    CheckBox cbFs=new CheckBox();
+    @FXML
+    private void fullScreen(ActionEvent Event){
+        System.out.println("Full Screen");
+        if(cbFs.isSelected())
+            stage.setFullScreen(true);
+        else
+            stage.setFullScreen(false);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb){
         // TODO
