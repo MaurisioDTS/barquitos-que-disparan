@@ -21,7 +21,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ViewController implements Initializable{
-    //TODO
+
     private Scene settings;
     public void setSettingsScene(Scene scene){settings=scene;}
     private Scene battle;
