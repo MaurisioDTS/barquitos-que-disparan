@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/game/lib/apacheCommons.jar!/" />
+      <root url="jar://$PROJECT_DIR$/game/lib/scenebuilder-8.5.0-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/game/lib/postgresql.jar!/" />
+      <root url="jar://$PROJECT_DIR$/game/lib/api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

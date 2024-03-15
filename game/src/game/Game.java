@@ -5,19 +5,26 @@ import javafx.scene.Parent;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import javax.swing.text.View;
 import java.util.Objects;
 
 public class Game extends Application {
     @Override
-    public void start(Stage stage) throws Exception {        
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Scenes/Settings.fxml")));
-        
-        Scene scene = new Scene(root);
-        
+    public void start(Stage stage) throws Exception {
+        FXMLLoader viewLoader = new FXMLLoader(getClass().getResource("Scenes/View.fxml"));
+        Parent tittle = viewLoader.load();
+        Scene scene = new Scene(tittle,1280,720);
+
+        FXMLLoader settingsLoader = new FXMLLoader(getClass().getResource("Scenes/Settings.fxml"));
+        Parent settings = settingsLoader.load();
+        Scene settingsScene = new Scene(settings,1280,720);
+
         stage.setScene(scene);
+        ViewController.giveWindow(stage);
         stage.show();
+
     }
-    
     public static void main(String[] args) {
         launch(args);
     }

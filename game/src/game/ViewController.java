@@ -1,59 +1,58 @@
 package game;
 
-import java.net.URL;
-import java.nio.file.Paths;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
-import javafx.fxml.FXML;
-import javafx.scene.*;
-import javafx.stage.Stage;
+import javafx.fxml.*;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Paths;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class ViewController implements Initializable{
-    
-    /** mi propia creación me da por detrás
+    //TODO
+    private Scene settings;
+    public void setSettingsScene(Scene scene){settings=scene;}
+    private Scene battle;
+    private static Stage stage;
+
+    public static void giveWindow(Stage window){
+        stage=window;
+    }
     @FXML
-    Media intro = new Media(Paths.get("res/audio/test.wav").toUri().toString());
+    Media intro = new Media(Paths.get("game/res/audio/test.mp3").toUri().toString());
     @FXML
     MediaPlayer m=new MediaPlayer(intro);
-    **/
+
+
     @FXML
     AnchorPane anchorPane=new AnchorPane();
-    @FXML
-    CheckBox cbFs=new CheckBox();
-    @FXML
-    Button apply=new Button();
     @FXML
     private void stop(ActionEvent Event){
         System.out.println("Exiting...");
         System.exit(0);
     }
-    @FXML
-    private void fs(ActionEvent Event){
-        System.out.println("togglin screen...");   
-    }
     // 5 horas y 47 minutos para esta mierda que nisiquiera funciona bien.
     @FXML
     private void battle(ActionEvent Event){
         System.out.println("Battle");
-       // m.play();
+        m.play();
     }
     @FXML
     private void settings(ActionEvent Event){
-        System.out.println("Settings");
-    }
-    @FXML
-    private void setSettings(ActionEvent Event){
-        Stage stage = (Stage) anchorPane.getScene().getWindow();
-        System.out.println("Full Screen");
-        if(cbFs.isSelected())
-            stage.setFullScreen(true);
-        else
-            stage.setFullScreen(false);
+        System.out.println("settings");
+        stage.setScene(settings);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){

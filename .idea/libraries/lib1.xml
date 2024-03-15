@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/game/dist/lib/postgresql.jar!/" />
+      <root url="jar://$PROJECT_DIR$/game/dist/lib/api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/game/dist/lib/apacheCommons.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
