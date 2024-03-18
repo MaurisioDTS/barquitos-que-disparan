@@ -31,7 +31,7 @@ public class ViewController implements Initializable{
         stage=window;
     }
     @FXML
-    Media intro = new Media(Paths.get("game/res/audio/test.mp3").toUri().toString());
+    Media intro = new Media(Paths.get("res/audio/test.mp3").toUri().toString());
     @FXML
     MediaPlayer m=new MediaPlayer(intro);
 

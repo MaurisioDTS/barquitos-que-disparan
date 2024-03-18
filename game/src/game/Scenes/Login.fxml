@@ -8,30 +8,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.ViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.LoginController">
    <children>
-      <PasswordField fx:id="tbLoginPass" layoutX="60.0" layoutY="145.0" />
-      <TextField fx:id="tbLoginUser" layoutX="60.0" layoutY="100.0" />
-      <CheckBox fx:id="cbRemember" layoutX="60.0" layoutY="192.0" mnemonicParsing="false" text="Remember me" />
-      <Label layoutX="109.0" layoutY="37.0" text="Login">
+      <PasswordField fx:id="tbLoginPass" layoutX="408.0" layoutY="332.0" />
+      <TextField fx:id="tbLoginUser" layoutX="408.0" layoutY="287.0" />
+      <CheckBox fx:id="cbRemember" layoutX="408.0" layoutY="379.0" mnemonicParsing="false" text="Remember me" />
+      <Label layoutX="457.0" layoutY="224.0" text="Login">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <PasswordField fx:id="tbRegPass" layoutX="376.0" layoutY="145.0" />
-      <Label layoutX="256.0" layoutY="104.0" text="Username" />
-      <Label layoutX="258.0" layoutY="149.0" text="Password" />
-      <TextField fx:id="tbRegUser" layoutX="376.0" layoutY="100.0" />
-      <Label layoutX="412.0" layoutY="37.0" text="Register">
+      <PasswordField fx:id="tbRegPass" layoutX="724.0" layoutY="332.0" />
+      <Label layoutX="604.0" layoutY="291.0" text="Username" />
+      <Label layoutX="606.0" layoutY="336.0" text="Password" />
+      <TextField fx:id="tbRegUser" layoutX="724.0" layoutY="287.0" />
+      <Label layoutX="760.0" layoutY="224.0" text="Register">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="btnLogin" layoutX="61.0" layoutY="225.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="149.0" text="Login!" />
-      <Button fx:id="btnRegister" layoutX="376.0" layoutY="225.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="149.0" text="Register!" />
-      <Label layoutX="61.0" layoutY="293.0" text="Incorrect Credentials" textFill="RED" visible="false" />
-      <Label layoutX="376.0" layoutY="293.0" text="Name's already in use" textFill="RED" visible="false" />
+      <Button fx:id="btnLogin" layoutX="409.0" layoutY="412.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="149.0" text="Login!" />
+      <Button fx:id="btnRegister" layoutX="724.0" layoutY="412.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="149.0" text="Register!" />
+      <Label layoutX="409.0" layoutY="480.0" text="Incorrect Credentials" textFill="RED" visible="false" />
+      <Label layoutX="724.0" layoutY="480.0" text="Name's already in use" textFill="RED" visible="false" />
    </children>
 </AnchorPane>

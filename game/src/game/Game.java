@@ -19,8 +19,12 @@ public class Game extends Application {
         FXMLLoader settingsLoader = new FXMLLoader(getClass().getResource("Scenes/Settings.fxml"));
         Parent settings = settingsLoader.load();
         Scene settingsScene = new Scene(settings,1280,720);
+        
+        FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("Scenes/Login.fxml"));
+        Parent login = loginLoader.load();
+        Scene loginScene = new Scene(login,1280,720);
 
-        stage.setScene(scene);
+        stage.setScene(loginScene);
         ViewController.giveWindow(stage);
         stage.show();
 
