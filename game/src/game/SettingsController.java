@@ -13,7 +13,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SettingsController {
+
+    
     private Scene tittle;
+    private static Stage stage;
     @FXML
     CheckBox cbFs=new CheckBox();
     @FXML
@@ -21,17 +24,17 @@ public class SettingsController {
     @FXML
     AnchorPane anchorPane=new AnchorPane();
 
-    public void setTittle(Scene scene) {
-        tittle = scene;
-    }
-    public void openFirstScene(ActionEvent actionEvent) {
-        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        primaryStage.setScene(tittle);
-    }
+    public void setTittleScene(Scene scene){tittle=scene;}
+   
     @FXML
     private void setSettings(ActionEvent Event){
         Stage stage = (Stage) anchorPane.getScene().getWindow();
         System.out.println("Full Screen");
         stage.setFullScreen(cbFs.isSelected());
+    }
+    @FXML
+    private void btnreturn(ActionEvent Event){
+        System.out.println("return");
+        stage.setScene(tittle);
     }
 }

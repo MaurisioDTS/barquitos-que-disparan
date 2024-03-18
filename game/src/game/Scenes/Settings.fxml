@@ -13,8 +13,8 @@
       <ChoiceBox layoutX="14.0" layoutY="37.0" prefWidth="150.0" />
       <Label layoutX="14.0" layoutY="74.0" text="Volumen" />
       <Slider layoutX="14.0" layoutY="97.0" value="50.0" />
-      <Button layoutX="14.0" layoutY="681.0" mnemonicParsing="false" text="Volver" AnchorPane.bottomAnchor="14.0" />
       <CheckBox fx:id="cbFs" layoutX="15.0" layoutY="120.0" mnemonicParsing="false" selected="true" text="Pantalla Completa" />
       <Button layoutX="74.0" layoutY="681.0" mnemonicParsing="false" onAction="#setSettings" text="Aplicar" />
+      <Button layoutX="12.0" layoutY="681.0" mnemonicParsing="false" onAction="#btnreturn" text="volver" />
    </children>
 </AnchorPane>

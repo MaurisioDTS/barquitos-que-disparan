@@ -2,22 +2,14 @@ package game;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ViewController implements Initializable{
