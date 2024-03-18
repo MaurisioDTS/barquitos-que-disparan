@@ -15,13 +15,15 @@ import java.util.ResourceBundle;
 public class ViewController implements Initializable{
 
     private Scene settings;
-    public void setSettingsScene(Scene scene){settings=scene;}
-    private Scene battle;
+    private Scene login;
     private static Stage stage;
 
+    public void setSettingsScene(Scene scene){settings=scene;}
+    public void setLoginScene(Scene scene){login=scene;}
     public static void giveWindow(Stage window){
         stage=window;
     }
+    
     @FXML
     Media intro = new Media(Paths.get("res/audio/test.mp3").toUri().toString());
     @FXML
@@ -38,8 +40,9 @@ public class ViewController implements Initializable{
     // 5 horas y 47 minutos para esta mierda que nisiquiera funciona bien.
     @FXML
     private void battle(ActionEvent Event){
-        System.out.println("Battle");
-        m.play();
+        stage.setScene(login);
+        System.out.println("login");
+        //m.play();
     }
     @FXML
     private void settings(ActionEvent Event){

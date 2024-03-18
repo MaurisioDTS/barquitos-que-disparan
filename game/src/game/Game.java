@@ -12,7 +12,8 @@ import java.util.Objects;
 public class Game extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        // loaders
+        
+    // loaders
         FXMLLoader viewLoader = new FXMLLoader(getClass().getResource("Scenes/View.fxml"));
         Parent tittle = viewLoader.load();
         Scene scene = new Scene(tittle,1280,720);
@@ -29,15 +30,17 @@ public class Game extends Application {
         Parent login = loginLoader.load();
         Scene loginScene = new Scene(login,1280,720);
         
-        // injects
+    // injects
         
         ViewController viewPaneController = (ViewController) viewLoader.getController();
         viewPaneController.setSettingsScene(settingsScene);
+        viewPaneController.setLoginScene(loginScene);
+        
         
         SettingsController settingsPaneController = (SettingsController) settingsLoader.getController();
         settingsPaneController.setTittleScene(scene);
 
-        //display scene
+    //display scene
         
         stage.setScene(scene);
         ViewController.giveWindow(stage);

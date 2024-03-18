@@ -14,9 +14,12 @@ import java.util.ResourceBundle;
 
 public class SettingsController {
 
-    
     private Scene tittle;
     private static Stage stage;
+    public static void giveWindow(Stage window){
+        stage=window;
+    }
+    
     @FXML
     CheckBox cbFs=new CheckBox();
     @FXML
@@ -25,7 +28,6 @@ public class SettingsController {
     AnchorPane anchorPane=new AnchorPane();
 
     public void setTittleScene(Scene scene){tittle=scene;}
-   
     @FXML
     private void setSettings(ActionEvent Event){
         Stage stage = (Stage) anchorPane.getScene().getWindow();
