@@ -24,3 +24,5 @@ hs_err_pid*
 replay_pid*
 game/build/*
 game/dist/*
+/game/dist
+/game/build
