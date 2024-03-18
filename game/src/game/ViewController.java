@@ -42,7 +42,7 @@ public class ViewController implements Initializable{
     private void battle(ActionEvent Event){
         stage.setScene(login);
         System.out.println("login");
-        //m.play();
+        m.play();
     }
     @FXML
     private void settings(ActionEvent Event){

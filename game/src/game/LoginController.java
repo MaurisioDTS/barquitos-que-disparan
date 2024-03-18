@@ -20,6 +20,8 @@ import utilidades.bbdd.Gestor_conexion_POSTGRE;
  * @author Usuario
  */
 public class LoginController {
+//TODO "programar el login"
+//TODO "añadir botón de volver", 
     private static Stage stage;
     private Scene board;
     
