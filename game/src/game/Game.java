@@ -33,15 +33,13 @@ public class Game extends Application {
         ViewController viewPaneController = (ViewController) viewLoader.getController();
         viewPaneController.setSettingsScene(settingsScene); // toSettings
         viewPaneController.setLoginScene(loginScene);   // toLogin
-        
-        
+
         SettingsController settingsPaneController = (SettingsController) settingsLoader.getController();
         settingsPaneController.setTittleScene(scene);   // returnToTittle
         
         LoginController loginPaneController = (LoginController) loginLoader.getController();
         loginPaneController.setTittleScene(scene);  // returnToTittle
         loginPaneController.setBoardScene(boardScene);  //toBoard
-        
 
     //display scene
         
