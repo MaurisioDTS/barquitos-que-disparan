@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package game;
 
+import java.net.URL;
+import java.util.Arrays;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.Scene;
@@ -15,15 +13,16 @@ import javafx.stage.Stage;
 import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
-/**
- *
- * @author Usuario
- */
-public class LoginController {
-//TODO "programar el login"
-//TODO "añadir botón de volver", 
+public class LoginController implements Initializable{
+//TODO "programar el login, pues simplemente multiplica x2 y se lo pasa a la siguiente escena"
+
     private static Stage stage;
+    private Scene tittle;
     private Scene board;
+    
+    public static void giveStage(Stage Stage){stage=Stage;}
+    public void setTittleScene(Scene scene){tittle=scene;}
+    public void setBoardScene(Scene scene){board=scene;}
     
     @FXML
     TextField tbRegUser=new TextField();
@@ -31,10 +30,16 @@ public class LoginController {
     PasswordField tbRegPass=new PasswordField();
     @FXML
     Button register=new Button();
+    @FXML
+    Button btnReturn=new Button();
+    
+    @FXML
+    private void btnReturn(ActionEvent Event){
+        System.out.println("return");
+        stage.setScene(tittle);
+    }
     
     Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
-    
-    public void setBoardScene(Scene scene){board=scene;}
     
     public void register(ActionEvent Event){
         String consulta;
@@ -45,14 +50,21 @@ public class LoginController {
         consulta ="insert into usuario (nick,passinsha256,lvl,elo) values ("+user+","+sha256hex+",0,0);";
     
         System.out.println(Bd.consultaModificacion(gestor,consulta));  
-        gestor.cerrar_Conexion(true);
+        //gestor.cerrar_Conexion(true);
     }
     public void login(ActionEvent Event){
-        String consulta;
-        consulta ="select nick from usuario";
+        /**String consulta;
+        consulta ="select nick from usuario;";
         
         System.out.println(Bd.consultaSelect(gestor,consulta));
-        gestor.cerrar_Conexion(true);
+        gestor.cerrar_Conexion(true);**/
+        
+        stage.setScene(board);
         System.out.println("pec");
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        // TODO
+        //if (Bd.consultaSelect(gestor,"select nick from usuario")==false){
     }
 }

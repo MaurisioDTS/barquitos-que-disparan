@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -13,25 +12,20 @@ import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class ViewController implements Initializable{
-
+    
+    private static Stage stage;
     private Scene settings;
     private Scene login;
-    private static Stage stage;
 
+    public static void giveStage(Stage Stage){stage=Stage;}
     public void setSettingsScene(Scene scene){settings=scene;}
     public void setLoginScene(Scene scene){login=scene;}
-    public static void giveWindow(Stage window){
-        stage=window;
-    }
     
     @FXML
     Media intro = new Media(Paths.get("res/audio/test.mp3").toUri().toString());
     @FXML
     MediaPlayer m=new MediaPlayer(intro);
-
-
-    @FXML
-    AnchorPane anchorPane=new AnchorPane();
+    
     @FXML
     private void stop(ActionEvent Event){
         System.out.println("Exiting...");
@@ -39,14 +33,16 @@ public class ViewController implements Initializable{
     }
     // 5 horas y 47 minutos para esta mierda que nisiquiera funciona bien.
     @FXML
-    private void battle(ActionEvent Event){
-        stage.setScene(login);
+    private void battle(ActionEvent Event) throws Exception{
+        //m.play();
         System.out.println("login");
-        m.play();
+        LoginController.giveStage(stage);
+        stage.setScene(login);
     }
     @FXML
     private void settings(ActionEvent Event){
         System.out.println("settings");
+        SettingsController.giveStage(stage);
         stage.setScene(settings);
     }
     @Override

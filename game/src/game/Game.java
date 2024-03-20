@@ -6,44 +6,47 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.swing.text.View;
-import java.util.Objects;
-
 public class Game extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
     // loaders
+    
         FXMLLoader viewLoader = new FXMLLoader(getClass().getResource("Scenes/View.fxml"));
         Parent tittle = viewLoader.load();
-        Scene scene = new Scene(tittle,1280,720);
+        Scene scene = new Scene(tittle);
 
         FXMLLoader settingsLoader = new FXMLLoader(getClass().getResource("Scenes/Settings.fxml"));
         Parent settings = settingsLoader.load();
-        Scene settingsScene = new Scene(settings,1280,720);
+        Scene settingsScene = new Scene(settings);
         
         FXMLLoader boardLoader = new FXMLLoader(getClass().getResource("Scenes/Board.fxml"));
         Parent board = boardLoader.load();
-        Scene boardScene = new Scene(board,1280,720);
+        Scene boardScene = new Scene(board);
         
         FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("Scenes/Login.fxml"));
         Parent login = loginLoader.load();
-        Scene loginScene = new Scene(login,1280,720);
+        Scene loginScene = new Scene(login);
         
     // injects
         
         ViewController viewPaneController = (ViewController) viewLoader.getController();
-        viewPaneController.setSettingsScene(settingsScene);
-        viewPaneController.setLoginScene(loginScene);
+        viewPaneController.setSettingsScene(settingsScene); // toSettings
+        viewPaneController.setLoginScene(loginScene);   // toLogin
         
         
         SettingsController settingsPaneController = (SettingsController) settingsLoader.getController();
-        settingsPaneController.setTittleScene(scene);
+        settingsPaneController.setTittleScene(scene);   // returnToTittle
+        
+        LoginController loginPaneController = (LoginController) loginLoader.getController();
+        loginPaneController.setTittleScene(scene);  // returnToTittle
+        loginPaneController.setBoardScene(boardScene);  //toBoard
+        
 
     //display scene
         
         stage.setScene(scene);
-        ViewController.giveWindow(stage);
+        ViewController.giveStage(stage);
         stage.show();
 
     }

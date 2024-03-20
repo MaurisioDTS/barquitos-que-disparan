@@ -5,12 +5,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane fx:id="boardP1" gridLinesVisible="true" layoutX="99.0" layoutY="138.0" prefHeight="446.0" prefWidth="449.0" style="-fx-background-color: blue;">
+      <GridPane fx:id="boardP1" gridLinesVisible="true" layoutX="56.0" layoutY="140.0" prefHeight="520.0" prefWidth="523.0" style="-fx-background-color: blue;" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="140.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -147,7 +149,7 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="9" />
          </children>
       </GridPane>
-      <GridPane fx:id="boardP2" gridLinesVisible="true" layoutX="755.0" layoutY="140.0" prefHeight="446.0" prefWidth="449.0" style="-fx-background-color: red;">
+      <GridPane fx:id="boardP2" gridLinesVisible="true" layoutX="690.0" layoutY="140.0" prefHeight="520.0" prefWidth="523.0" style="-fx-background-color: red;" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="140.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -275,75 +277,83 @@
             <Button mnemonicParsing="false" opacity="0.0" prefHeight="79.0" prefWidth="41.0" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="9" />
          </children>
       </GridPane>
-      <Label layoutX="229.0" layoutY="37.0" prefHeight="53.0" prefWidth="189.0" text="JUGADOR 1" textAlignment="CENTER">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="885.0" layoutY="37.0" text="JUGADOR 2" textAlignment="CENTER">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="599.0" layoutY="37.0" prefHeight="53.0" prefWidth="137.0" text="TIEMPO" textAlignment="CENTER">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="629.0" layoutY="81.0" text="10:00">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="645.0" layoutY="135.0" text="A">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="646.0" layoutY="181.0" prefHeight="45.0" prefWidth="21.0" text="B">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="644.0" layoutY="227.0" prefHeight="45.0" prefWidth="21.0" text="C">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="643.0" layoutY="271.0" prefHeight="53.0" prefWidth="29.0" text="D">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="645.0" layoutY="310.0" prefHeight="45.0" prefWidth="21.0" text="E">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="646.0" layoutY="360.0" prefHeight="45.0" prefWidth="21.0" text="F">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="641.0" layoutY="400.0" prefHeight="53.0" prefWidth="29.0" text="G">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="641.0" layoutY="442.0" prefHeight="53.0" prefWidth="29.0" text="H">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="652.0" layoutY="495.0" prefHeight="53.0" prefWidth="29.0" text="I" textAlignment="CENTER">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="641.0" layoutY="548.0" prefHeight="53.0" prefWidth="29.0" text="K">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
+      <VBox alignment="CENTER" layoutX="579.0" layoutY="135.0" prefHeight="530.0" prefWidth="110.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="A">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="21.0" text="B">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="21.0" text="C">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="29.0" text="D">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="21.0" text="E">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="21.0" text="F">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="29.0" text="G">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="29.0" text="H">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="29.0" text="I" textAlignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="29.0" text="J">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Pane prefHeight="140.0" prefWidth="1280.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="54.0" prefHeight="53.0" prefWidth="523.0" text="JUGADOR 1" textAlignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="681.0" layoutY="44.0" prefHeight="53.0" prefWidth="523.0" text="JUGADOR 2" textAlignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="590.0" layoutY="14.0" prefHeight="53.0" prefWidth="100.0" text="TIEMPO" textAlignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="612.0" layoutY="59.0" text="10:00">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

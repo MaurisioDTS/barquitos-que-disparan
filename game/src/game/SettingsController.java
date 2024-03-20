@@ -2,23 +2,19 @@ package game;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 public class SettingsController {
 
-    private Scene tittle;
     private static Stage stage;
-    public static void giveWindow(Stage window){
-        stage=window;
-    }
+    private Scene tittle;
+    
+    public static void giveStage(Stage Stage){stage=Stage;}
+    public void setTittleScene(Scene scene){tittle=scene;}
     
     @FXML
     CheckBox cbFs=new CheckBox();
@@ -26,8 +22,12 @@ public class SettingsController {
     Button apply=new Button();
     @FXML
     AnchorPane anchorPane=new AnchorPane();
-
-    public void setTittleScene(Scene scene){tittle=scene;}
+    
+    @FXML
+    private void stop(ActionEvent Event){
+        System.out.println("Exiting...");
+        System.exit(0);
+    }
     @FXML
     private void setSettings(ActionEvent Event){
         Stage stage = (Stage) anchorPane.getScene().getWindow();
