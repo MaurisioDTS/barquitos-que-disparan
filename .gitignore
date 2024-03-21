@@ -26,3 +26,5 @@ game/build/*
 game/dist/*
 /game/dist
 /game/build
+/game/dist
+/game/build
