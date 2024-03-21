@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.SettingsController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.SettingsController">
    <children>
       <Button layoutX="74.0" layoutY="681.0" mnemonicParsing="false" onAction="#setSettings" text="Aplicar" />
       <Button layoutX="12.0" layoutY="681.0" mnemonicParsing="false" onAction="#btnreturn" text="volver" />
-      <Pane layoutX="540.0" layoutY="139.0" prefHeight="200.0" prefWidth="200.0">
+      <Pane layoutX="484.0" layoutY="47.0" prefHeight="313.0" prefWidth="313.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="135.0" text="Idioma" textAlignment="CENTER" />
-            <ChoiceBox layoutX="25.0" layoutY="161.0" prefWidth="150.0" />
-            <Label layoutX="76.0" layoutY="27.0" text="Volumen" />
-            <Slider layoutX="30.0" layoutY="53.0" value="50.0" />
-            <CheckBox fx:id="cbFs" layoutX="41.0" layoutY="92.0" mnemonicParsing="false" text="Pantalla Completa" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" layoutY="157.0" text="Idioma" textAlignment="CENTER" />
+            <ChoiceBox layoutX="82.0" layoutY="183.0" prefWidth="150.0" />
+            <Label layoutX="134.0" layoutY="14.0" text="Volumen" />
+            <Slider layoutX="46.0" layoutY="41.0" prefHeight="14.0" prefWidth="221.0" value="50.0" />
+            <CheckBox fx:id="cbFs" layoutX="95.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Pantalla Completa" />
          </children>
       </Pane>
    </children>

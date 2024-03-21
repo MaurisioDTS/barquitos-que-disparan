@@ -30,12 +30,12 @@ public class SettingsController {
     }
     @FXML
     private void setSettings(ActionEvent Event){
-        Stage stage = (Stage) anchorPane.getScene().getWindow();
         System.out.println("Full Screen");
         stage.setFullScreen(cbFs.isSelected());
     }
     @FXML
     private void btnreturn(ActionEvent Event){
+        ViewController.giveStage(stage);
         System.out.println("return");
         stage.setScene(tittle);
     }

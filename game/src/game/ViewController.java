@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
+import javafx.scene.media.AudioClip;
 
 public class ViewController implements Initializable{
     
@@ -22,9 +23,7 @@ public class ViewController implements Initializable{
     public void setLoginScene(Scene scene){login=scene;}
     
     @FXML
-    Media intro = new Media(Paths.get("game/res/audio/test.mp3").toUri().toString());
-    @FXML
-    MediaPlayer m=new MediaPlayer(intro);
+    AudioClip intro = new AudioClip(Paths.get("res/audio/test.mp3").toUri().toString());
     
     @FXML
     private void stop(ActionEvent Event){
@@ -34,7 +33,8 @@ public class ViewController implements Initializable{
     // 5 horas y 47 minutos para esta mierda que nisiquiera funciona bien.
     @FXML
     private void battle(ActionEvent Event) throws Exception{
-        m.play();
+        intro.play();
+        intro.stop();
         System.out.println("login");
         LoginController.giveStage(stage);
         stage.setScene(login);
