@@ -16,6 +16,7 @@ public class Ship {
     private boolean horizontal;
     private int initialHorizontalCoordinate;
     private int initialVerticalCoordinate;
+    //Vector para guardar el resto de las coordenadas, crear un metodo que mire si es horizontal y las coodenadas iniciales, y sume de 1 en 1 hasta llegar a la longitud maxima del barco
     
     Ship(String sT,int l,boolean h,int iCH,int iCV){
         shipType=sT;
