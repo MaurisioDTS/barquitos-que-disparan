@@ -1,7 +1,6 @@
 package game;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
@@ -53,11 +52,13 @@ public class LoginController implements Initializable{
         //gestor.cerrar_Conexion(true);
     }
     public void login(ActionEvent Event){
-        /**String consulta;
-        consulta ="select nick from usuario;";
+        String usernameS;
+        String PassS;
+        
+        usernameS ="select nick from usuario;";
         
         System.out.println(Bd.consultaSelect(gestor,consulta));
-        gestor.cerrar_Conexion(true);**/
+        gestor.cerrar_Conexion(true);
         
         stage.setScene(board);
         System.out.println("pec");

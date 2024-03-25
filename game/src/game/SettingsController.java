@@ -32,6 +32,7 @@ public class SettingsController {
     private void setSettings(ActionEvent Event){
         System.out.println("Full Screen");
         stage.setFullScreen(cbFs.isSelected());
+        
     }
     @FXML
     private void btnreturn(ActionEvent Event){

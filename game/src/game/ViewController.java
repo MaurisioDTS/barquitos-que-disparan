@@ -15,7 +15,7 @@ import javafx.scene.media.AudioClip;
 public class ViewController implements Initializable{
     
     private static Stage stage;
-    private Scene settings;
+    public static Scene settings;
     private Scene login;
 
     public static void giveStage(Stage Stage){stage=Stage;}

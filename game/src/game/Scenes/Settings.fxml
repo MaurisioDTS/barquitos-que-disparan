@@ -10,9 +10,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.SettingsController">
    <children>
-      <Button layoutX="74.0" layoutY="681.0" mnemonicParsing="false" onAction="#setSettings" text="Aplicar" />
-      <Button layoutX="12.0" layoutY="681.0" mnemonicParsing="false" onAction="#btnreturn" text="volver" />
-      <Pane layoutX="484.0" layoutY="47.0" prefHeight="313.0" prefWidth="313.0">
+      <Button layoutX="73.0" layoutY="681.0" mnemonicParsing="false" onAction="#setSettings" text="Aplicar" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="73.0" />
+      <Button layoutX="14.0" layoutY="681.0" mnemonicParsing="false" onAction="#btnreturn" text="volver" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+      <Pane layoutX="484.0" layoutY="47.0" prefHeight="313.0" prefWidth="313.0" AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="484.0" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="47.0">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" layoutY="157.0" text="Idioma" textAlignment="CENTER" />
             <ChoiceBox layoutX="82.0" layoutY="183.0" prefWidth="150.0" />
