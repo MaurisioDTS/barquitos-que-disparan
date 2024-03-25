@@ -4,8 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.nio.file.Paths;
@@ -23,7 +21,7 @@ public class ViewController implements Initializable{
     public void setLoginScene(Scene scene){login=scene;}
     
     @FXML
-    AudioClip intro = new AudioClip(Paths.get("res/audio/test.mp3").toUri().toString());
+    AudioClip intro = new AudioClip(Paths.get("game/res/audio/test.mp3").toUri().toString());
     
     @FXML
     private void stop(ActionEvent Event){
@@ -34,7 +32,7 @@ public class ViewController implements Initializable{
     @FXML
     private void battle(ActionEvent Event) throws Exception{
         intro.play();
-        intro.stop();
+
         System.out.println("login");
         LoginController.giveStage(stage);
         stage.setScene(login);

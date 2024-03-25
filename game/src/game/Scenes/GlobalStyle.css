@@ -1,0 +1,10 @@
+.root{
+    -fx-background-image: url("sea.png");
+    -fx-background-size: 100% 100%;
+}
+.button{
+    -fx-background-color: #8bc2c2;
+    -fx-font: url("sans-font.ttf");
+    -fx-background-image: url("jerma.jpg");
+    -fx-background-size: 100% 100%;
+}
