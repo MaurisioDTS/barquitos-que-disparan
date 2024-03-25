@@ -12,62 +12,72 @@ package game;
 public class Ship {
     
     private String shipType;
-    private int length;
+    private int shipLength;
     private boolean horizontal;
     private int initialHorizontalCoordinate;
     private int initialVerticalCoordinate;
-    //Vector para guardar el resto de las coordenadas, crear un metodo que mire si es horizontal y las coodenadas iniciales, y sume de 1 en 1 hasta llegar a la longitud maxima del barco
+    private int [][] restShipCoordinatesHV;
     
-    Ship(String sT,int l,boolean h,int iCH,int iCV){
+    Ship(String sT,int l,int iCH,int iCV){
         shipType=sT;
-        length=l;
-        horizontal=h;
+        shipLength=l;
+        horizontal=false;
         initialHorizontalCoordinate=iCH;
         initialVerticalCoordinate=iCV;
-    }
-    
-    public void setShipType(String sT){
-        shipType=sT;
+        restShipCoordinatesHV=new int[l][2];
+        createRestShipCoordinates();
     }
     
     public String getShipType(){
         return shipType;
     }
     
-    public void setLength(int l){
-        length=l;
-    }
-    
     public int getLength(){
-        return length;
+        return shipLength;
     }
     
-    public void setHorizontal(boolean h){
-        horizontal=h;
+    public void setHorizontal(){
+        if (!horizontal) {
+            horizontal=true;
+        } else {
+            horizontal=false;
+        }
     }
     
     public boolean getHorizontal(){
         return horizontal;
     }
     
-    public void setinitialHorizontalCoordinate(int iCH){
-        initialHorizontalCoordinate=iCH;
-    }
-    
-    public int getinitialHorizontalCoordinate(){
+    public int getInitialHorizontalCoordinate(){
         return initialHorizontalCoordinate;
     }
     
-    public void setinitialVerticalCoordinate(int iCV){
-        initialVerticalCoordinate=iCV;
+    public int getInitialVerticalCoordinate(){
+        return initialVerticalCoordinate;
     }
     
-    public int getinitialVerticalCoordinate(){
-        return initialVerticalCoordinate;
+    public void createRestShipCoordinates(){
+        //The +1 is added to prevent the second coordinate from being identical to the initial one.
+        for (int i = 0; i < shipLength-1; i++) {
+            restShipCoordinatesHV[i][0]=initialHorizontalCoordinate+i+1;
+            restShipCoordinatesHV[i][1]=initialVerticalCoordinate+i+1;
+        }
+    }
+    
+    public String getRestShipCoordinates(){
+        String temp="";
+        for (int i = 0; i < shipLength-1; i++) {
+            temp+="H: "+restShipCoordinatesHV[i][0]+", V: "+restShipCoordinatesHV[i][1];
+        }
+        return temp;
     }
     
     @Override
     public String toString(){
-        return "Ship type: "+shipType+"\nLength: "+length+"\nHorizontal: "+horizontal+"\nInitialCoordinates: "+initialHorizontalCoordinate+";"+initialVerticalCoordinate;
+        String temp="";
+        for (int i = 0; i < shipLength-1; i++) {
+            temp+="H: "+restShipCoordinatesHV[i][0]+", V: "+restShipCoordinatesHV[i][1]+" ; ";
+        }
+        return "Ship type= "+shipType+"\nLength= "+shipLength+"\nHorizontal= "+horizontal+"\nInitialCoordinates= H: "+initialHorizontalCoordinate+", V: "+initialVerticalCoordinate+"\nRestShipCoordinatesHV= "+temp;
     }
 }
