@@ -28,6 +28,10 @@ public class LoginController implements Initializable{
     @FXML        
     PasswordField tbRegPass=new PasswordField();
     @FXML
+    TextField tbLogUser=new TextField();
+    @FXML        
+    PasswordField tbLogPass=new PasswordField();
+    @FXML
     Button register=new Button();
     @FXML
     Button btnReturn=new Button();
@@ -52,10 +56,13 @@ public class LoginController implements Initializable{
         //gestor.cerrar_Conexion(true);
     }
     public void login(ActionEvent Event){
-        String usernameS;
-        String PassS;
+        String usernameS=tbLogUser.getText();
+        String PassS=tbLogPass.getText();
         
-        usernameS ="select nick from usuario;";
+        String password=tbRegPass.getText();
+        String sha256hex = "'"+org.apache.commons.codec.digest.DigestUtils.sha256Hex(PassS)+"'";
+        String consulta="SELECT FROM usuario WHERE nick="+usernameS+"";
+  
         
         System.out.println(Bd.consultaSelect(gestor,consulta));
         gestor.cerrar_Conexion(true);
