@@ -31,3 +31,8 @@ game/dist/*
 /out
 /game/dist
 /game/build
+game/dist/game.jnlp
+game/dist/game.jar
+game/dist/game.html
+game/build/classes/game/ViewController.class
+game/build/built-jar.properties
