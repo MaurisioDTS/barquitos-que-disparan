@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class UserProfileController {
+public class ProfileController {
     private static Stage stage;
     private Scene tittle;
     private Scene profile;

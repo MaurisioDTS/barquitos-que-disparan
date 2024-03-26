@@ -43,7 +43,7 @@ public class Game extends Application {
         
         LoginController loginPaneController = (LoginController) loginLoader.getController();
         loginPaneController.setTittleScene(scene);  // returnToTittle
-        loginPaneController.setProfileScene(boardScene);  //toProfile
+        loginPaneController.setProfileScene(profileScene);  //toProfile
 
     //display scene
         

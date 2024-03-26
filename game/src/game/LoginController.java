@@ -95,7 +95,7 @@ public class LoginController implements Initializable{
         //TODO
         Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
         try{
-            System.out.println(Bd.consultaSelect(gestor,"select * from usuarios;"));
+            System.out.println(Bd.consultaSelect(gestor,"select * from usuario;"));
         }
         catch (NullPointerException a) {
             noDb();
