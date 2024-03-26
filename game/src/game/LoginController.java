@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -35,6 +36,8 @@ public class LoginController implements Initializable{
     Button register=new Button();
     @FXML
     Button btnReturn=new Button();
+    @FXML
+    Label lblWrongCredentials=new Label();
     
     @FXML
     private void btnReturn(ActionEvent Event){
@@ -56,19 +59,27 @@ public class LoginController implements Initializable{
         //gestor.cerrar_Conexion(true);
     }
     public void login(ActionEvent Event){
-        String usernameS=tbLogUser.getText();
-        String PassS=tbLogPass.getText();
+        String nick="'"+tbLogUser.getText()+"'";
+        String pass=tbLogPass.getText();
         
-        String password=tbRegPass.getText();
-        String sha256hex = "'"+org.apache.commons.codec.digest.DigestUtils.sha256Hex(PassS)+"'";
-        String consulta="SELECT FROM usuario WHERE nick="+usernameS+"";
-  
+        String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(pass);
+        String consulta="SELECT * FROM usuario where nick="+nick+";";
+        String[][] result = Bd.consultaSelect(gestor,consulta);
         
-        System.out.println(Bd.consultaSelect(gestor,consulta));
-        gestor.cerrar_Conexion(true);
+        System.out.println(result[0][1]);
         
-        stage.setScene(board);
-        System.out.println("pec");
+        if (result[0][1].equals(sha256hex)){
+            stage.setScene(board);
+        }
+        else{
+            lblWrongCredentials.setVisible(true);
+            System.out.println("pec");
+        }
+        
+        //System.out.println(Bd.consultaSelect(gestor,consulta));
+        
+        //stage.setScene(board);
+        //System.out.println("pec");
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
