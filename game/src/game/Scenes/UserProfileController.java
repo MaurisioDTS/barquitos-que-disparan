@@ -2,6 +2,7 @@ package game.Scenes;
 
 import javafx.fxml.*;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class UserProfileController {
@@ -16,5 +17,5 @@ public class UserProfileController {
     public void setProfileScene(Scene scene, String nick){profile=scene;user=nick;}
     
     @FXML
-    lb
+    Label lblUsername=new Label(user);
 }

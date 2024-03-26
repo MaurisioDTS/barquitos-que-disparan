@@ -18,11 +18,11 @@ public class LoginController implements Initializable{
 
     private static Stage stage;
     private Scene tittle;
-    private Scene board;
+    private Scene profile;
     
     public static void giveStage(Stage Stage){stage=Stage;}
     public void setTittleScene(Scene scene){tittle=scene;}
-    public void setBoardScene(Scene scene){board=scene;}
+    public void setProfileScene(Scene scene){profile=scene;}
     
     @FXML
     TextField tbRegUser=new TextField();
@@ -70,7 +70,7 @@ public class LoginController implements Initializable{
         //System.out.println(result[0][1]); //SHOW HASHED PASSWORD
         
         if (result[0][1].equals(sha256hex)){
-            stage.setScene(board);
+            stage.setScene(profile);
         }
         else{
             lblWrongCredentials.setVisible(true);

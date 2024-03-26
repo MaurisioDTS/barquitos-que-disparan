@@ -27,6 +27,10 @@ public class Game extends Application {
         FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("Scenes/Login.fxml"));
         Parent login = loginLoader.load();
         Scene loginScene = new Scene(login);
+
+        FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("Scenes/Profile.fxml"));
+        Parent profile = profileLoader.load();
+        Scene profileScene = new Scene(profile);
         
     // injects
         
@@ -39,7 +43,7 @@ public class Game extends Application {
         
         LoginController loginPaneController = (LoginController) loginLoader.getController();
         loginPaneController.setTittleScene(scene);  // returnToTittle
-        loginPaneController.setBoardScene(boardScene);  //toBoard
+        loginPaneController.setProfileScene(boardScene);  //toProfile
 
     //display scene
         
