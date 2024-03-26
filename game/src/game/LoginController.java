@@ -59,14 +59,15 @@ public class LoginController implements Initializable{
         //gestor.cerrar_Conexion(true);
     }
     public void login(ActionEvent Event){
+        lblWrongCredentials.setVisible(false);
         String nick="'"+tbLogUser.getText()+"'";
         String pass=tbLogPass.getText();
-        
         String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(pass);
+        
         String consulta="SELECT * FROM usuario where nick="+nick+";";
         String[][] result = Bd.consultaSelect(gestor,consulta);
         
-        System.out.println(result[0][1]);
+        //System.out.println(result[0][1]); //SHOW HASHED PASSWORD
         
         if (result[0][1].equals(sha256hex)){
             stage.setScene(board);
@@ -75,11 +76,6 @@ public class LoginController implements Initializable{
             lblWrongCredentials.setVisible(true);
             System.out.println("pec");
         }
-        
-        //System.out.println(Bd.consultaSelect(gestor,consulta));
-        
-        //stage.setScene(board);
-        //System.out.println("pec");
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
