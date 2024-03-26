@@ -1,6 +1,8 @@
 package game;
 
+import java.net.ConnectException;
 import java.net.URL;
+import java.sql.SQLOutput;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
@@ -10,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.postgresql.util.PSQLException;
 import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
@@ -38,15 +41,18 @@ public class LoginController implements Initializable{
     Button btnReturn=new Button();
     @FXML
     Label lblWrongCredentials=new Label();
+    @FXML
+    Label lblNoDb=new Label();
     
     @FXML
     private void btnReturn(ActionEvent Event){
         System.out.println("return");
         stage.setScene(tittle);
     }
-    
     Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
-    
+
+    public void noDb(){lblNoDb.setVisible(true);}
+
     public void register(ActionEvent Event){
         String consulta;
         String user = "'"+tbRegUser.getText()+"'";
@@ -68,17 +74,32 @@ public class LoginController implements Initializable{
         String[][] result = Bd.consultaSelect(gestor,consulta);
         
         //System.out.println(result[0][1]); //SHOW HASHED PASSWORD
-        
-        if (result[0][1].equals(sha256hex)){
-            stage.setScene(profile);
+
+        try{ // como detesto haber programado esto
+            if (result[0][1].equals(sha256hex)){
+                stage.setScene(profile);
+            }
+            else{
+                lblWrongCredentials.setVisible(true);
+                System.out.println("pec");
+            }
         }
-        else{
-            lblWrongCredentials.setVisible(true);
-            System.out.println("pec");
+        catch (java.lang.NullPointerException a){
+            System.out.println("that user doesnt exist");
         }
+
+
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        // TODO
+        //TODO
+        Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
+        try{
+            System.out.println(Bd.consultaSelect(gestor,"select * from usuarios;"));
+        }
+        catch (NullPointerException a) {
+            noDb();
+            System.out.println("DB NOT FOUND!!!!!!!!!!!!1!!!!!!1");
+        }
     }
 }
