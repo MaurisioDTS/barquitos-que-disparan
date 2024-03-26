@@ -14,7 +14,7 @@ import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
 public class LoginController implements Initializable{
-//TODO "programar el login, pues simplemente multiplica x2 y se lo pasa a la siguiente escena"
+//TODO
 
     private static Stage stage;
     private Scene tittle;
