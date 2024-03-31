@@ -271,7 +271,7 @@
             <Button mnemonicParsing="false" opacity="0.0" prefHeight="79.0" prefWidth="41.0" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="9" />
          </children>
       </GridPane>
-      <VBox alignment="CENTER" layoutX="579.0" layoutY="135.0" prefHeight="530.0" prefWidth="110.0">
+      <VBox alignment="CENTER" layoutX="579.0" layoutY="139.0" prefHeight="520.0" prefWidth="110.0">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" text="A">
                <font>

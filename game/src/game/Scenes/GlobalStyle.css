@@ -2,16 +2,22 @@
     src: url('sans-font.ttf');
 }
 .root{
+    -fx-background-color:  #b3f0ff;
+}
+.landscape{
     -fx-background-image: url("sea.png");
     -fx-background-size: 100% 100%;
 }
 .label{
     -fx-font-family: 'Pixel Comic Sans (Undertale Sans Font)';
-    -fx-text-fill: #000000;
     -fx-font-style: normal;
 }
 .button{
-    -fx-background-color: #8bc2c2;
+    -fx-fill:#8bc2c2;
+    -fx-background-color: radial-gradient(center 80% 20%, radius 80%, rgb(139, 194, 194) 0%, rgb(104, 162, 192) 100%);;
     -fx-font-family: 'Pixel Comic Sans (Undertale Sans Font)';
     -fx-text-fill: #000000;
+    -fx-border-color: black;
+    -fx-border-width: 5;
+    -fx-border-style: solid;
 }

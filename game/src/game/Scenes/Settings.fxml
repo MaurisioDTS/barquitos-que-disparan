@@ -1,20 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.SettingsController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.SettingsController">
    <children>
-      <Button layoutX="73.0" layoutY="681.0" mnemonicParsing="false" onAction="#setSettings" text="Aplicar" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="73.0" />
-      <Button layoutX="14.0" layoutY="681.0" mnemonicParsing="false" onAction="#btnreturn" text="volver" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
-      <Pane layoutX="484.0" layoutY="47.0" prefHeight="313.0" prefWidth="313.0" AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="484.0" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="47.0">
+      <Pane layoutX="484.0" layoutY="47.0" prefHeight="281.0" prefWidth="313.0" AnchorPane.bottomAnchor="392.0" AnchorPane.leftAnchor="484.0" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="47.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" layoutY="157.0" text="Idioma" textAlignment="CENTER" />
-            <ChoiceBox layoutX="82.0" layoutY="183.0" prefWidth="150.0" />
-            <Label layoutX="134.0" layoutY="14.0" text="Volumen" />
-            <Slider layoutX="46.0" layoutY="41.0" prefHeight="14.0" prefWidth="221.0" value="50.0" />
-            <CheckBox fx:id="cbFs" layoutX="95.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Pantalla Completa" />
+            <Pane layoutX="51.0" layoutY="48.0" prefHeight="31.0" prefWidth="211.0">
+               <children>
+                  <Label layoutX="81.0" text="Volumen" />
+                  <Slider layoutX="-5.0" layoutY="17.0" prefHeight="14.0" prefWidth="221.0" value="50.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="102.0" layoutY="116.0" prefHeight="25.0" prefWidth="111.0">
+               <children>
+                  <CheckBox fx:id="cbFs" layoutX="83.0" layoutY="4.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" style="-fx-font-family: Pixel Comic Sans (Undertale Sans Font);">
+                     <font>
+                        <Font name="Pixel Comic Sans (Undertale Sans Font) Regular" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <Label layoutX="6.0" layoutY="4.0" text="FullScreen: " />
+               </children>
+            </Pane>
+            <Pane layoutX="58.0" layoutY="161.0" prefHeight="93.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="14.0" text="Idioma" textAlignment="CENTER" />
+                  <ChoiceBox layoutX="25.0" layoutY="44.0" prefWidth="150.0" />
+               </children>
+            </Pane>
          </children>
       </Pane>
+      <Button layoutX="665.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnreturn" prefHeight="69.0" prefWidth="160.0" text="volver" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="665.0">
+         <font>
+            <Font size="34.0" />
+         </font></Button>
+      <Button layoutX="455.0" layoutY="360.0" mnemonicParsing="false" onAction="#setSettings" prefHeight="69.0" prefWidth="160.0" text="aplicar">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

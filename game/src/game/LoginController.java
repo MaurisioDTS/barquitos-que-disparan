@@ -4,6 +4,8 @@ import java.net.ConnectException;
 import java.net.URL;
 import java.sql.SQLOutput;
 import java.util.ResourceBundle;
+
+import game.Scenes.ProfileController;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.Scene;
@@ -66,7 +68,7 @@ public class LoginController implements Initializable{
     }
     public void login(ActionEvent Event){
         lblWrongCredentials.setVisible(false);
-        String nick="'"+tbLogUser.getText()+"'";
+        String  nick="'"+tbLogUser.getText()+"'";
         String pass=tbLogPass.getText();
         String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(pass);
         
@@ -77,6 +79,7 @@ public class LoginController implements Initializable{
 
         try{ // como detesto haber programado esto
             if (result[0][1].equals(sha256hex)){
+                ProfileController.setProfileScene(profile,tbRegUser.getText());
                 stage.setScene(profile);
             }
             else{
@@ -87,8 +90,6 @@ public class LoginController implements Initializable{
         catch (java.lang.NullPointerException a){
             System.out.println("that user doesnt exist");
         }
-
-
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
