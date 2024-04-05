@@ -10,22 +10,22 @@
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.Scenes.ProfileController">
    <children>
       <Group layoutX="14.0" layoutY="8.0">
-         <Label fx:id="lblUsername" layoutX="107.0" prefHeight="56.0" prefWidth="180.0">
-            <font>
-               <Font size="24.0"/>
-            </font>
-         </Label>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" height="101.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE"
-                    width="101.0"/>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="93.0" layoutX="4.0" layoutY="10.0"
-                    stroke="BLACK" strokeType="INSIDE" width="93.0"/>
-         <Label layoutX="12.0" layoutY="48.0" text="Imagen Avatar"/>
-         <Label layoutX="107.0" layoutY="53.0" text="NVL 15">
-            <font>
-               <Font size="18.0"/>
-            </font>
-         </Label>
-         <Label layoutX="107.0" layoutY="78.0" text="Rango: www"/>
+         <children>
+            <Label fx:id="lblUsername" layoutX="107.0" prefHeight="56.0" prefWidth="180.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="101.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="101.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="93.0" layoutX="4.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" width="93.0" />
+            <Label layoutX="12.0" layoutY="48.0" text="Imagen Avatar" />
+            <Label layoutX="107.0" layoutY="53.0" text="NVL 15">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="107.0" layoutY="78.0" text="Rango: www" />
+         </children>
       </Group>
       <Group layoutX="645.0" layoutY="359.0">
          <children>
@@ -62,5 +62,6 @@
             </Group>
          </children>
       </Group>
+      <Button layoutX="62.0" layoutY="140.0" mnemonicParsing="false" prefHeight="141.0" prefWidth="191.0" text="play" />
    </children>
 </AnchorPane>
