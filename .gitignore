@@ -36,3 +36,9 @@ game/dist/game.jar
 game/dist/game.html
 game/build/classes/game/ViewController.class
 game/build/built-jar.properties
+*.properties
+*.class
+/game/build/classes
+game/dist/game.html
+game/dist/game.jar
+game/dist/game.jnlp
