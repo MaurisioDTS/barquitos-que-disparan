@@ -2,7 +2,6 @@ package game;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import game.Scenes.ProfileController;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.Scene;

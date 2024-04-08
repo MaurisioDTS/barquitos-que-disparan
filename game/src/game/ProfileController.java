@@ -1,4 +1,4 @@
-package game.Scenes;
+package game;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,7 +22,6 @@ public class ProfileController implements Initializable{
     public static void setProfileScene(Scene scene, String nick){profile=scene;user=nick;}
     
     public void play(ActionEvent Action){
-        System.out.println(user);
         lblUsername.setText(user);
     }
 
