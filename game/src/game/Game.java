@@ -13,8 +13,8 @@ public class Game extends Application {
     // loaders
     
         FXMLLoader viewLoader = new FXMLLoader(getClass().getResource("Scenes/View.fxml"));
-        Parent tittle = viewLoader.load();
-        Scene scene = new Scene(tittle);
+        Parent title = viewLoader.load();
+        Scene scene = new Scene(title);
 
         FXMLLoader settingsLoader = new FXMLLoader(getClass().getResource("Scenes/Settings.fxml"));
         Parent settings = settingsLoader.load();

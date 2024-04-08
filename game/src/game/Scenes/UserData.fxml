@@ -62,6 +62,6 @@
             </Group>
          </children>
       </Group>
-      <Button layoutX="62.0" layoutY="140.0" mnemonicParsing="false" prefHeight="141.0" prefWidth="191.0" text="play" />
+      <Button layoutX="62.0" layoutY="140.0" mnemonicParsing="false" onAction="#play" prefHeight="141.0" prefWidth="191.0" text="play" />
    </children>
 </AnchorPane>

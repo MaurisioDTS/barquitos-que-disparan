@@ -11,10 +11,10 @@ import javafx.stage.Stage;
 public class SettingsController {
 
     private static Stage stage;
-    private Scene tittle;
+    private Scene title;
     
     public static void giveStage(Stage Stage){stage=Stage;}
-    public void setTittleScene(Scene scene){tittle=scene;}
+    public void setTittleScene(Scene scene){title=scene;}
     
     @FXML
     CheckBox cbFs=new CheckBox();
@@ -38,6 +38,6 @@ public class SettingsController {
     private void btnreturn(ActionEvent Event){
         ViewController.giveStage(stage);
         System.out.println("return");
-        stage.setScene(tittle);
+        stage.setScene(title);
     }
 }

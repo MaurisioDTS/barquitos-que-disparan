@@ -1,10 +1,7 @@
 package game;
 
-import java.net.ConnectException;
 import java.net.URL;
-import java.sql.SQLOutput;
 import java.util.ResourceBundle;
-
 import game.Scenes.ProfileController;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
@@ -14,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.postgresql.util.PSQLException;
 import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
@@ -22,11 +18,11 @@ public class LoginController implements Initializable{
 //TODO
 
     private static Stage stage;
-    private Scene tittle;
+    private Scene title;
     private Scene profile;
     
     public static void giveStage(Stage Stage){stage=Stage;}
-    public void setTittleScene(Scene scene){tittle=scene;}
+    public void setTittleScene(Scene scene){title=scene;}
     public void setProfileScene(Scene scene){profile=scene;}
     
     @FXML
@@ -49,7 +45,7 @@ public class LoginController implements Initializable{
     @FXML
     private void btnReturn(ActionEvent Event){
         System.out.println("return");
-        stage.setScene(tittle);
+        stage.setScene(title);
     }
     Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
 
@@ -68,7 +64,7 @@ public class LoginController implements Initializable{
     }
     public void login(ActionEvent Event){
         lblWrongCredentials.setVisible(false);
-        String  nick="'"+tbLogUser.getText()+"'";
+        String nick="'"+tbLogUser.getText()+"'";
         String pass=tbLogPass.getText();
         String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(pass);
         
@@ -79,7 +75,7 @@ public class LoginController implements Initializable{
 
         try{ // como detesto haber programado esto
             if (result[0][1].equals(sha256hex)){
-                ProfileController.setProfileScene(profile,tbRegUser.getText());
+                ProfileController.setProfileScene(profile,tbLogUser.getText());
                 stage.setScene(profile);
             }
             else{
