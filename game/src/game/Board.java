@@ -15,6 +15,11 @@ public class Board {
             board[a.getInitialHorizontalCoordinate()][a.getInitialVerticalCoordinate()]=a;
         }
     }
+    
+    public void checkCheck(int x, int y){
+        
+    }
+    
     @Override
     public String toString(){
         return user;
