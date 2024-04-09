@@ -16,8 +16,13 @@ public class Board {
         }
     }
     
-    public void checkCheck(int x, int y){
-        
+    public boolean checkCheck(int x, int y){
+        if(board[x][y].equals(null)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
     @Override

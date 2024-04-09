@@ -10,19 +10,23 @@ import javafx.stage.Stage;
 
 public class ProfileController implements Initializable{
     private static Stage stage;
-    private static Scene title;
+    private Scene title;
+    private Scene board;
     private static Scene profile;
     private static String user;
 
     @FXML
     Label lblUsername=new Label();
 
-    public void giveStage(Stage Stage){stage=Stage;}
+    public static void giveStage(Stage Stage){stage=Stage;}
     public void setTittleScene(Scene scene){title=scene;}
+    public void setBoardScene(Scene scene){board=scene;}
     public static void setProfileScene(Scene scene, String nick){profile=scene;user=nick;}
     
     public void play(ActionEvent Action){
         lblUsername.setText(user);
+        BoardController.giveStage(stage);
+        stage.setScene(board);
     }
 
     @Override

@@ -22,7 +22,6 @@ public class SettingsController {
     Button apply=new Button();
     @FXML
     AnchorPane anchorPane=new AnchorPane();
-    
     @FXML
     private void stop(ActionEvent Event){
         System.out.println("Exiting...");

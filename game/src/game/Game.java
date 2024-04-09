@@ -20,10 +20,6 @@ public class Game extends Application {
         Parent settings = settingsLoader.load();
         Scene settingsScene = new Scene(settings);
         
-        FXMLLoader boardLoader = new FXMLLoader(getClass().getResource("Scenes/Board.fxml"));
-        Parent board = boardLoader.load();
-        Scene boardScene = new Scene(board);
-        
         FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("Scenes/Login.fxml"));
         Parent login = loginLoader.load();
         Scene loginScene = new Scene(login);
@@ -31,6 +27,10 @@ public class Game extends Application {
         FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("Scenes/Profile.fxml"));
         Parent profile = profileLoader.load();
         Scene profileScene = new Scene(profile);
+
+        FXMLLoader boardLoader = new FXMLLoader(getClass().getResource("Scenes/Board.fxml"));
+        Parent board = boardLoader.load();
+        Scene boardScene = new Scene(board);
         
     // injects
         
@@ -45,10 +45,17 @@ public class Game extends Application {
         loginPaneController.setTittleScene(scene);  // returnToTittle
         loginPaneController.setProfileScene(profileScene);  //toProfile
 
-    //display scene
+        ProfileController profilePaneController = (ProfileController) profileLoader.getController();
+        profilePaneController.setTittleScene(scene);  // returnToTittle
+        profilePaneController.setBoardScene(boardScene);  //toBoard
+
+        BoardController boardPaneController = (BoardController) boardLoader.getController();
+        boardPaneController.setTittleScene(scene);  // returnToTittle
+
+        //display scene
         
-        stage.setScene(scene);
-        ViewController.giveStage(stage);
+        stage.setScene(boardScene);
+        BoardController.giveStage(stage);
         stage.show();
 
     }
