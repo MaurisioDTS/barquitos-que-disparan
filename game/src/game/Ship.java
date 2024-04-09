@@ -69,6 +69,6 @@ public class Ship {
         for (int i = 0; i < shipLength-1; i++) {
             temp+="H: "+restShipCoordinatesHV[i][0]+", V: "+restShipCoordinatesHV[i][1]+" ; ";
         }
-        return "Ship type= "+shipType+"\nLength= "+shipLength+"\nHorizontal= "+horizontal+"\nInitialCoordinates= H: "+initialHorizontalCoordinate+", V: "+initialVerticalCoordinate+"\nRestShipCoordinatesHV= "+temp;
+        return "-------"+shipType+"-------\nLength= "+shipLength+"\nHorizontal= "+horizontal+"\nInitialCoordinates= H: "+initialHorizontalCoordinate+", V: "+initialVerticalCoordinate+"\nRestShipCoordinatesHV= "+temp;
     }
 }
