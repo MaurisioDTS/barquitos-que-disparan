@@ -28,7 +28,7 @@ public class Game extends Application {
         Parent login = loginLoader.load();
         Scene loginScene = new Scene(login);
 
-        FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("Scenes/UserData.fxml"));
+        FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("Scenes/Profile.fxml"));
         Parent profile = profileLoader.load();
         Scene profileScene = new Scene(profile);
         
