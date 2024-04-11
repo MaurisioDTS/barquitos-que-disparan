@@ -15,10 +15,9 @@ public class Game extends Application {
         FXMLLoader viewLoader = new FXMLLoader(getClass().getResource("Scenes/View.fxml"));
         Parent title = viewLoader.load();
         Scene scene = new Scene(title);
+        
+        Scene sceneController=new Scene(title);
 
-        FXMLLoader settingsLoader = new FXMLLoader(getClass().getResource("Scenes/Settings.fxml"));
-        Parent settings = settingsLoader.load();
-        Scene settingsScene = new Scene(settings);
         
         FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("Scenes/Login.fxml"));
         Parent login = loginLoader.load();
@@ -35,11 +34,8 @@ public class Game extends Application {
     // injects
         
         ViewController viewPaneController = (ViewController) viewLoader.getController();
-        viewPaneController.setSettingsScene(settingsScene); // toSettings
         viewPaneController.setLoginScene(loginScene);   // toLogin
 
-        SettingsController settingsPaneController = (SettingsController) settingsLoader.getController();
-        settingsPaneController.setTittleScene(scene);   // returnToTittle
         
         LoginController loginPaneController = (LoginController) loginLoader.getController();
         loginPaneController.setTittleScene(scene);  // returnToTittle
@@ -54,7 +50,7 @@ public class Game extends Application {
 
         //display scene
         
-        stage.setScene(boardScene);
+        stage.setScene(scene);
         BoardController.giveStage(stage);
         stage.show();
 
