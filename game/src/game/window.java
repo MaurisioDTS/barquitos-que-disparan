@@ -6,38 +6,38 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Scene{
+public class window{
     
     private Stage stage;
+    private Scene scene;
     private Parent root;
+
     private boolean fullScreen;
             
-    Scene(Stage stage){
+    window(Stage stage){
         this.stage=stage;
     }
 
-    private Scene(Parent root) {
+    private window(Parent root) {
      
     }
     
     
-    public void goSettings() throws Exception{
-        FXMLLoader Loader = new FXMLLoader(getClass().getResource());
-        Parent a = Loader.load();
-        javafx.scene.Scene scene = new javafx.scene.Scene(a);
-        
-        stage.setFullScreen(fullScreen);
-        stage.setScene(scene);
-        
-        
+    public void goSettings(ActionEvent event) throws Exception{
         
         root = FXMLLoader.load(getClass().getResource("Scenes/Settings.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setScene(scene);
+        
+        stage.setFullScreen(fullScreen);
+        stage.setScene(this.scene);
+        
         stage.show();
+        
+        
     }
     public void setFullScreen(boolean a){fullScreen=a;}
     public Stage getStage(){return stage;}

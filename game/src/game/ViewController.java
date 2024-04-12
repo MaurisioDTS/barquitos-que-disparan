@@ -40,15 +40,14 @@ public class ViewController implements Initializable{
         stage.setScene(login);
     }
     @FXML
-    private void settings(ActionEvent Event) throws IOException{
+    private void settings(ActionEvent Event){
         System.out.println("settings");
-        
-        FXMLLoader settLoader = new FXMLLoader(getClass().getResource("Scenes/Settings.fxml"));
-        Parent settings = settLoader.load();
-        Scene scene = new Scene(settings);
-        scene.setRoot(root);
-
-        stage.setScene(scene);
+       try{
+        window.goSettings(Event);
+       }
+       catch(Exception e){
+           System.out.println("eror");
+       }
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
