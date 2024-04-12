@@ -1,5 +1,6 @@
 package game;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.fxml.Initializable;
@@ -8,6 +9,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
+import javafx.scene.Parent;
 import javafx.scene.media.AudioClip;
 
 public class ViewController implements Initializable{
@@ -38,10 +40,15 @@ public class ViewController implements Initializable{
         stage.setScene(login);
     }
     @FXML
-    private void settings(ActionEvent Event){
+    private void settings(ActionEvent Event) throws IOException{
         System.out.println("settings");
-        SettingsController.giveStage(stage);
-        stage.setScene(settings);
+        
+        FXMLLoader settLoader = new FXMLLoader(getClass().getResource("Scenes/Settings.fxml"));
+        Parent settings = settLoader.load();
+        Scene scene = new Scene(settings);
+        scene.setRoot(root);
+
+        stage.setScene(scene);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
