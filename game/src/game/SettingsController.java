@@ -32,7 +32,7 @@ public class SettingsController implements Initializable{
     @FXML
     Slider sldVolume=new Slider();
     @FXML
-    ChoiceBox cbLanguage=new ChoiceBox(FXCollections.observableArrayList("1", "2", "3"));
+    ChoiceBox cbLang=new ChoiceBox(FXCollections.observableArrayList("1", "2", "3"));
 
     @FXML
     Button apply=new Button();
@@ -50,7 +50,6 @@ public class SettingsController implements Initializable{
 
         Game.setVol(sldVolume.getValue());
         Game.setFs(stage,cbFs.isSelected());
-        Game.changeMusic((Integer) cbLanguage.getValue());
     }
     @FXML
     private void btnreturn(ActionEvent a){

@@ -27,16 +27,16 @@
             <Pane layoutX="58.0" layoutY="161.0" prefHeight="93.0" prefWidth="200.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="14.0" text="Idioma" textAlignment="CENTER" />
-                  <ChoiceBox layoutX="25.0" layoutY="44.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="cbLang" layoutX="25.0" layoutY="44.0" prefWidth="150.0" />
                </children>
             </Pane>
          </children>
       </Pane>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="666.0" layoutY="352.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnreturn" prefHeight="77.0" prefWidth="169.0" text="volver" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="666.0" AnchorPane.rightAnchor="445.0">
+      <Button layoutX="665.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnreturn" prefHeight="69.0" prefWidth="160.0" text="volver" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="665.0">
          <font>
             <Font size="34.0" />
          </font></Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="471.0" layoutY="352.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setSettings" prefHeight="77.0" prefWidth="169.0" text="aplicar" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="471.0" AnchorPane.rightAnchor="640.0">
+      <Button layoutX="455.0" layoutY="360.0" mnemonicParsing="false" onAction="#setSettings" prefHeight="69.0" prefWidth="160.0" text="aplicar">
          <font>
             <Font size="32.0" />
          </font>
