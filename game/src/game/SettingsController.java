@@ -1,16 +1,25 @@
 package game;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class SettingsController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import static javafx.scene.input.KeyCode.T;
+
+public class SettingsController implements Initializable{
 
     private static Stage stage=Game.getStage();
     private Scene title;
@@ -22,6 +31,9 @@ public class SettingsController {
     CheckBox cbFs=new CheckBox();
     @FXML
     Slider sldVolume=new Slider();
+    @FXML
+    ChoiceBox cbLanguage=new ChoiceBox(FXCollections.observableArrayList("1", "2", "3"));
+
     @FXML
     Button apply=new Button();
     @FXML
@@ -38,6 +50,7 @@ public class SettingsController {
 
         Game.setVol(sldVolume.getValue());
         Game.setFs(stage,cbFs.isSelected());
+        Game.changeMusic((Integer) cbLanguage.getValue());
     }
     @FXML
     private void btnreturn(ActionEvent a){
@@ -45,5 +58,9 @@ public class SettingsController {
         Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
         stage.setScene(title);
         System.out.println(stage.getScene());
+    }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }

@@ -31,6 +31,11 @@ public class ViewController implements Initializable{
         System.out.println("Exiting...");
         System.exit(0);
     }
+    @FXML
+    private void mute(ActionEvent Event){
+        System.out.println("Toggling mute...");
+        Game.toggleMute();
+    }
     // 5 horas y 47 minutos para esta mierda que nisiquiera funciona bien.
     @FXML
     private void battle(ActionEvent a) throws Exception{

@@ -18,19 +18,36 @@
          <Font name="System Bold" size="75.0" />
         </font>
     </Label>
-    <Button focusTraversable="false" layoutX="58.0" layoutY="237.0" onAction="#battle" prefHeight="87.0" prefWidth="308.0" text="BATALLA" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="58.0">
+    <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="58.0" layoutY="237.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#battle" prefHeight="89.0" prefWidth="308.0" text="BATALLA" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="58.0">
         <font>
          <Font name="System Bold" size="43.0" />
         </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
     </Button>
-    <Button focusTraversable="false" layoutX="58.0" layoutY="365.0" onAction="#settings" prefHeight="87.0" prefWidth="260.0" text="Ajustes" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="148.0" AnchorPane.leftAnchor="58.0">
+    <Button alignment="CENTER" focusTraversable="false" layoutX="58.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#settings" prefHeight="87.0" prefWidth="260.0" text="Ajustes" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="148.0" AnchorPane.leftAnchor="58.0">
         <font>
           <Font name="System Bold" size="40.0" />
         </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
     </Button>
-    <Button ellipsisString="x" focusTraversable="false" graphicTextGap="0.0" layoutX="1215.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="50.0" text="X" textOverrun="CLIP" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+    <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" graphicTextGap="0.0" layoutX="1215.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="50.0" text="X" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
         <font>
           <Font name="System Bold" size="25.0" />
         </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
     </Button>
+   <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" graphicTextGap="0.0" layoutX="1150.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mute" prefHeight="50.0" prefWidth="50.0" text="m" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="15.0">
+      <font>
+         <Font name="System Bold" size="22.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
 </AnchorPane>

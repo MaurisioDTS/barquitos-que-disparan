@@ -32,11 +32,11 @@
             </Pane>
          </children>
       </Pane>
-      <Button layoutX="665.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnreturn" prefHeight="69.0" prefWidth="160.0" text="volver" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="665.0">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="666.0" layoutY="352.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnreturn" prefHeight="77.0" prefWidth="169.0" text="volver" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="666.0" AnchorPane.rightAnchor="445.0">
          <font>
             <Font size="34.0" />
          </font></Button>
-      <Button layoutX="455.0" layoutY="360.0" mnemonicParsing="false" onAction="#setSettings" prefHeight="69.0" prefWidth="160.0" text="aplicar">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="471.0" layoutY="352.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setSettings" prefHeight="77.0" prefWidth="169.0" text="aplicar" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="471.0" AnchorPane.rightAnchor="640.0">
          <font>
             <Font size="32.0" />
          </font>
