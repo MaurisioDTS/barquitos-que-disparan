@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.media.AudioClip;
 
@@ -32,22 +33,18 @@ public class ViewController implements Initializable{
     }
     // 5 horas y 47 minutos para esta mierda que nisiquiera funciona bien.
     @FXML
-    private void battle(ActionEvent Event) throws Exception{
+    private void battle(ActionEvent a) throws Exception{
         //intro.play();
 
         System.out.println("login");
-        LoginController.giveStage(stage);
+        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();        
         stage.setScene(login);
     }
     @FXML
-    private void settings(ActionEvent Event){
+    private void settings(ActionEvent a){
         System.out.println("settings");
-       try{
-        window.goSettings(Event);
-       }
-       catch(Exception e){
-           System.out.println("eror");
-       }
+        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow(); 
+        stage.setScene(settings);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){

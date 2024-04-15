@@ -2,6 +2,7 @@ package game;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -33,9 +34,10 @@ public class SettingsController {
         
     }
     @FXML
-    private void btnreturn(ActionEvent Event){
+    private void btnreturn(ActionEvent a){
         ViewController.giveStage(stage);
         System.out.println("return");
+        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
         stage.setScene(title);
     }
 }

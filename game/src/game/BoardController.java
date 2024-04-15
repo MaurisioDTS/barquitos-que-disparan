@@ -22,7 +22,7 @@ public class BoardController implements Initializable{
     Board elpepe=new Board("elpepe");
     
     Ship one=new Ship("portaaviones",5,0,0);
-    Ship two=new Ship("buque de telepata de guerra",4,0,1);
+    Ship two=new Ship("buque telepata de guerra",4,0,1);
     Ship thr=new Ship("submarino no sumergible",3,0,2);
     Ship fou=new Ship("el yate de hijacked",2,0,3);
     Ship fiv=new Ship("lancha de poliester",1,0,4);

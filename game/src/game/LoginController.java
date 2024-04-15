@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -42,8 +43,9 @@ public class LoginController implements Initializable{
     Label lblNoDb=new Label();
     
     @FXML
-    private void btnReturn(ActionEvent Event){
+    private void btnReturn(ActionEvent a){
         System.out.println("return");
+        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow(); 
         stage.setScene(title);
     }
     Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
@@ -61,7 +63,7 @@ public class LoginController implements Initializable{
         System.out.println(Bd.consultaModificacion(gestor,consulta));  
         //gestor.cerrar_Conexion(true);
     }
-    public void login(ActionEvent Event){
+    public void login(ActionEvent a){
         lblWrongCredentials.setVisible(false);
         String nick="'"+tbLogUser.getText()+"'";
         String pass=tbLogPass.getText();
@@ -74,7 +76,9 @@ public class LoginController implements Initializable{
 
         try{ // como detesto haber programado esto
             if (result[0][1].equals(sha256hex)){
+                Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
                 ProfileController.setProfileScene(profile,tbLogUser.getText());
+                
                 stage.setScene(profile);
             }
             else{
@@ -82,7 +86,7 @@ public class LoginController implements Initializable{
                 System.out.println("pec");
             }
         }
-        catch (java.lang.NullPointerException a){
+        catch (java.lang.NullPointerException n){
             System.out.println("that user doesnt exist");
         }
     }
