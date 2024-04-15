@@ -6,12 +6,13 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class SettingsController {
 
-    private static Stage stage;
+    private static Stage stage=Game.getStage();
     private Scene title;
     
     public static void giveStage(Stage Stage){stage=Stage;}
@@ -19,6 +20,8 @@ public class SettingsController {
     
     @FXML
     CheckBox cbFs=new CheckBox();
+    @FXML
+    Slider sldVolume=new Slider();
     @FXML
     Button apply=new Button();
     @FXML
@@ -30,14 +33,17 @@ public class SettingsController {
     }
     @FXML
     private void setSettings(ActionEvent Event){
-        System.out.println("Full Screen");
-        
+        Stage stage = (Stage)((Node)Event.getSource()).getScene().getWindow();
+        System.out.println(sldVolume.getValue());
+
+        Game.setVol(sldVolume.getValue());
+        Game.setFs(stage,cbFs.isSelected());
     }
     @FXML
     private void btnreturn(ActionEvent a){
-        ViewController.giveStage(stage);
         System.out.println("return");
         Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
         stage.setScene(title);
+        System.out.println(stage.getScene());
     }
 }

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.SettingsController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.SettingsController">
    <children>
       <Pane layoutX="484.0" layoutY="47.0" prefHeight="281.0" prefWidth="313.0" AnchorPane.bottomAnchor="392.0" AnchorPane.leftAnchor="484.0" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="47.0">
          <children>
             <Pane layoutX="51.0" layoutY="48.0" prefHeight="31.0" prefWidth="211.0">
                <children>
                   <Label layoutX="81.0" text="Volumen" />
-                  <Slider layoutX="-5.0" layoutY="17.0" prefHeight="14.0" prefWidth="221.0" value="50.0" />
+                  <Slider fx:id="sldVolume" layoutX="-5.0" layoutY="17.0" max="1.0" prefHeight="14.0" prefWidth="221.0" value="0.5" />
                </children>
             </Pane>
             <Pane layoutX="102.0" layoutY="116.0" prefHeight="25.0" prefWidth="111.0">

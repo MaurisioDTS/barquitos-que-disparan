@@ -15,7 +15,7 @@ import javafx.scene.media.AudioClip;
 
 public class ViewController implements Initializable{
     
-    private static Stage stage;
+    private static Stage stage=Game.getStage();
     private Scene settings;
     private Scene login;
 
@@ -45,6 +45,7 @@ public class ViewController implements Initializable{
         System.out.println("settings");
         Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow(); 
         stage.setScene(settings);
+        System.out.println(stage.getScene());
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
