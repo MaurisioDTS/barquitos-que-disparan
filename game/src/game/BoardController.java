@@ -1,5 +1,7 @@
 package game;
 
+import game.Objects.Ship;
+import game.Objects.Board;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -21,11 +23,12 @@ public class BoardController implements Initializable{
     
     Board brd=new Board("elpepe");
     
-    Ship one=new Ship("portaaviones",5,0,0);
-    Ship two=new Ship("buque telepata de guerra",4,1,1);
-    Ship thr=new Ship("submarino no sumergible",3,2,2);
-    Ship fou=new Ship("el yate de hijacked",2,3,3);
-    Ship fiv=new Ship("lancha de poliester",1,4,4);
+    Ship one=new Ship("portaaviones",5,0,0,false);
+    Ship two=new Ship("buque telepata de guerra",4,1,1,false);
+    Ship thr=new Ship("submarino no sumergible",3,2,2,false);
+    Ship fou=new Ship("el yate de hijacked",2,3,3,false);
+    Ship fiv=new Ship("lancha de poliester",1,4,4,false);
+    
      /**
         A
     **/
@@ -159,201 +162,203 @@ public class BoardController implements Initializable{
     public void d10(ActionEvent Event){
         brd.checkCheck(3,9);}
     /**
+        E
+    **/
+    @FXML
+    public void e1(ActionEvent Event){
+        brd.checkCheck(4,0);}
+    @FXML
+    public void e2(ActionEvent Event){
+        brd.checkCheck(4,1);}
+    @FXML
+    public void e3(ActionEvent Event){
+        brd.checkCheck(4,2);}
+    @FXML
+    public void e4(ActionEvent Event){
+        brd.checkCheck(4,3);}
+    @FXML
+    public void e5(ActionEvent Event){
+        brd.checkCheck(4,4);}
+    @FXML
+    public void e6(ActionEvent Event){
+        brd.checkCheck(4,5);}
+    @FXML
+    public void e7(ActionEvent Event){
+        brd.checkCheck(4,6);}
+    @FXML
+    public void e8(ActionEvent Event){
+        brd.checkCheck(4,7);}
+    @FXML
+    public void e9(ActionEvent Event){
+        brd.checkCheck(4,8);}
+    @FXML
+    public void e10(ActionEvent Event){
+        brd.checkCheck(4,9);}
+    /**
         F
     **/
     @FXML
     public void f1(ActionEvent Event){
-        brd.checkCheck(4,0);}
+        brd.checkCheck(5,0);}
     @FXML
     public void f2(ActionEvent Event){
-        brd.checkCheck(4,1);}
+        brd.checkCheck(5,1);}
     @FXML
     public void f3(ActionEvent Event){
-        brd.checkCheck(4,2);}
+        brd.checkCheck(5,2);}
     @FXML
     public void f4(ActionEvent Event){
-        brd.checkCheck(4,3);}
+        brd.checkCheck(5,3);}
     @FXML
     public void f5(ActionEvent Event){
-        brd.checkCheck(4,4);}
+        brd.checkCheck(5,4);}
     @FXML
     public void f6(ActionEvent Event){
-        brd.checkCheck(4,5);}
+        brd.checkCheck(5,5);}
     @FXML
     public void f7(ActionEvent Event){
-        brd.checkCheck(4,6);}
+        brd.checkCheck(5,6);}
     @FXML
     public void f8(ActionEvent Event){
-        brd.checkCheck(4,7);}
+        brd.checkCheck(5,7);}
     @FXML
     public void f9(ActionEvent Event){
-        brd.checkCheck(4,8);}
+        brd.checkCheck(5,8);}
     @FXML
     public void f10(ActionEvent Event){
-        brd.checkCheck(4,9);}
+        brd.checkCheck(5,9);}
     /**
         G
     **/
     @FXML
     public void g1(ActionEvent Event){
-        brd.checkCheck(5,0);}
+        brd.checkCheck(6,0);}
     @FXML
     public void g2(ActionEvent Event){
-        brd.checkCheck(5,1);}
+        brd.checkCheck(6,1);}
     @FXML
     public void g3(ActionEvent Event){
-        brd.checkCheck(5,2);}
+        brd.checkCheck(6,2);}
     @FXML
     public void g4(ActionEvent Event){
-        brd.checkCheck(5,3);}
+        brd.checkCheck(6,3);}
     @FXML
     public void g5(ActionEvent Event){
-        brd.checkCheck(5,4);}
+        brd.checkCheck(6,4);}
     @FXML
     public void g6(ActionEvent Event){
-        brd.checkCheck(5,5);}
+        brd.checkCheck(6,5);}
     @FXML
     public void g7(ActionEvent Event){
-        brd.checkCheck(5,6);}
+        brd.checkCheck(6,6);}
     @FXML
     public void g8(ActionEvent Event){
-        brd.checkCheck(5,7);}
+        brd.checkCheck(6,7);}
     @FXML
     public void g9(ActionEvent Event){
-        brd.checkCheck(5,8);}
+        brd.checkCheck(6,8);}
     @FXML
     public void g10(ActionEvent Event){
-        brd.checkCheck(5,9);}
+        brd.checkCheck(6,9);}
      /**
         H
     **/
     @FXML
     public void h1(ActionEvent Event){
-        brd.checkCheck(6,0);}
+        brd.checkCheck(7,0);}
     @FXML
     public void h2(ActionEvent Event){
-        brd.checkCheck(6,1);}
+        brd.checkCheck(7,1);}
     @FXML
     public void h3(ActionEvent Event){
-        brd.checkCheck(6,2);}
+        brd.checkCheck(7,2);}
     @FXML
     public void h4(ActionEvent Event){
-        brd.checkCheck(6,3);}
+        brd.checkCheck(7,3);}
     @FXML
     public void h5(ActionEvent Event){
-        brd.checkCheck(6,4);}
+        brd.checkCheck(7,4);}
     @FXML
     public void h6(ActionEvent Event){
-        brd.checkCheck(6,5);}
+        brd.checkCheck(7,5);}
     @FXML
     public void h7(ActionEvent Event){
-        brd.checkCheck(6,6);}
+        brd.checkCheck(7,6);}
     @FXML
     public void h8(ActionEvent Event){
-        brd.checkCheck(6,7);}
+        brd.checkCheck(7,7);}
     @FXML
     public void h9(ActionEvent Event){
-        brd.checkCheck(6,8);}
+        brd.checkCheck(7,8);}
     @FXML
     public void h10(ActionEvent Event){
-        brd.checkCheck(6,9);}
+        brd.checkCheck(7,9);}
     /**
         I
     **/
     @FXML
     public void i1(ActionEvent Event){
-        brd.checkCheck(7,0);}
+        brd.checkCheck(8,0);}
     @FXML
     public void i2(ActionEvent Event){
-        brd.checkCheck(7,1);}
+        brd.checkCheck(8,1);}
     @FXML
     public void i3(ActionEvent Event){
-        brd.checkCheck(7,2);}
+        brd.checkCheck(8,2);}
     @FXML
     public void i4(ActionEvent Event){
-        brd.checkCheck(7,3);}
+        brd.checkCheck(8,3);}
     @FXML
     public void i5(ActionEvent Event){
-        brd.checkCheck(7,4);}
+        brd.checkCheck(8,4);}
     @FXML
     public void i6(ActionEvent Event){
-        brd.checkCheck(7,5);}
+        brd.checkCheck(8,5);}
     @FXML
     public void i7(ActionEvent Event){
-        brd.checkCheck(7,6);}
+        brd.checkCheck(8,6);}
     @FXML
     public void i8(ActionEvent Event){
-        brd.checkCheck(7,7);}
+        brd.checkCheck(8,7);}
     @FXML
     public void i9(ActionEvent Event){
-        brd.checkCheck(7,8);}
+        brd.checkCheck(8,8);}
+     @FXML
+    public void i10(ActionEvent Event){
+        brd.checkCheck(8,9);}
     /**
         J
     **/
     @FXML
     public void j1(ActionEvent Event){
-        brd.checkCheck(8,0);}
-    @FXML
-    public void j2(ActionEvent Event){
-        brd.checkCheck(8,1);}
-    @FXML
-    public void j3(ActionEvent Event){
-        brd.checkCheck(8,2);}
-    @FXML
-    public void j4(ActionEvent Event){
-        brd.checkCheck(8,3);}
-    @FXML
-    public void j5(ActionEvent Event){
-        brd.checkCheck(8,4);}
-    @FXML
-    public void j6(ActionEvent Event){
-        brd.checkCheck(8,5);}
-    @FXML
-    public void j7(ActionEvent Event){
-        brd.checkCheck(8,6);}
-    @FXML
-    public void j8(ActionEvent Event){
-        brd.checkCheck(8,7);}
-    @FXML
-    public void j9(ActionEvent Event){
-        brd.checkCheck(8,8);}
-    @FXML
-    public void j10(ActionEvent Event){
-        brd.checkCheck(8,9);}
-    /**
-     J
-     **/
-    @FXML
-    public void k1(ActionEvent Event){
         brd.checkCheck(9,0);}
     @FXML
-    public void k2(ActionEvent Event){
+    public void j2(ActionEvent Event){
         brd.checkCheck(9,1);}
     @FXML
-    public void k3(ActionEvent Event){
+    public void j3(ActionEvent Event){
         brd.checkCheck(9,2);}
     @FXML
-    public void k4(ActionEvent Event){
+    public void j4(ActionEvent Event){
         brd.checkCheck(9,3);}
     @FXML
-    public void k5(ActionEvent Event){
+    public void j5(ActionEvent Event){
         brd.checkCheck(9,4);}
     @FXML
-    public void k6(ActionEvent Event){
+    public void j6(ActionEvent Event){
         brd.checkCheck(9,5);}
     @FXML
-    public void k7(ActionEvent Event){
+    public void j7(ActionEvent Event){
         brd.checkCheck(9,6);}
     @FXML
-    public void k8(ActionEvent Event){
+    public void j8(ActionEvent Event){
         brd.checkCheck(9,7);}
     @FXML
-    public void k9(ActionEvent Event){
+    public void j9(ActionEvent Event){
         brd.checkCheck(9,8);}
     @FXML
-    public void k10(ActionEvent Event){
+    public void j10(ActionEvent Event){
         brd.checkCheck(9,9);}
-    
     
     @Override
     public void initialize(URL url, ResourceBundle rb){
