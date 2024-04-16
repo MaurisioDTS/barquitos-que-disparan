@@ -75,6 +75,9 @@ public class Game extends Application{
         Parent board = boardLoader.load();
         Scene boardScene = new Scene(board);
         
+        FXMLLoader dragLoader = new FXMLLoader(getClass().getResource("Scenes/BoardShips.fxml"));
+        Parent drag = dragLoader.load();
+        Scene dragScene = new Scene(drag);
     // injects
         
         ViewController viewPaneController = (ViewController) viewLoader.getController();
@@ -92,11 +95,17 @@ public class Game extends Application{
         profilePaneController.setTittleScene(scene);  // returnToTittle
         profilePaneController.setBoardScene(boardScene);  //toBoard
 
+        
         BoardController boardPaneController = (BoardController) boardLoader.getController();
         boardPaneController.setTittleScene(scene);  // returnToTittle
+        boardPaneController.setDragScene(dragScene);  // returnToTittle
 
+        
+       DraggableController dragPaneController = (DraggableController) dragLoader.getController();
+       dragPaneController.setTittleScene(scene);  // returnToTittle
         //display scene
 
+        
         stage.setScene(scene);
         stage.show();
         defaultAudio.setVolume(0.5);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
