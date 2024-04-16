@@ -25,7 +25,6 @@ public class Ship {
         initialHorizontalCoordinate=x;
         initialVerticalCoordinate=y;
         restShipCoordinatesHV=new int[l][2];
-        createRestShipCoordinates();
     }
     public String getShipType(){
         return shipType;

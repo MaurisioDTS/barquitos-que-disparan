@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.BoardController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.DraggableController">
    <children>
       <GridPane fx:id="boardP1" gridLinesVisible="true" layoutX="209.0" layoutY="140.0" prefHeight="423.0" prefWidth="425.0" style="-fx-background-color: blue;" AnchorPane.leftAnchor="209.0" AnchorPane.topAnchor="140.0">
         <columnConstraints>

@@ -20,8 +20,8 @@ public class BoardController implements Initializable{
 
     public static void giveStage(Stage Stage){stage=Stage;}
     public void setTittleScene(Scene scene){title=scene;}
-    public void setBoardScene(Scene scene){board=scene;}
-    public void setDragScene(Scene scene){drag=scene;}
+    
+   
     
     Board brd=new Board("elpepe");
     
