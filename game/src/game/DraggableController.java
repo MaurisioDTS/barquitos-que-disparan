@@ -7,9 +7,20 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class DraggableController implements Initializable{
-     @FXML
+    
+    private Stage stage;
+    private Scene title;
+    private Scene board;
+    private Scene profile;
+    
+     public void setTittleScene(Scene scene){title=scene;}
+    public void setBoardScene(Scene scene){board=scene;}
+    
+    @FXML
     private Rectangle shipLength5;
     private Rectangle shipLength4;
     private Rectangle shipLength3;
