@@ -9,16 +9,24 @@ public class Ship {
     private int initialVerticalCoordinate;
     private int [][] restShipCoordinatesHV;
     
-    public Ship(String sT,int l,int iCH,int iCV,boolean horizontal){
+    public Ship(String sT,int l,int x,int y,boolean horizontal){
         shipType=sT;
         shipLength=l;
         this.horizontal=horizontal;
-        initialHorizontalCoordinate=iCH;
-        initialVerticalCoordinate=iCV;
+        initialHorizontalCoordinate=x;
+        initialVerticalCoordinate=y;
+        restShipCoordinatesHV=new int[l][2];
+        createShipChunks();
+    }
+    public Ship(String sT,int l,int x,int y){
+        shipType=sT;
+        shipLength=l;
+        this.horizontal=horizontal;
+        initialHorizontalCoordinate=x;
+        initialVerticalCoordinate=y;
         restShipCoordinatesHV=new int[l][2];
         createRestShipCoordinates();
     }
-    
     public String getShipType(){
         return shipType;
     }
@@ -47,7 +55,7 @@ public class Ship {
         return initialVerticalCoordinate;
     }
     
-    public void createRestShipCoordinates(){
+    public void createShipChunks(){
         //The +1 is added to prevent the second coordinate from being identical to the initial one.
         for (int i = 0; i < shipLength-1; i++) {
             restShipCoordinatesHV[i][0]=initialHorizontalCoordinate+i+1;

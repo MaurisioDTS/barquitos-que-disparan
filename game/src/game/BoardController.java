@@ -23,11 +23,11 @@ public class BoardController implements Initializable{
     
     Board brd=new Board("elpepe");
     
-    Ship one=new Ship("portaaviones",5,0,0,false);
-    Ship two=new Ship("buque telepata de guerra",4,1,1,false);
-    Ship thr=new Ship("submarino no sumergible",3,2,2,false);
-    Ship fou=new Ship("el yate de hijacked",2,3,3,false);
-    Ship fiv=new Ship("lancha de poliester",1,4,4,false);
+    //Ship one=new Ship("portaaviones",5,0,0,false);
+    //Ship two=new Ship("buque telepata de guerra",4,1,1,false);
+    //Ship thr=new Ship("submarino no sumergible",3,2,2,false);
+    //Ship fou=new Ship("el yate de hijacked",2,3,3,false);
+    //Ship fiv=new Ship("lancha de poliester",1,4,4,false);
     
      /**
         A
@@ -363,10 +363,10 @@ public class BoardController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb){
         //System.out.println(one.toString());
-        brd.insertShip(one);
-        brd.insertShip(two);
-        brd.insertShip(thr);
-        brd.insertShip(fou);
-        brd.insertShip(fiv);
+//        brd.insertShip(one);
+//        brd.insertShip(two);
+//        brd.insertShip(thr);
+//        brd.insertShip(fou);
+//        brd.insertShip(fiv);
     }
 }
