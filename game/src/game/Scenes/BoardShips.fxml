@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,9 +10,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.DraggableController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.DraggableController">
    <children>
-      <Button layoutX="32.0" layoutY="637.0" mnemonicParsing="false" onAction="#rtn" prefHeight="53.0" prefWidth="103.0" text="return" />
+      <Button layoutX="32.0" layoutY="637.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rtn" prefHeight="53.0" prefWidth="103.0" text="return" />
       <GridPane fx:id="boardP1" gridLinesVisible="true" layoutX="209.0" layoutY="140.0" prefHeight="423.0" prefWidth="425.0" style="-fx-background-color: blue;" AnchorPane.leftAnchor="209.0" AnchorPane.topAnchor="140.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -44,8 +39,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#a1" opacity="0.0" text="Button" />
-            <Button mnemonicParsing="false" onAction="#b1" opacity="0.0" text="Button" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.rowIndex="4" />
@@ -55,8 +50,8 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.rowIndex="9" />
             
-            <Button mnemonicParsing="false" onAction="#a2" opacity="0.0" text="Button" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" onAction="#b2" opacity="0.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="4" />
@@ -66,8 +61,8 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="9" />
             
-            <Button mnemonicParsing="false" onAction="#a3" opacity="0.0" text="Button" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onAction="#b3" opacity="0.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="4" />
@@ -77,8 +72,8 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="9" />
             
-            <Button mnemonicParsing="false" onAction="#a4" opacity="0.0" text="Button" GridPane.columnIndex="3" />
-            <Button mnemonicParsing="false" onAction="#b4" opacity="0.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="3" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="4" />
@@ -88,8 +83,8 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="9" />
             
-            <Button mnemonicParsing="false" onAction="#a5" opacity="0.0" text="Button" GridPane.columnIndex="4" />
-            <Button mnemonicParsing="false" onAction="#b5" opacity="0.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="4" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="4" />
@@ -99,8 +94,8 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="9" />
             
-            <Button mnemonicParsing="false" onAction="#a6" opacity="0.0" text="Button" GridPane.columnIndex="5" />
-            <Button mnemonicParsing="false" onAction="#b6" opacity="0.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="5" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="4" />
@@ -110,8 +105,8 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="9" />
             
-            <Button mnemonicParsing="false" onAction="#a7" opacity="0.0" text="Button" GridPane.columnIndex="6" />
-            <Button mnemonicParsing="false" onAction="#b7" opacity="0.0" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="6" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="4" />
@@ -121,8 +116,8 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="9" />
             
-            <Button mnemonicParsing="false" onAction="#a8" opacity="0.0" text="Button" GridPane.columnIndex="7" />
-            <Button mnemonicParsing="false" onAction="#b8" opacity="0.0" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="7" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="4" />
@@ -132,8 +127,8 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="9" />
             
-            <Button mnemonicParsing="false" onAction="#a9" opacity="0.0" text="Button" GridPane.columnIndex="8" />
-            <Button mnemonicParsing="false" onAction="#b9" opacity="0.0" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="8" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="4" />
@@ -143,8 +138,8 @@
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="9" />
             
-            <Button mnemonicParsing="false" onAction="#a10" opacity="0.0" text="Button" GridPane.columnIndex="9" />
-            <Button mnemonicParsing="false" onAction="#b10" opacity="0.0" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="9" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" opacity="0.0" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="4" />
@@ -297,11 +292,11 @@
             </Label>
          </children>
       </Pane>
-      <Rectangle fx:id="shipLength5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="83.0" layoutY="425.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+      <Rectangle fx:id="shipLength3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="83.0" layoutY="425.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
       <Rectangle fx:id="shipLength4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="83.0" layoutY="260.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
       <Rectangle fx:id="shipLength2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="83.0" layoutY="344.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
       <Rectangle fx:id="shipLength1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="83.0" layoutY="302.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
-      <Rectangle fx:id="shipLength3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="83.0" layoutY="385.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
-      <Button layoutX="1163.0" layoutY="653.0" mnemonicParsing="false" onAction="#board" prefHeight="53.0" prefWidth="103.0" text="board" />
+      <Rectangle fx:id="shipLength5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="83.0" layoutY="385.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+      <Button layoutX="1163.0" layoutY="653.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#board" prefHeight="53.0" prefWidth="103.0" text="board" />
    </children>
 </AnchorPane>
