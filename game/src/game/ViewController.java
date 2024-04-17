@@ -23,9 +23,6 @@ public class ViewController implements Initializable{
     public void setSettingsScene(Scene scene){settings=scene;}
     public void setLoginScene(Scene scene){login=scene;}
     
-   // @FXML
-   // AudioClip intro = new AudioClip(Paths.get("game/res/audio/test.mp3").toUri().toString());
-    
     @FXML
     private void stop(ActionEvent Event){
         System.out.println("Exiting...");
@@ -38,9 +35,7 @@ public class ViewController implements Initializable{
     }
     // 5 horas y 47 minutos para esta mierda que nisiquiera funciona bien.
     @FXML
-    private void battle(ActionEvent a) throws Exception{
-        //intro.play();
-
+    private void battle(ActionEvent a){
         System.out.println("login");
         Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();        
         stage.setScene(login);

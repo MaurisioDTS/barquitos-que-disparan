@@ -14,8 +14,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
-
+import javafx.scene.media.AudioClip;
+import utilidades.bbdd.Bd;
+import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
 public class SettingsController implements Initializable{
 
@@ -24,6 +27,9 @@ public class SettingsController implements Initializable{
     
     public static void giveStage(Stage Stage){stage=Stage;}
     public void setTittleScene(Scene scene){title=scene;}
+    
+    @FXML
+    AudioClip test = new AudioClip(Paths.get("res/audio/test.mp3").toUri().toString());
     
     @FXML
     CheckBox cbFs=new CheckBox();
@@ -55,6 +61,23 @@ public class SettingsController implements Initializable{
         Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
         stage.setScene(title);
         System.out.println(stage.getScene());
+    }
+    @FXML
+    private void createDb(ActionEvent a){
+        Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("postgre", true);
+        Bd.importar("res/mdddb.sql",gestor);
+        gestor.cerrar_Conexion(true);
+    }
+    @FXML
+    private void deleteDb(ActionEvent a){
+        Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("postgres", true);
+        Bd.consultaModificacion(gestor,"drop database mdddb");
+        gestor.cerrar_Conexion(true);
+        System.out.println("delete");
+    }
+    @FXML
+    private void test(ActionEvent a){
+    test.play();
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -48,11 +48,12 @@ public class LoginController implements Initializable{
         Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow(); 
         stage.setScene(title);
     }
-    Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
+    Gestor_conexion_POSTGRE gestor;
 
     public void noDb(){lblNoDb.setVisible(true);}
 
     public void register(ActionEvent Event){
+        Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
         String consulta;
         String user = "'"+tbRegUser.getText()+"'";
         String password=tbRegPass.getText();
@@ -61,7 +62,7 @@ public class LoginController implements Initializable{
         consulta ="insert into usuario (nick,passinsha256,lvl,elo) values ("+user+","+sha256hex+",0,0);";
     
         System.out.println(Bd.consultaModificacion(gestor,consulta));  
-        //gestor.cerrar_Conexion(true);
+        gestor.cerrar_Conexion(true);
     }
     public void login(ActionEvent a){
         lblWrongCredentials.setVisible(false);
@@ -89,17 +90,20 @@ public class LoginController implements Initializable{
         catch (java.lang.NullPointerException n){
             System.out.println("that user doesnt exist");
         }
+        gestor.cerrar_Conexion(true);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
         //TODO
         Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
         try{
+            this.gestor=gestor;
             System.out.println(Bd.consultaSelect(gestor,"select * from usuario;"));
         }
         catch (NullPointerException a) {
             noDb();
             System.out.println("DB NOT FOUND!!!!!!!!!!!!1!!!!!!1");
         }
+        gestor.cerrar_Conexion(true);
     }
 }
