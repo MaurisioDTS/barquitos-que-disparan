@@ -1,5 +1,3 @@
-//SIN ACABAR
-
 CREATE TABLE IF NOT EXISTS usuario
 (
     nick varchar(15) NOT NULL,
@@ -31,7 +29,7 @@ CREATE TABLE IF NOT EXISTS comentario
 	dat date not null,
 	
 	PRIMARY KEY (n),
-	ADD FOREIGN KEY (nick) REFERENCES usuario (nick)
+	FOREIGN KEY (nick) REFERENCES usuario (nick)
 );
 
 CREATE TABLE IF NOT EXISTS tablero
@@ -44,5 +42,5 @@ CREATE TABLE IF NOT EXISTS tablero
     four character varying(6) NOT NULL,
     five character varying(6) NOT NULL,
     PRIMARY KEY (nick),
-    ADD FOREIGN KEY (nick) REFERENCES usuario (nick)
+    FOREIGN KEY (nick) REFERENCES usuario (nick)
 );

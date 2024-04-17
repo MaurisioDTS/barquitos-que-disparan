@@ -17,13 +17,13 @@ public class ProfileController implements Initializable{
     private static String user;
 
     @FXML
-    Label lblUsername=new Label();
+    static Label lblUsername=new Label();
 
     public static void giveStage(Stage Stage){stage=Stage;}
     public void setTittleScene(Scene scene){title=scene;}
     public void setDragScene(Scene scene){drag=scene;}
     
-    public static void setProfileScene(Scene scene, String nick){profile=scene;user=nick;}
+    public static void setProfileScene(Scene scene, String nick){profile=scene;user=nick;lblUsername.setText(user);}
     
     public void play(ActionEvent a){
         lblUsername.setText(user);
@@ -34,6 +34,5 @@ public class ProfileController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        lblUsername.setText(user);
     }
 }
