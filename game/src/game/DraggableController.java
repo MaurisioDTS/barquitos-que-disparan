@@ -9,6 +9,7 @@ import javafx.scene.shape.Rectangle;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -20,8 +21,9 @@ public class DraggableController implements Initializable{
     private Scene profile;
     
     public static void giveStage(Stage Stage){stage=Stage;}
-    public void setTittleScene(Scene scene){title=scene;}
     public void setBoardScene(Scene scene){board=scene;}
+    public void setProfileScene(Scene scene){profile=scene;}
+
     
     @FXML
     private Rectangle shipLength5;
@@ -29,12 +31,20 @@ public class DraggableController implements Initializable{
     private Rectangle shipLength3;
     private Rectangle shipLength2;
     private Rectangle shipLength1;
-
-
+    
     DraggableMaker draggableMaker = new DraggableMaker();
     
     Board brd=new Board("elpepe");
-
+    
+    @FXML
+    public void rtn(ActionEvent a){
+        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
+        stage.setScene(profile);
+    }
+    public void board(ActionEvent a){
+        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
+        stage.setScene(board);
+    }
      /**
         A
     **/
@@ -374,4 +384,6 @@ public class DraggableController implements Initializable{
         draggableMaker.makeDraggable(shipLength2);
         draggableMaker.makeDraggable(shipLength1);
     }
+
+    
 }

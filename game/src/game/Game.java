@@ -30,7 +30,7 @@ public class Game extends Application{
     public static void setVol(double d){defaultAudio.setVolume(d);}
     public static void toggleMute(){
         
-        defaultAudio.setMute(!defaultAudio.isMute());
+    defaultAudio.setMute(!defaultAudio.isMute());
         
     } // probablemente la linea de código más inteligente que ha salido de mi mente
     /**public static void changeMusic(int i){
@@ -98,6 +98,7 @@ public class Game extends Application{
         
         DraggableController dragPaneController = (DraggableController) dragLoader.getController();
         dragPaneController.setBoardScene(boardScene);  // returnToTittle
+        dragPaneController.setProfileScene(profileScene);
         
         BoardController boardPaneController = (BoardController) boardLoader.getController();
         boardPaneController.setTittleScene(scene);  // returnToTittle
@@ -107,8 +108,8 @@ public class Game extends Application{
         stage.setScene(scene);
         stage.show();
         defaultAudio.setVolume(0.5);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
-        defaultAudio.setOnEndOfMedia(()-> {defaultAudio.seek(Duration.ZERO);
-    });/**pastkeysAudio.setOnEndOfMedia(new Runnable() {
+        defaultAudio.setOnEndOfMedia(()-> {defaultAudio.seek(Duration.ZERO);});
+        /**pastkeysAudio.setOnEndOfMedia(new Runnable() {
             public void run() {
                 pastkeysAudio.seek(Duration.ZERO);
             }

@@ -1,6 +1,5 @@
 package game;
 
-import game.Objects.Ship;
 import game.Objects.Board;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,8 +19,6 @@ public class BoardController implements Initializable{
 
     public static void giveStage(Stage Stage){stage=Stage;}
     public void setTittleScene(Scene scene){title=scene;}
-    
-   
     
     Board brd=new Board("elpepe");
     
