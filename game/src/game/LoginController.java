@@ -38,11 +38,9 @@ public class LoginController implements Initializable{
     @FXML
     Button btnReturn=new Button();
     @FXML
-    Label lblNoUser=new Label();
-    @FXML
     Label lblWrongCredentials=new Label();
     @FXML
-    static Label lblNoDb=new Label();
+    Label lblNoDb=new Label();
     
     @FXML
     private void btnReturn(ActionEvent a){
@@ -50,10 +48,11 @@ public class LoginController implements Initializable{
         Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow(); 
         stage.setScene(title);
     }
-    static Gestor_conexion_POSTGRE gestor;
+    Gestor_conexion_POSTGRE gestor;
+
+    public void noDb(){lblNoDb.setVisible(true);}
 
     public void register(ActionEvent Event){
-        tryDb();
         Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
         String consulta;
         String user = "'"+tbRegUser.getText()+"'";
@@ -66,9 +65,7 @@ public class LoginController implements Initializable{
         gestor.cerrar_Conexion(true);
     }
     public void login(ActionEvent a){
-        lblNoUser.setVisible(false);
-        tryDb();
-        Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
+        Gestor_conexion_POSTGRE gestor = new Gestor_conexion_POSTGRE("mdddb", true);
         lblWrongCredentials.setVisible(false);
         String nick="'"+tbLogUser.getText()+"'";
         String pass=tbLogPass.getText();
@@ -92,26 +89,22 @@ public class LoginController implements Initializable{
             }
         }
         catch (java.lang.NullPointerException n){
-            lblNoUser.setVisible(true);
             System.out.println("that user doesnt exist");
         }
         gestor.cerrar_Conexion(true);
     }
-    public static void tryDb(){
-        lblNoDb.setVisible(false);
-        try{
-            Gestor_conexion_POSTGRE temp=new Gestor_conexion_POSTGRE("mdddb", true);
-            System.out.println(Bd.consultaSelect(temp,"select * from usuario;"));
-            gestor.cerrar_Conexion(true);
-        }
-        catch (NullPointerException a) {
-            lblNoDb.setVisible(true);
-            System.out.println("DB NOT FOUND!!!!!!!!!!!!1!!!!!!1");
-        }
-    }
     @Override
     public void initialize(URL url, ResourceBundle rb){
         //TODO
-        tryDb();
+        Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
+        try{
+            this.gestor=gestor;
+            System.out.println(Bd.consultaSelect(gestor,"select * from usuario;"));
+        }
+        catch (NullPointerException a) {
+            noDb();
+            System.out.println("DB NOT FOUND!!!!!!!!!!!!1!!!!!!1");
+        }
+        gestor.cerrar_Conexion(true);
     }
 }
