@@ -46,5 +46,6 @@
             <Font size="32.0" />
          </font>
       </Button>
+      <Label fx:id="lblDbWarning" layoutX="797.0" layoutY="317.0" prefHeight="43.0" prefWidth="256.0" text="db error: database may be in use currently" textAlignment="JUSTIFY" textFill="RED" textOverrun="CLIP" visible="false" />
    </children>
 </AnchorPane>
