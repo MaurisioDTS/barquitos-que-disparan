@@ -65,6 +65,7 @@ public class LoginController implements Initializable{
         gestor.cerrar_Conexion(true);
     }
     public void login(ActionEvent a){
+        Gestor_conexion_POSTGRE gestor = new Gestor_conexion_POSTGRE("mdddb", true);
         lblWrongCredentials.setVisible(false);
         String nick="'"+tbLogUser.getText()+"'";
         String pass=tbLogPass.getText();
