@@ -3,14 +3,11 @@ package game;
 
 import game.Objects.Board;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class DraggableController{
@@ -26,15 +23,15 @@ public class DraggableController{
 
     
     @FXML
-    private Rectangle shipLength5;
+    private HBox shipLength1;
     @FXML
-    private Rectangle shipLength4;
+    private HBox shipLength2;
     @FXML
-    private Rectangle shipLength3;
+    private HBox shipLength3;
     @FXML
-    private Rectangle shipLength2;
+    private HBox shipLength4;
     @FXML
-    private Rectangle shipLength1;
+    private HBox shipLength5;
     @FXML
     private DraggableMaker draggableMaker;
     
@@ -59,6 +56,15 @@ public class DraggableController{
         draggableMaker.makeDraggable(shipLength2);
         draggableMaker.makeDraggable(shipLength1);
     }
-
     
+    public void rotateShip(KeyEvent rotate) {
+        Node ship = (Node) rotate.getSource();
+        
+        switch(rotate.getCode()){
+            case R: ship.setRotate(ship.getRotate()+90);
+                break;
+            default:
+                break;
+        }
+    }
 }
