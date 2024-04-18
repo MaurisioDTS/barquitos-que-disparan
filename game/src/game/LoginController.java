@@ -96,15 +96,16 @@ public class LoginController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb){
         //TODO
-        Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
+
         try{
             this.gestor=gestor;
+            Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
             System.out.println(Bd.consultaSelect(gestor,"select * from usuario;"));
+            gestor.cerrar_Conexion(true);
         }
         catch (NullPointerException a) {
             noDb();
             System.out.println("DB NOT FOUND!!!!!!!!!!!!1!!!!!!1");
         }
-        gestor.cerrar_Conexion(true);
     }
 }

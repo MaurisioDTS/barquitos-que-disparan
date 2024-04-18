@@ -75,7 +75,7 @@ public class SettingsController implements Initializable{
         postgres.cerrar_Conexion(true);
         Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
         Bd.importar("res/mdddb.sql",gestor);
-        LoginController.tryDb();
+        //LoginController.tryDb();
         gestor.cerrar_Conexion(true);
     }
     @FXML
@@ -85,7 +85,7 @@ public class SettingsController implements Initializable{
         try{
         Bd.consultaModificacion(gestor,"drop database mdddb");
         gestor.cerrar_Conexion(true);
-        LoginController.tryDb();
+        //LoginController.tryDb();
         System.out.println("delete");
         }
         catch (Exception n){
