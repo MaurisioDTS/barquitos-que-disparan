@@ -43,3 +43,4 @@ game/dist/game.html
 game/dist/game.jar
 game/dist/game.jnlp
 *.html
+/game/.idea
