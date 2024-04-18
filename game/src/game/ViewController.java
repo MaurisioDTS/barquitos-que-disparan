@@ -23,30 +23,20 @@ public class ViewController implements Initializable{
     public void setSettingsScene(Scene scene){settings=scene;}
     public void setLoginScene(Scene scene){login=scene;}
     
+    // extra controls
+    
     @FXML
-    private void stop(ActionEvent Event){
-        System.out.println("Exiting...");
-        System.exit(0);
-    }
+    private void stop(ActionEvent Event){System.out.println("Exiting...");System.exit(0);}
     @FXML
-    private void mute(ActionEvent Event){
-        System.out.println("Toggling mute...");
-        Game.toggleMute();
-    }
-    // 5 horas y 47 minutos para esta mierda que nisiquiera funciona bien.
+    private void mute(ActionEvent Event){System.out.println("Toggling mute...");Game.toggleMute();}
+    
+    // scene changes
+    
     @FXML
-    private void battle(ActionEvent a){
-        System.out.println("login");
-        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();        
-        stage.setScene(login);
-    }
+    private void battle(ActionEvent a){stage.setScene(login);}
     @FXML
-    private void settings(ActionEvent a){
-        System.out.println("settings");
-        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow(); 
-        stage.setScene(settings);
-        System.out.println(stage.getScene());
-    }
+    private void settings(ActionEvent a){stage.setScene(settings);}
+    
     @Override
     public void initialize(URL url, ResourceBundle rb){
         // TODO

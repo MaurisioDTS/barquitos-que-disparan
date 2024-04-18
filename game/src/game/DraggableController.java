@@ -36,15 +36,10 @@ public class DraggableController{
     
     Board brd=new Board("elpepe");
     
-    @FXML
-    public void rtn(ActionEvent a){
-        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
-        stage.setScene(profile);
-    }
-    public void board(ActionEvent a){
-        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
-        stage.setScene(board);
-    }
+    // changes in scene
+    
+    public void rtn(ActionEvent a){stage.setScene(profile);}
+    public void board(ActionEvent a){stage.setScene(board);}
         
     @FXML
     public void initialize() {

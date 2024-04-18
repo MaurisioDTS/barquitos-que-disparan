@@ -15,15 +15,15 @@ import java.nio.file.Paths;
 public class Game extends Application{
 
     private static Stage pStage;
-    public static Stage getPrimaryStage() {return pStage;}
-    private void setPrimaryStage(Stage pStage) {
-        Game.pStage = pStage;
-    }
+    public static Stage getPrimaryStage(){return pStage;}
+    private void setPrimaryStage(Stage pStage){Game.pStage = pStage;}
 
     static Media defaultMedia=new Media(Paths.get("src/game/Scenes/Sin_titulo.wav").toUri().toString());
     static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
 
     // Settings
+    private boolean fullScreen=true;
+    
     public static void setFs(boolean b){pStage.setFullScreen(b);}
     public static void setVol(double d){defaultAudio.setVolume(d);}
     public static void toggleMute(){defaultAudio.setMute(!defaultAudio.isMute());/** probablemente la linea de código más inteligente que ha salido de mi mente**/}
@@ -31,10 +31,9 @@ public class Game extends Application{
     @Override
     public void start(Stage s) throws Exception {
         setPrimaryStage(s);
-        pStage=s;
 
-//    // loaders
-//    
+    // loaders
+
         FXMLLoader viewLoader = new FXMLLoader(getClass().getResource("Scenes/View.fxml"));
         Parent title = viewLoader.load();
         Scene scene = new Scene(title);
@@ -88,16 +87,15 @@ public class Game extends Application{
         pStage.setScene(scene);
         pStage.setTitle("Barquitos que disparan!!!11!11");
         pStage.getIcons().add(new Image(Game.class.getResourceAsStream("Scenes/jerma.jpg")));
+        pStage.setFullScreen(fullScreen);
         pStage.show();
         defaultAudio.setVolume(0.5);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
-        defaultAudio.setOnEndOfMedia(()-> {defaultAudio.seek(Duration.ZERO);});
+        defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);});
 
         defaultAudio.play();
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void main(String[] args) {launch(args);}
 }
 
 //    static Media pastkeys=new Media(Paths.get("game/res/audio/past keys.wav").toUri().toString());

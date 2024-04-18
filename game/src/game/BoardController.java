@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class BoardController implements Initializable{
@@ -18,6 +20,11 @@ public class BoardController implements Initializable{
     private Scene drag;
 
     public void setTittleScene(Scene scene){title=scene;}
+    
+    @FXML
+    GridPane player1=new GridPane();
+    @FXML
+    Button btn;
     
     Board brd=new Board("elpepe");
     
@@ -360,7 +367,7 @@ public class BoardController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        //System.out.println(one.toString());
+        //System.out.println(player1.);
 //        brd.insertShip(one);
 //        brd.insertShip(two);
 //        brd.insertShip(thr);
