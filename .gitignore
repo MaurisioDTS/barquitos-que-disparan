@@ -47,3 +47,5 @@ game/dist/game.jnlp
 /game/out
 game/game.iml
 /game/dist
+game/dist/game.html
+/game/build
