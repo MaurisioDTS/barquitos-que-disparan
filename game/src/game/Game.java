@@ -22,9 +22,9 @@ public class Game extends Application{
     static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
 
     // Settings
-    private boolean fullScreen=true;
+    private static boolean fullScreen=false;
     
-    public static void setFs(boolean b){pStage.setFullScreen(b);}
+    public static void setFs(boolean b){fullScreen=b; pStage.setFullScreen(b);}
     public static void setVol(double d){defaultAudio.setVolume(d);}
     public static void toggleMute(){defaultAudio.setMute(!defaultAudio.isMute());/** probablemente la linea de código más inteligente que ha salido de mi mente**/}
 
@@ -88,13 +88,15 @@ public class Game extends Application{
         pStage.setTitle("Barquitos que disparan!!!11!11");
         pStage.getIcons().add(new Image(Game.class.getResourceAsStream("Scenes/jerma.jpg")));
         pStage.setFullScreen(fullScreen);
+        pStage.setWidth(1280);
+        pStage.setHeight(720);
         pStage.show();
         defaultAudio.setVolume(0.5);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
         defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);});
 
         defaultAudio.play();
     }
-
+    //public static void changeScene(Scene){};
     public static void main(String[] args) {launch(args);}
 }
 
