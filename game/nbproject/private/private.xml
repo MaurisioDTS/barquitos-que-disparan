@@ -6,11 +6,17 @@
             <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/BoardShips.java</file>
             <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/BoardController.java</file>
             <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/DraggableController.java</file>
+            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/DraggableMaker.java</file>
             <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/Game.java</file>
             <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/ViewController.java</file>
+<<<<<<< Updated upstream
+=======
+            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/Scenes/BoardShips.fxml</file>
+>>>>>>> Stashed changes
             <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/ProfileController.java</file>
             <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/LoginController.java</file>
             <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/SettingsController.java</file>
+            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/LoginController.java</file>
         </group>
     </open-files>
 </project-private>

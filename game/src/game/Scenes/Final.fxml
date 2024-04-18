@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="1022.0" stylesheets="@GlobalStyle.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.291" fx:controller="game.FinalController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="70.0" prefHeight="32.0" prefWidth="139.0" text="Jugador 1 ha ganado" textAlignment="CENTER" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="672.0" layoutY="70.0" prefHeight="32.0" prefWidth="139.0" text="Jugador 2 ha perdido" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
