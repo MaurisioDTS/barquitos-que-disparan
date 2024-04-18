@@ -6,7 +6,10 @@ import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -19,8 +22,11 @@ public class DraggableController{
 
     public void setBoardScene(Scene scene){board=scene;}
     public void setProfileScene(Scene scene){profile=scene;}
-
     
+    @FXML
+    private HBox currentDraggedBox;
+    @FXML
+    private boolean rotateKeyPressed = false;
     @FXML
     private HBox shipLength1;
     @FXML
@@ -49,21 +55,45 @@ public class DraggableController{
     @FXML
     public void initialize() {
         draggableMaker = new DraggableMaker();
-        draggableMaker.makeDraggable(shipLength5);
-        draggableMaker.makeDraggable(shipLength4);
-        draggableMaker.makeDraggable(shipLength3);
-        draggableMaker.makeDraggable(shipLength2);
         draggableMaker.makeDraggable(shipLength1);
+        draggableMaker.makeDraggable(shipLength2);
+        draggableMaker.makeDraggable(shipLength3);
+        draggableMaker.makeDraggable(shipLength4);
+        draggableMaker.makeDraggable(shipLength5);
     }
     
-    public void rotateShip(KeyEvent rotate) {
-        Node ship = (Node) rotate.getSource();
-        
-        switch(rotate.getCode()){
-            case R: ship.setRotate(ship.getRotate()+90);
-                break;
-            default:
-                break;
+    @FXML
+    private void onDragDetected(MouseEvent event) {
+        System.out.println("Drag detected");
+        if (event.getSource() instanceof HBox) {
+            System.out.println("HBox detected");
+            currentDraggedBox = (HBox) event.getSource();
+            currentDraggedBox.startFullDrag();
+        }
+    }
+
+    @FXML
+    private void onDragOver(DragEvent event) {
+        System.out.println("Drag over");
+        if (currentDraggedBox != null && rotateKeyPressed) {
+            System.out.println("HBox rotated");
+            currentDraggedBox.setRotate(currentDraggedBox.getRotate()+90);
+        }
+    }
+
+    @FXML
+    private void rotateKeyPressed(KeyEvent event) {
+        System.out.println("Rotate key pressed");
+        if (event.getCode() == KeyCode.R) {
+            rotateKeyPressed = true;
+        }
+    }
+
+    @FXML
+    private void rotateKeyReleased(KeyEvent event) {
+        System.out.println("Rotate key released");
+        if (event.getCode() == KeyCode.R) {
+            rotateKeyPressed = false;
         }
     }
 }
