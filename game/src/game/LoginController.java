@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,7 +14,7 @@ import javafx.stage.Stage;
 import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
-public class LoginController implements Initializable{
+public class LoginController{
 //TODO
     private static Stage stage=Game.getPrimaryStage();
     private Scene title;
@@ -42,13 +43,17 @@ public class LoginController implements Initializable{
     public void clearTBs(){tbRegUser.setText("");tbRegPass.setText("");tbLogUser.setText("");tbLogPass.setText("");}
     
     @FXML
-    private void btnReturn(ActionEvent a){stage.setScene(title);}
+    private void btnReturn(ActionEvent a) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/View.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
     
     Gestor_conexion_POSTGRE gestor;
 
     public void noDb(){lblNoDb.setVisible(true);}
-
-    public void register(ActionEvent Event){
+    @FXML
+    private void register(){
         Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
         String consulta;
         String user = "'"+tbRegUser.getText()+"'";
@@ -57,10 +62,12 @@ public class LoginController implements Initializable{
         
         consulta ="insert into usuario (nick,passinsha256,lvl,elo) values ("+user+","+sha256hex+",0,0);";
     
-        System.out.println(Bd.consultaModificacion(gestor,consulta));  
+        System.out.println(Bd.consultaModificacion(gestor,consulta));
+        clearTBs();
         gestor.cerrar_Conexion(true);
     }
-    public void login(ActionEvent a){
+    @FXML
+    private void login() throws Exception{
         Gestor_conexion_POSTGRE gestor = new Gestor_conexion_POSTGRE("mdddb", true);
         lblWrongCredentials.setVisible(false);
         String nick=tbLogUser.getText();
@@ -69,14 +76,17 @@ public class LoginController implements Initializable{
         
         String consulta="SELECT * FROM usuario where nick='"+nick+"';";
         String[][] result = Bd.consultaSelect(gestor,consulta);
-        
+
         //System.out.println(result[0][1]); //SHOW HASHED PASSWORD
 
         try{ // como detesto haber programado esto
             if (result[0][1].equals(sha256hex)){
                 clearTBs();
+                Parent root = FXMLLoader.load(getClass().getResource("Scenes/Profile.fxml"));
                 ProfileController.setUser(nick);
-                stage.setScene(profile);
+                ProfileController.cqs();
+                stage.getScene().setRoot(root);
+                stage.show();
             }
             else{
                 lblWrongCredentials.setVisible(true);
@@ -88,7 +98,6 @@ public class LoginController implements Initializable{
         }
         gestor.cerrar_Conexion(true);
     }
-    @Override
     public void initialize(URL url, ResourceBundle rb){
         //TODO
         try{

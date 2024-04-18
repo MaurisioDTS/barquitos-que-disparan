@@ -14,12 +14,6 @@ import javafx.stage.Stage;
 public class BoardController implements Initializable{
 
     private static Stage stage=Game.getPrimaryStage();
-    private Scene title;
-    private Scene board;
-    private Scene profile;
-    private Scene drag;
-
-    public void setTittleScene(Scene scene){title=scene;}
     
     @FXML
     GridPane player1=new GridPane();

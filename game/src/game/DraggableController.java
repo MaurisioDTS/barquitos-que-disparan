@@ -4,7 +4,9 @@ package game;
 import game.Objects.Board;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyCode;
@@ -16,13 +18,7 @@ import javafx.stage.Stage;
 public class DraggableController{
 
     private static Stage stage=Game.getPrimaryStage();
-    private Scene title;
-    private Scene board;
-    private Scene profile;
 
-    public void setBoardScene(Scene scene){board=scene;}
-    public void setProfileScene(Scene scene){profile=scene;}
-    
     @FXML
     private HBox currentDraggedBox;
     @FXML
@@ -44,8 +40,16 @@ public class DraggableController{
     
     // changes in scene
     
-    public void rtn(ActionEvent a){stage.setScene(profile);}
-    public void board(ActionEvent a){stage.setScene(board);}
+    public void rtn(ActionEvent a) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/Profile.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
+    public void board(ActionEvent a) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/Board.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
         
     @FXML
     public void initialize() {

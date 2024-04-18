@@ -3,20 +3,17 @@ package game;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ViewController implements Initializable{
     
     private Stage stage=Game.getPrimaryStage();
-    private Scene settings;
-    private Scene login;
-
-    public void giveStage(Stage Stage){stage=Stage;}
-    public void setSettingsScene(Scene scene){settings=scene;}
-    public void setLoginScene(Scene scene){login=scene;}
     
     // extra controls
     
@@ -28,9 +25,17 @@ public class ViewController implements Initializable{
     // scene changes
     
     @FXML
-    private void battle(ActionEvent a){stage.setScene(login);}
+    private void battle(ActionEvent a) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/Login.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
     @FXML
-    private void settings(ActionEvent a){stage.setScene(settings);}
+    private void settings(ActionEvent a) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/Settings.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb){

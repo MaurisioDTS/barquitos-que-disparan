@@ -4,8 +4,10 @@ import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -26,8 +28,6 @@ import utilidades.bbdd.Gestor_conexion_POSTGRE;
 public class SettingsController implements Initializable{
 
     private static Stage stage=Game.getPrimaryStage();
-    private Scene title;
-    public void setTittleScene(Scene scene){title=scene;}
     
     @FXML
     Label lblDbWarning=new Label();
@@ -72,9 +72,14 @@ public class SettingsController implements Initializable{
     @FXML
     private void test(ActionEvent a){test.play();}
     @FXML
-    private void btnreturn(ActionEvent a){stage.setScene(title);}
+    private void btnreturn(ActionEvent a) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/View.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        sldVolume.setValue(Game.defaultAudio.getVolume());
+        cbFs.setSelected(Game.fullScreen);
     }
 }

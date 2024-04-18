@@ -21,8 +21,8 @@ public class Game extends Application{
     static Media defaultMedia=new Media(Paths.get("src/game/Scenes/Sin_titulo.wav").toUri().toString());
     static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
 
-    // Settings
-    private static boolean fullScreen=false;
+// Settings
+    static boolean fullScreen=false;
     
     public static void setFs(boolean b){fullScreen=b; pStage.setFullScreen(b);}
     public static void setVol(double d){defaultAudio.setVolume(d);}
@@ -30,59 +30,15 @@ public class Game extends Application{
 
     @Override
     public void start(Stage s) throws Exception {
-        setPrimaryStage(s);
+        setPrimaryStage(s);  // gets the primary stage and saves it for later...
 
-    // loaders
+    // first scene loader
 
         FXMLLoader viewLoader = new FXMLLoader(getClass().getResource("Scenes/View.fxml"));
         Parent title = viewLoader.load();
         Scene scene = new Scene(title);
-        
-        FXMLLoader settingsLoader = new FXMLLoader(getClass().getResource("Scenes/Settings.fxml"));
-        Parent settings = settingsLoader.load();
-        Scene settingsScene = new Scene(settings);
-        
-        FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("Scenes/Login.fxml"));
-        Parent login = loginLoader.load();
-        Scene loginScene = new Scene(login);
 
-        FXMLLoader profileLoader = new FXMLLoader(getClass().getResource("Scenes/Profile.fxml"));
-        Parent profile = profileLoader.load();
-        Scene profileScene = new Scene(profile);
-        
-        FXMLLoader dragLoader = new FXMLLoader(getClass().getResource("Scenes/BoardShips.fxml"));
-        Parent drag = dragLoader.load();
-        Scene dragScene = new Scene(drag);
-        
-        FXMLLoader boardLoader = new FXMLLoader(getClass().getResource("Scenes/Board.fxml"));
-        Parent board = boardLoader.load();
-        Scene boardScene = new Scene(board);
-        
-    // injects
-        
-        ViewController viewPaneController = (ViewController) viewLoader.getController();
-        viewPaneController.setLoginScene(loginScene);   // toLogin
-        viewPaneController.setSettingsScene(settingsScene);
-
-        SettingsController settingsPaneController = (SettingsController) settingsLoader.getController();
-        settingsPaneController.setTittleScene(scene);   // toLogin
-
-        LoginController loginPaneController = (LoginController) loginLoader.getController();
-        loginPaneController.setTittleScene(scene);  // returnToTittle
-        loginPaneController.setProfileScene(profileScene);  //toProfile
-
-        ProfileController profilePaneController = (ProfileController) profileLoader.getController();
-        profilePaneController.setTittleScene(scene);  // returnToTittle
-        profilePaneController.setDragScene(dragScene);  //toBoard
-        
-        DraggableController dragPaneController = (DraggableController) dragLoader.getController();
-        dragPaneController.setBoardScene(boardScene);  // returnToTittle
-        dragPaneController.setProfileScene(profileScene);
-        
-        BoardController boardPaneController = (BoardController) boardLoader.getController();
-        boardPaneController.setTittleScene(scene);  // returnToTittle
-        
-        //display scene
+    //display scene
         
         pStage.setScene(scene);
         pStage.setTitle("Barquitos que disparan!!!11!11");
@@ -94,7 +50,7 @@ public class Game extends Application{
         defaultAudio.setVolume(0.5);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
         defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);});
 
-        defaultAudio.play();
+        //defaultAudio.play();
     }
     //public static void changeScene(Scene){};
     public static void main(String[] args) {launch(args);}

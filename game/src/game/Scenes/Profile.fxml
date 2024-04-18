@@ -42,8 +42,8 @@
                         <children>
                            <Rectangle arcHeight="5.0" arcWidth="5.0" height="47.0" stroke="BLACK" strokeType="INSIDE" width="620.0" />
                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9a9a9a" height="47.0" layoutX="564.0" stroke="BLACK" strokeType="INSIDE" width="57.0" />
-                           <ProgressBar layoutX="5.0" layoutY="5.0" prefHeight="37.0" prefWidth="609.0" progress="0.0" style="-fx-background-color: black;" />
-                           <Label fx:id="pgRatio" alignment="CENTER" layoutX="219.0" prefHeight="47.0" prefWidth="128.0" text="Ratio Batallas" />
+                           <ProgressBar fx:id="pbRatio" layoutX="5.0" layoutY="5.0" prefHeight="37.0" prefWidth="609.0" progress="0.0" style="-fx-background-color: black;" />
+                           <Label fx:id="pgRatio" alignment="CENTER" layoutX="247.0" prefHeight="47.0" prefWidth="128.0" text="Ratio Batallas" />
                         </children>
                      </Group>
                      <Group layoutY="47.0">
