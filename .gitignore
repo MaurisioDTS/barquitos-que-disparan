@@ -45,3 +45,4 @@ game/dist/game.jnlp
 *.html
 /game/.idea
 /game/out
+game/game.iml
