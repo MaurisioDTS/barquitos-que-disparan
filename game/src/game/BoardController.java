@@ -10,14 +10,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class BoardController implements Initializable{
-    
-    private static Stage stage;
+
+    private static Stage stage=Game.getPrimaryStage();
     private Scene title;
     private Scene board;
     private Scene profile;
     private Scene drag;
 
-    public static void giveStage(Stage Stage){stage=Stage;}
     public void setTittleScene(Scene scene){title=scene;}
     
     Board brd=new Board("elpepe");

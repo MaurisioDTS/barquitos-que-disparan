@@ -17,11 +17,10 @@ import utilidades.bbdd.Gestor_conexion_POSTGRE;
 public class LoginController implements Initializable{
 //TODO
 
-    private static Stage stage;
+    private static Stage stage=Game.getPrimaryStage();
     private Scene title;
     private Scene profile;
-    
-    public static void giveStage(Stage Stage){stage=Stage;}
+
     public void setTittleScene(Scene scene){title=scene;}
     public void setProfileScene(Scene scene){profile=scene;}
     

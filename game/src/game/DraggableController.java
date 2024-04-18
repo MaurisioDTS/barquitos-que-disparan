@@ -11,13 +11,12 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class DraggableController{
-    
-    private static Stage stage;
+
+    private static Stage stage=Game.getPrimaryStage();
     private Scene title;
     private Scene board;
     private Scene profile;
-    
-    public static void giveStage(Stage Stage){stage=Stage;}
+
     public void setBoardScene(Scene scene){board=scene;}
     public void setProfileScene(Scene scene){profile=scene;}
 

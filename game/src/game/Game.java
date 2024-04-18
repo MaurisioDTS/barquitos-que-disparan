@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -13,51 +14,30 @@ import java.nio.file.Paths;
 
 public class Game extends Application{
 
-    static Stage nose=new Stage();
-    public static Stage getStage(){return nose;}
+    private static Stage pStage;
+    public static Stage getPrimaryStage() {return pStage;}
+    private void setPrimaryStage(Stage pStage) {
+        Game.pStage = pStage;
+    }
 
     static Media defaultMedia=new Media(Paths.get("src/game/Scenes/Sin_titulo.wav").toUri().toString());
     static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
 
-//    static Media pastkeys=new Media(Paths.get("game/res/audio/past keys.wav").toUri().toString());
-//    static MediaPlayer pastkeysAudio=new MediaPlayer(defaultMedia);
-//
-//    static Media metal=new Media(Paths.get("game/res/audio/metal.wav").toUri().toString());
-//    static MediaPlayer metalAudio=new MediaPlayer(defaultMedia);
-
     // Settings
-    public static void setFs(Stage s,boolean b){nose.setFullScreen(b);}
+    public static void setFs(boolean b){pStage.setFullScreen(b);}
     public static void setVol(double d){defaultAudio.setVolume(d);}
-    public static void toggleMute(){
-        
-    defaultAudio.setMute(!defaultAudio.isMute());
-        
-    } // probablemente la linea de código más inteligente que ha salido de mi mente
-    /**public static void changeMusic(int i){
-        defaultAudio.stop();
-        pastkeysAudio.stop();
-        metalAudio.stop();
-
-        switch (i) {
-            case 1:
-                defaultAudio.play();
-            case 2:
-                pastkeysAudio.play();
-            case 3:
-                metalAudio.play();
-            default:
-                defaultAudio.play();
-        }
-     * @param stage
-     * @throws java.lang.Exception}**/
+    public static void toggleMute(){defaultAudio.setMute(!defaultAudio.isMute());/** probablemente la linea de código más inteligente que ha salido de mi mente**/}
 
     @Override
-    public void start(Stage stage) throws Exception { nose=stage;
+    public void start(Stage s) throws Exception {
+        setPrimaryStage(s);
+        pStage=s;
+
 //    // loaders
 //    
         FXMLLoader viewLoader = new FXMLLoader(getClass().getResource("Scenes/View.fxml"));
-        Parent root = viewLoader.load();
-        Scene scene = new Scene(root);
+        Parent title = viewLoader.load();
+        Scene scene = new Scene(title);
         
         FXMLLoader settingsLoader = new FXMLLoader(getClass().getResource("Scenes/Settings.fxml"));
         Parent settings = settingsLoader.load();
@@ -105,22 +85,50 @@ public class Game extends Application{
         
         //display scene
         
-        stage.setScene(scene);
-        stage.show();
+        pStage.setScene(scene);
+        pStage.setTitle("Barquitos que disparan!!!11!11");
+        pStage.getIcons().add(new Image(Game.class.getResourceAsStream("Scenes/jerma.jpg")));
+        pStage.show();
         defaultAudio.setVolume(0.5);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
         defaultAudio.setOnEndOfMedia(()-> {defaultAudio.seek(Duration.ZERO);});
-        /**pastkeysAudio.setOnEndOfMedia(new Runnable() {
-            public void run() {
-                pastkeysAudio.seek(Duration.ZERO);
-            }
-        });metalAudio.setOnEndOfMedia(new Runnable() {
-            public void run() {
-                metalAudio.seek(Duration.ZERO);
-            }
-        });**/
+
         defaultAudio.play();
     }
+
     public static void main(String[] args) {
         launch(args);
     }
 }
+
+//    static Media pastkeys=new Media(Paths.get("game/res/audio/past keys.wav").toUri().toString());
+//    static MediaPlayer pastkeysAudio=new MediaPlayer(defaultMedia);
+//
+//    static Media metal=new Media(Paths.get("game/res/audio/metal.wav").toUri().toString());
+//    static MediaPlayer metalAudio=new MediaPlayer(defaultMedia);
+
+/**public static void changeMusic(int i){
+ defaultAudio.stop();
+ pastkeysAudio.stop();
+ metalAudio.stop();
+
+ switch (i) {
+ case 1:
+ defaultAudio.play();
+ case 2:
+ pastkeysAudio.play();
+ case 3:
+ metalAudio.play();
+ default:
+ defaultAudio.play();
+ }
+}**/
+
+/**pastkeysAudio.setOnEndOfMedia(new Runnable() {
+ public void run() {
+ pastkeysAudio.seek(Duration.ZERO);
+ }
+ });metalAudio.setOnEndOfMedia(new Runnable() {
+ public void run() {
+ metalAudio.seek(Duration.ZERO);
+ }
+ });**/

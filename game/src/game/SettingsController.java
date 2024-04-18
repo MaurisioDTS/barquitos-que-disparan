@@ -25,10 +25,8 @@ import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
 public class SettingsController implements Initializable{
 
-    private static Stage stage=Game.getStage();
+    private static Stage stage=Game.getPrimaryStage();
     private Scene title;
-    
-    public static void giveStage(Stage Stage){stage=Stage;}
     public void setTittleScene(Scene scene){title=scene;}
     
     @FXML
@@ -55,11 +53,11 @@ public class SettingsController implements Initializable{
     }
     @FXML
     private void setSettings(ActionEvent Event){
-        Stage stage = (Stage)((Node)Event.getSource()).getScene().getWindow();
+        //Stage stage = (Stage)((Node)Event.getSource()).getScene().getWindow();
         System.out.println(sldVolume.getValue());
 
         Game.setVol(sldVolume.getValue());
-        Game.setFs(stage,cbFs.isSelected());
+        Game.setFs(cbFs.isSelected());
     }
     @FXML
     private void btnreturn(ActionEvent a){

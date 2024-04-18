@@ -2,16 +2,17 @@
     src: url('sans-font.ttf');
 }
 #danger:hover{
-    -fx-fill:#8bc2c2;
+    -fx-fill: #dc3d3d;
     -fx-background-color: radial-gradient(center 80% 20%, radius 80%, rgb(255, 10, 10) 0%, rgb(200, 162, 192) 100%);;
     -fx-font-family: 'Pixel Comic Sans (Undertale Sans Font)';
-    -fx-text-fill: #000000;
+    -fx-text-fill: #d0f2ff;
     -fx-border-color: black;
     -fx-border-width: 5;
     -fx-border-style: solid;
 }
 .root{
     -fx-background-color:  #b3f0ff;
+    -fx-alignment: center;
 }
 .landscape{
     -fx-background-image: url("sea.png");
