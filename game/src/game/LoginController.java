@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,7 +15,6 @@ import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
 public class LoginController implements Initializable{
 //TODO
-
     private static Stage stage=Game.getPrimaryStage();
     private Scene title;
     private Scene profile;
@@ -41,12 +39,11 @@ public class LoginController implements Initializable{
     @FXML
     Label lblNoDb=new Label();
     
+    public void clearTBs(){tbRegUser.setText("");tbRegPass.setText("");tbLogUser.setText("");tbLogPass.setText("");}
+    
     @FXML
-    private void btnReturn(ActionEvent a){
-        System.out.println("return");
-        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow(); 
-        stage.setScene(title);
-    }
+    private void btnReturn(ActionEvent a){stage.setScene(title);}
+    
     Gestor_conexion_POSTGRE gestor;
 
     public void noDb(){lblNoDb.setVisible(true);}
@@ -66,20 +63,19 @@ public class LoginController implements Initializable{
     public void login(ActionEvent a){
         Gestor_conexion_POSTGRE gestor = new Gestor_conexion_POSTGRE("mdddb", true);
         lblWrongCredentials.setVisible(false);
-        String nick="'"+tbLogUser.getText()+"'";
+        String nick=tbLogUser.getText();
         String pass=tbLogPass.getText();
         String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(pass);
         
-        String consulta="SELECT * FROM usuario where nick="+nick+";";
+        String consulta="SELECT * FROM usuario where nick='"+nick+"';";
         String[][] result = Bd.consultaSelect(gestor,consulta);
         
         //System.out.println(result[0][1]); //SHOW HASHED PASSWORD
 
         try{ // como detesto haber programado esto
             if (result[0][1].equals(sha256hex)){
-                Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
-                ProfileController.setProfileScene(profile,tbLogUser.getText());
-                
+                clearTBs();
+                ProfileController.setUser(nick);
                 stage.setScene(profile);
             }
             else{
@@ -95,7 +91,6 @@ public class LoginController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb){
         //TODO
-
         try{
             this.gestor=gestor;
             Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);

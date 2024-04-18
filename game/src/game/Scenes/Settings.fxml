@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -41,11 +42,14 @@
             <Font size="32.0" />
          </font>
       </Button>
-      <Button layoutX="437.0" layoutY="423.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnreturn" prefHeight="70.0" prefWidth="175.0" text="volver" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="654.0">
+      <Button layoutX="437.0" layoutY="423.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnreturn" prefHeight="70.0" prefWidth="175.0" text="volver">
          <font>
             <Font size="32.0" />
          </font>
       </Button>
       <Label fx:id="lblDbWarning" layoutX="797.0" layoutY="317.0" prefHeight="43.0" prefWidth="256.0" text="db error: database may be in use currently" textAlignment="JUSTIFY" textFill="RED" textOverrun="CLIP" visible="false" />
    </children>
+   <padding>
+      <Insets bottom="100.0" />
+   </padding>
 </AnchorPane>

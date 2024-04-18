@@ -41,59 +41,38 @@ public class SettingsController implements Initializable{
     Slider sldVolume=new Slider();
     @FXML
     ChoiceBox cbLang=new ChoiceBox(FXCollections.observableArrayList("1", "2", "3"));
-
+    
     @FXML
-    Button apply=new Button();
-    @FXML
-    AnchorPane anchorPane=new AnchorPane();
-    @FXML
-    private void stop(ActionEvent Event){
-        System.out.println("Exiting...");
-        System.exit(0);
-    }
+    private void stop(ActionEvent Event){System.exit(0);}
     @FXML
     private void setSettings(ActionEvent Event){
-        //Stage stage = (Stage)((Node)Event.getSource()).getScene().getWindow();
-        System.out.println(sldVolume.getValue());
-
         Game.setVol(sldVolume.getValue());
         Game.setFs(cbFs.isSelected());
     }
+    
     @FXML
-    private void btnreturn(ActionEvent a){
-        System.out.println("return");
-        Stage stage = (Stage)((Node)a.getSource()).getScene().getWindow();
-        stage.setScene(title);
-        System.out.println(stage.getScene());
-    }
-    @FXML
-    private void createDb(ActionEvent a){
+    private void createDb(ActionEvent a){ // creates the inintial dB with no data, from the sql script
         Gestor_conexion_POSTGRE postgres=new Gestor_conexion_POSTGRE("postgres", true);
         Bd.consultaModificacion(postgres, "CREATE DATABASE mdddb;");
         postgres.cerrar_Conexion(true);
         Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
         Bd.importar("res/mdddb.sql",gestor);
-        //LoginController.tryDb();
         gestor.cerrar_Conexion(true);
     }
+    
     @FXML
-    private void deleteDb(ActionEvent a){
+    private void deleteDb(ActionEvent a){ // DROPS THE ENTIRE DATABASE
         lblDbWarning.setVisible(false);
         Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("postgres", true);
-        try{
-        Bd.consultaModificacion(gestor,"drop database mdddb");
-        gestor.cerrar_Conexion(true);
-        //LoginController.tryDb();
-        System.out.println("delete");
-        }
-        catch (Exception n){
-            lblDbWarning.setVisible(true);
-        }
+        
+        try {Bd.consultaModificacion(gestor,"drop database mdddb"); gestor.cerrar_Conexion(true);}
+        catch(Exception e){lblDbWarning.setVisible(true);}
     }
+    
     @FXML
-    private void test(ActionEvent a){
-    test.play();
-    }
+    private void test(ActionEvent a){test.play();}
+    @FXML
+    private void btnreturn(ActionEvent a){stage.setScene(title);}
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
