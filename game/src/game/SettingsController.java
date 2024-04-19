@@ -10,39 +10,42 @@ import javafx.scene.Parent;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import javafx.scene.control.Label;
-import javafx.scene.media.AudioClip;
 import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
 public class SettingsController implements Initializable{
 
     private static Stage stage=Game.getPrimaryStage();
+
+
+    MediaPlayer test = new MediaPlayer(new Media(Paths.get("res/audio/test.wav").toUri().toString()));
+    private int count=0;
+    //MediaPlayer eE = new MediaPlayer(new Media(Paths.get("res/audio/eE.wav").toUri().toString()));
+
     
     @FXML
     Label lblDbWarning=new Label();
-    
-    @FXML
-    AudioClip test = new AudioClip(Paths.get("res/audio/test.mp3").toUri().toString());
-    
     @FXML
     CheckBox cbFs=new CheckBox();
     @FXML
     Slider sldVolume=new Slider();
     @FXML
     ChoiceBox cbLang=new ChoiceBox(FXCollections.observableArrayList("1", "2", "3"));
-    
     @FXML
     private void stop(ActionEvent Event){System.exit(0);}
     @FXML
     private void setSettings(ActionEvent Event){
         Game.setVol(sldVolume.getValue());
         Game.setFs(cbFs.isSelected());
+        System.out.println(Game.getVol());
     }
     
     @FXML
@@ -65,7 +68,17 @@ public class SettingsController implements Initializable{
     }
     
     @FXML
-    private void test(ActionEvent a){test.play();}
+    private void test(ActionEvent a){
+        test.setVolume(Game.getVol());
+        test.setOnEndOfMedia(()->{test.stop();});
+        test.play();
+//        count++;
+//        if(count<=5){count=0;
+//        }
+//        else if(count<=4){
+//
+//        }
+    }
     @FXML
     private void btnreturn(ActionEvent a) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Scenes/View.fxml"));
@@ -74,7 +87,7 @@ public class SettingsController implements Initializable{
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        sldVolume.setValue(Game.defaultAudio.getVolume());
-        cbFs.setSelected(Game.fullScreen);
+        sldVolume.setValue(Game.getVol());
+        cbFs.setSelected(Game.getFs());
     }
 }

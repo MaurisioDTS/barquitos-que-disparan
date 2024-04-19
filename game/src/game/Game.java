@@ -17,15 +17,17 @@ public class Game extends Application{
     private static Stage pStage;
     public static Stage getPrimaryStage(){return pStage;}
     private void setPrimaryStage(Stage pStage){Game.pStage = pStage;}
-
-    static Media defaultMedia=new Media(Paths.get("src/game/Scenes/Sin_titulo.wav").toUri().toString());
-    static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
+    private static Media defaultMedia=new Media(Paths.get("src/game/Scenes/Sin_titulo.wav").toUri().toString());
+    private static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
 
 // Settings
-    static boolean fullScreen=false;
-    
+
+    private static double globalVolume=0.5;
+    private static boolean fullScreen=false;
     public static void setFs(boolean b){fullScreen=b; pStage.setFullScreen(b);}
-    public static void setVol(double d){defaultAudio.setVolume(d);}
+    public static void setVol(double d){globalVolume=d;defaultAudio.setVolume(globalVolume);}
+    public static double getVol(){return globalVolume;}
+    public static boolean getFs(){return fullScreen;}
     public static void toggleMute(){defaultAudio.setMute(!defaultAudio.isMute());/** probablemente la linea de código más inteligente que ha salido de mi mente**/}
 
     @Override
@@ -48,9 +50,9 @@ public class Game extends Application{
         pStage.setHeight(720);
         pStage.show();
         
-        defaultAudio.setVolume(0.5);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
+        defaultAudio.setVolume(globalVolume);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
         defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);}); // expresion lambda que loopea el audio hasta el infinito
-        //defaultAudio.play();
+        defaultAudio.play();
     }
     //public static void changeScene(Scene){};
     public static void main(String[] args) {launch(args);}
