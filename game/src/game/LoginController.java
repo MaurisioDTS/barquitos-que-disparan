@@ -81,10 +81,9 @@ public class LoginController{
 
         try{ // como detesto haber programado esto
             if (result[0][1].equals(sha256hex)){
+                ProfileController.setUser(nick);
                 clearTBs();
                 Parent root = FXMLLoader.load(getClass().getResource("Scenes/Profile.fxml"));
-                ProfileController.setUser(nick);
-                ProfileController.cqs();
                 stage.getScene().setRoot(root);
                 stage.show();
             }

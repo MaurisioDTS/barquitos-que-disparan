@@ -1,4 +1,4 @@
-                                                                                                                                                                                                                                                                                                                                                                                         package game;
+package game;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,9 +23,9 @@ public class ProfileController implements Initializable{
     @FXML
     static Label totalBattles=new Label();
     @FXML
-    static Label loses=new Label();
+    Label loses=new Label();
     @FXML
-    static Label wins=new Label();
+    Label wins=new Label();
     @FXML
     Label ratio=new Label();
 
@@ -36,13 +36,21 @@ public class ProfileController implements Initializable{
     public static void setUser(String s){user=s;}
     
     public static void cqs(){ // cqs = "calienta que sales", pide los datos de la bd para ponerlos en el perfil
-
+       
         Gestor_conexion_POSTGRE gestor = new Gestor_conexion_POSTGRE("mdddb", true);
-        String consulta="SELECT lvl,wins,loses,elo FROM usuario where nick='"+user+"';";
+        String consulta="SELECT * FROM usuario where nick='"+user+"';";
         String[][] result = Bd.consultaSelect(gestor,consulta);
+        for(int i=0;i<result.length;i++){
+          
+                 System.out.println("lvl="+result[0][2]);
+                 System.out.println("elo="+result[0][3]);
+                 System.out.println("wins="+result[0][4]);
+                 System.out.println("loses="+result[0][5]);
+            
+        }
         //totalBattles.setText("Batallas totales: "+Integer.parseInt(result[0][1])+Integer.parseInt(result[0][2]));
-        loses.setText("Derrotas: "+result[0][2]);
-        wins.setText("Victorias: "+result[0][1]);
+        //loses.setText("loses="+result[0][5]);
+        //wins.setText("wins="+result[0][4]);
         gestor.cerrar_Conexion(true);
     }
     
@@ -60,5 +68,6 @@ public class ProfileController implements Initializable{
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
+        cqs();
     }
 }

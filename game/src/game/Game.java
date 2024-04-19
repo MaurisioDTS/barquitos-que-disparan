@@ -32,13 +32,13 @@ public class Game extends Application{
     public void start(Stage s) throws Exception {
         setPrimaryStage(s);  // gets the primary stage and saves it for later...
 
-    // first scene loader
+    // scene loader
 
         FXMLLoader viewLoader = new FXMLLoader(getClass().getResource("Scenes/View.fxml"));
         Parent title = viewLoader.load();
         Scene scene = new Scene(title);
 
-    //display scene
+    // display scene
         
         pStage.setScene(scene);
         pStage.setTitle("Barquitos que disparan!!!11!11");
@@ -47,9 +47,9 @@ public class Game extends Application{
         pStage.setWidth(1280);
         pStage.setHeight(720);
         pStage.show();
+        
         defaultAudio.setVolume(0.5);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
-        defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);});
-
+        defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);}); // expresion lambda que loopea el audio hasta el infinito
         //defaultAudio.play();
     }
     //public static void changeScene(Scene){};
