@@ -5,60 +5,70 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<HBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" stylesheets="@GlobalStyle.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="game.SettingsController">
+    <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0">
+       <children>
+          <HBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0">
+             <children>
+                <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" stylesheets="@GlobalStyle.css">
+                   <children>
+                      <Pane layoutX="323.0" layoutY="24.0" prefHeight="510.0" prefWidth="635.0" AnchorPane.leftAnchor="323.0" AnchorPane.rightAnchor="322.0">
+                         <children>
+                            <Pane layoutX="168.0" layoutY="118.0" AnchorPane.leftAnchor="168.0" AnchorPane.rightAnchor="168.0">
+                               <children>
+                                  <Pane layoutX="51.0" layoutY="28.0" prefHeight="31.0" prefWidth="211.0">
+                                     <children>
+                                        <Label layoutX="81.0" text="Volumen" />
+                                        <Slider fx:id="sldVolume" layoutX="-5.0" layoutY="17.0" max="1.0" prefHeight="14.0" prefWidth="221.0" value="0.5" />
+                                     </children>
+                                  </Pane>
+                                  <Pane layoutX="101.0" layoutY="141.0" prefHeight="25.0" prefWidth="111.0">
+                                     <children>
+                                        <CheckBox fx:id="cbFs" layoutX="83.0" layoutY="4.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" style="-fx-font-family: Pixel Comic Sans (Undertale Sans Font);">
+                                           <font>
+                                              <Font name="Pixel Comic Sans (Undertale Sans Font) Regular" size="12.0" />
+                                           </font>
+                                        </CheckBox>
+                                        <Label layoutX="6.0" layoutY="4.0" text="FullScreen: " />
+                                     </children>
+                                  </Pane>
+                                  <Pane layoutX="57.0" layoutY="174.0" prefHeight="93.0" prefWidth="200.0">
+                                     <children>
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="14.0" text="Idioma" textAlignment="CENTER" />
+                                        <ChoiceBox fx:id="cbLang" layoutX="25.0" layoutY="47.0" prefWidth="150.0" />
+                                     </children>
+                                  </Pane>
+                                  <Button layoutX="120.0" layoutY="73.0" mnemonicParsing="false" onAction="#test" text="test vol" />
+                                  <Button layoutX="14.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#createDb" prefHeight="35.0" prefWidth="111.0" text="Create dB" />
+                                  <Button id="danger" layoutX="188.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteDb" prefHeight="35.0" prefWidth="111.0" styleClass="danger" text="DELETE db" />
+                               </children>
+                            </Pane>
+                            <Label layoutX="193.0" layoutY="31.0" prefHeight="70.0" prefWidth="274.0" text="Settings!!11!!1!">
+                               <font>
+                                  <Font name="System Bold" size="34.0" />
+                               </font>
+                            </Label>
+                         </children>
+                      </Pane>
+                      <Label fx:id="lblDbWarning" layoutX="797.0" layoutY="317.0" prefHeight="43.0" prefWidth="256.0" text="db error: database may be in use currently" textAlignment="JUSTIFY" textFill="RED" textOverrun="CLIP" visible="false" />
+                      <Button layoutX="436.0" layoutY="551.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnreturn" prefHeight="70.0" prefWidth="175.0" text="volver">
+                         <font>
+                            <Font size="32.0" />
+                         </font>
+                      </Button>
+                      <Button graphicTextGap="0.0" layoutX="691.0" layoutY="551.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setSettings" prefHeight="70.0" prefWidth="175.0" text="aplicar">
+                         <font>
+                            <Font size="32.0" />
+                         </font>
+                      </Button>
+                   </children>
+                   <padding>
+                      <Insets bottom="100.0" />
+                   </padding>
+                </AnchorPane>
+             </children>
+          </HBox>
+       </children>
+    </VBox>
+</HBox>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.SettingsController">
-   <children>
-      <Pane layoutX="323.0" layoutY="24.0" prefHeight="510.0" prefWidth="635.0" AnchorPane.leftAnchor="323.0" AnchorPane.rightAnchor="322.0">
-         <children>
-            <Pane layoutX="168.0" layoutY="118.0" AnchorPane.leftAnchor="168.0" AnchorPane.rightAnchor="168.0">
-               <children>
-                  <Pane layoutX="51.0" layoutY="28.0" prefHeight="31.0" prefWidth="211.0">
-                     <children>
-                        <Label layoutX="81.0" text="Volumen" />
-                        <Slider fx:id="sldVolume" layoutX="-5.0" layoutY="17.0" max="1.0" prefHeight="14.0" prefWidth="221.0" value="0.5" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="101.0" layoutY="141.0" prefHeight="25.0" prefWidth="111.0">
-                     <children>
-                        <CheckBox fx:id="cbFs" layoutX="83.0" layoutY="4.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" style="-fx-font-family: Pixel Comic Sans (Undertale Sans Font);">
-                           <font>
-                              <Font name="Pixel Comic Sans (Undertale Sans Font) Regular" size="12.0" />
-                           </font>
-                        </CheckBox>
-                        <Label layoutX="6.0" layoutY="4.0" text="FullScreen: " />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="57.0" layoutY="174.0" prefHeight="93.0" prefWidth="200.0">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="14.0" text="Idioma" textAlignment="CENTER" />
-                        <ChoiceBox fx:id="cbLang" layoutX="25.0" layoutY="47.0" prefWidth="150.0" />
-                     </children>
-                  </Pane>
-                  <Button layoutX="120.0" layoutY="73.0" mnemonicParsing="false" onAction="#test" text="test vol" />
-                  <Button layoutX="14.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#createDb" prefHeight="35.0" prefWidth="111.0" text="Create dB" />
-                  <Button id="danger" layoutX="188.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteDb" prefHeight="35.0" prefWidth="111.0" styleClass="danger" text="DELETE db" />
-               </children>
-            </Pane>
-            <Label layoutX="193.0" layoutY="31.0" prefHeight="70.0" prefWidth="274.0" text="Settings!!11!!1!">
-               <font>
-                  <Font name="System Bold" size="34.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Label fx:id="lblDbWarning" layoutX="797.0" layoutY="317.0" prefHeight="43.0" prefWidth="256.0" text="db error: database may be in use currently" textAlignment="JUSTIFY" textFill="RED" textOverrun="CLIP" visible="false" />
-      <Button layoutX="436.0" layoutY="551.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnreturn" prefHeight="70.0" prefWidth="175.0" text="volver">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Button>
-      <Button graphicTextGap="0.0" layoutX="691.0" layoutY="551.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setSettings" prefHeight="70.0" prefWidth="175.0" text="aplicar">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Button>
-   </children>
-   <padding>
-      <Insets bottom="100.0" />
-   </padding>
-</AnchorPane>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -21,8 +22,32 @@
            <font>
             <Font name="System Bold" size="75.0" />
            </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.5619047619047619">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#7a7cff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
        </Label>
-       <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="58.0" layoutY="237.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#battle" prefHeight="89.0" prefWidth="308.0" text="BATALLA" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="58.0">
+       <Button id="danger" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" ellipsisString="" graphicTextGap="0.0" layoutX="1215.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="50.0" text="X" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+           <font>
+             <Font name="System Bold" size="21.0" />
+           </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+       </Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutX="1150.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mute" prefHeight="50.0" prefWidth="50.0" text="m" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="15.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="237.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#battle" prefHeight="89.0" prefWidth="308.0" text="BATALLA" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="58.0">
            <font>
             <Font name="System Bold" size="43.0" />
            </font>
@@ -30,7 +55,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
        </Button>
-       <Button alignment="CENTER" focusTraversable="false" layoutX="58.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#settings" prefHeight="87.0" prefWidth="260.0" text="Ajustes" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="148.0" AnchorPane.leftAnchor="58.0">
+       <Button alignment="CENTER" layoutX="58.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#settings" prefHeight="87.0" prefWidth="260.0" text="Ajustes" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="148.0" AnchorPane.leftAnchor="58.0">
            <font>
              <Font name="System Bold" size="40.0" />
            </font>
@@ -38,21 +63,5 @@
             <Cursor fx:constant="HAND" />
          </cursor>
        </Button>
-       <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" graphicTextGap="0.0" layoutX="1215.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="50.0" text="X" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-           <font>
-             <Font name="System Bold" size="25.0" />
-           </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" graphicTextGap="0.0" layoutX="1150.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mute" prefHeight="50.0" prefWidth="50.0" text="m" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="15.0">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
    </children>
 </AnchorPane>

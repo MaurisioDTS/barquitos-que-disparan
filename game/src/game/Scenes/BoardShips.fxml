@@ -8,11 +8,17 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" onDragOver="#onDragOver" onKeyPressed="#rotateKeyPressed" onKeyReleased="#rotateKeyReleased" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.DraggableController">
+<HBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.DraggableController">
+    <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0">
+       <children>
+          <HBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0">
+             <children>
+<AnchorPane id="AnchorPane" onDragOver="#onDragOver" onKeyPressed="#rotateKeyPressed" onKeyReleased="#rotateKeyReleased" prefHeight="720.0" prefWidth="1280.0">
    <children>
       <Button layoutX="32.0" layoutY="637.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rtn" prefHeight="53.0" prefWidth="103.0" text="return" />
       <GridPane fx:id="boardP1" gridLinesVisible="true" layoutX="263.0" layoutY="140.0" prefHeight="369.0" prefWidth="371.0" style="-fx-background-color: blue;" AnchorPane.leftAnchor="263.0" AnchorPane.topAnchor="140.0">
@@ -123,3 +129,8 @@
       <URL value="@BoardShipsStyle.css" />
    </stylesheets>
 </AnchorPane>
+             </children>
+          </HBox>
+       </children>
+    </VBox>
+</HBox>

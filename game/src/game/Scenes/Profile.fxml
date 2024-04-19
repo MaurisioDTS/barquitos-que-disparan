@@ -7,16 +7,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-
-<StackPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #b3f0ff;" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.ProfileController">
+<HBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.ProfileController">
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0">
    <children>
-      <GridPane>
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <HBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0">
          <children>
          <AnchorPane nodeOrientation="LEFT_TO_RIGHT">
             <children>
@@ -94,6 +88,7 @@
                </padding>
          </AnchorPane>
          </children>
-      </GridPane>
+      </HBox>
    </children>
-</StackPane>
+</VBox>
+</HBox>
