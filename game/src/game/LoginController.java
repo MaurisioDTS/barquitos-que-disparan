@@ -1,6 +1,8 @@
 package game;
 
+import java.net.ConnectException;
 import java.net.URL;
+import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
@@ -14,7 +16,9 @@ import javafx.stage.Stage;
 import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
-public class LoginController{
+import static game.Utils.digest256;
+
+public class LoginController implements Initializable{
 //TODO
     private static Stage stage=Game.getPrimaryStage();
     private Scene title;
@@ -53,61 +57,45 @@ public class LoginController{
 
     public void noDb(){lblNoDb.setVisible(true);}
     @FXML
-    private void register(){
+    private void register() throws NoSuchAlgorithmException {
+        //TODO add already existing user message
         Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
-        String consulta;
-        String user = "'"+tbRegUser.getText()+"'";
-        String password=tbRegPass.getText();
-        String sha256hex = "'"+org.apache.commons.codec.digest.DigestUtils.sha256Hex(password)+"'";
-        
-        consulta ="insert into usuario (nick,passinsha256,lvl,elo) values ("+user+","+sha256hex+",0,0);";
-    
-        System.out.println(Bd.consultaModificacion(gestor,consulta));
+
+        String user = tbRegUser.getText(), pass=digest256(tbRegPass.getText());
+
+        String consulta ="insert into usuario (nick,passinsha256,lvl,elo) values ('"+user+"','"+pass+"',0,0);";
+        Bd.consultaModificacion(gestor,consulta);
         clearTBs();
         gestor.cerrar_Conexion(true);
     }
     @FXML
-    private void login() throws Exception{
+    private void login() throws Exception{ lblWrongCredentials.setVisible(false);
         Gestor_conexion_POSTGRE gestor = new Gestor_conexion_POSTGRE("mdddb", true);
-        lblWrongCredentials.setVisible(false);
-        String nick=tbLogUser.getText();
-        String pass=tbLogPass.getText();
-        String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(pass);
-        
-        String consulta="SELECT * FROM usuario where nick='"+nick+"';";
+        String nick=tbLogUser.getText(), pass=digest256(tbLogPass.getText());
+
+        String consulta="SELECT passinsha256 FROM usuario where nick='"+nick+"';";
         String[][] result = Bd.consultaSelect(gestor,consulta);
 
-        //System.out.println(result[0][1]); //SHOW HASHED PASSWORD
+        System.out.println(result[0][0]);
 
-        try{ // como detesto haber programado esto
-            if (result[0][1].equals(sha256hex)){
+        try{ // If the credentials match, goes to profile. Otherwise, shows an error message
+            if (result[0][0].equals(pass)){
                 ProfileController.setUser(nick);
                 clearTBs();
                 Parent root = FXMLLoader.load(getClass().getResource("Scenes/Profile.fxml"));
                 stage.getScene().setRoot(root);
                 stage.show();
             }
-            else{
-                lblWrongCredentials.setVisible(true);
-                System.out.println("pec");
-            }
+            else {lblWrongCredentials.setVisible(true);}
         }
-        catch (java.lang.NullPointerException n){
-            System.out.println("that user doesnt exist");
-        }
+        catch(java.lang.NullPointerException n) {lblWrongCredentials.setVisible(true);}
         gestor.cerrar_Conexion(true);
     }
-    public void initialize(URL url, ResourceBundle rb){
-        //TODO
+    public void initialize(URL url, ResourceBundle rb){ // Checks if dB is up
         try{
-            this.gestor=gestor;
-            Gestor_conexion_POSTGRE gestor=new Gestor_conexion_POSTGRE("mdddb", true);
-            System.out.println(Bd.consultaSelect(gestor,"select * from usuario;"));
-            gestor.cerrar_Conexion(true);
-        }
-        catch (NullPointerException a) {
-            noDb();
-            System.out.println("DB NOT FOUND!!!!!!!!!!!!1!!!!!!1");
-        }
+            Gestor_conexion_POSTGRE test=new Gestor_conexion_POSTGRE("mdddb",true);
+            Bd.consultaSelect(test,"select * from usuario;");
+            test.cerrar_Conexion(true);
+        } catch(Exception e){noDb();}
     }
 }

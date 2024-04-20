@@ -21,6 +21,7 @@ import javafx.scene.control.Label;
 import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
+
 public class SettingsController implements Initializable{
 
     private static Stage stage=Game.getPrimaryStage();
@@ -28,7 +29,7 @@ public class SettingsController implements Initializable{
 
     MediaPlayer test = new MediaPlayer(new Media(Paths.get("res/audio/test.wav").toUri().toString()));
     private int count=0;
-    //MediaPlayer eE = new MediaPlayer(new Media(Paths.get("res/audio/eE.wav").toUri().toString()));
+    MediaPlayer eE = new MediaPlayer(new Media(Paths.get("res/audio/eE.wav").toUri().toString()));
 
     
     @FXML
@@ -45,7 +46,6 @@ public class SettingsController implements Initializable{
     private void setSettings(ActionEvent Event){
         Game.setVol(sldVolume.getValue());
         Game.setFs(cbFs.isSelected());
-        System.out.println(Game.getVol());
     }
     
     @FXML
@@ -68,16 +68,17 @@ public class SettingsController implements Initializable{
     }
     
     @FXML
-    private void test(ActionEvent a){
-        test.setVolume(Game.getVol());
-        test.setOnEndOfMedia(()->{test.stop();});
-        test.play();
-//        count++;
-//        if(count<=5){count=0;
-//        }
-//        else if(count<=4){
-//
-//        }
+    private void test(ActionEvent a){count++;
+        if(count==5){count=0;
+            eE.setVolume(Game.getVol());
+            eE.setOnEndOfMedia(()->{eE.stop();});
+            eE.play();
+        }
+        else{
+            test.setVolume(Game.getVol());
+            test.setOnEndOfMedia(()->{test.stop();});
+            test.play();
+        }
     }
     @FXML
     private void btnreturn(ActionEvent a) throws IOException {
