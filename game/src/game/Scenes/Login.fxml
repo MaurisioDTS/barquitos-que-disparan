@@ -5,45 +5,47 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" stylesheets="@GlobalStyle.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="game.LoginController">
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
+<HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.LoginController">
    <children>
-      <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
-         <children>
-         <AnchorPane  nodeOrientation="LEFT_TO_RIGHT" stylesheets="@style.css" HBox.hgrow="ALWAYS">
+   <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
+      <children>
+         <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
             <children>
-               <PasswordField fx:id="tbLogPass" layoutX="68.0" layoutY="165.0" />
-               <TextField fx:id="tbLogUser" layoutX="68.0" layoutY="120.0" />
-               <CheckBox fx:id="cbRemember" layoutX="68.0" layoutY="212.0" mnemonicParsing="false" text="Remember me" />
-               <Label layoutX="117.0" layoutY="57.0" text="Login">
-                  <font>
-                     <Font name="System Bold Italic" size="20.0" />
-                  </font>
-               </Label>
-               <PasswordField fx:id="tbRegPass" layoutX="384.0" layoutY="165.0" />
-               <Label layoutX="264.0" layoutY="124.0" text="Username" />
-               <Label layoutX="266.0" layoutY="169.0" text="Password" />
-               <TextField fx:id="tbRegUser" layoutX="384.0" layoutY="120.0" />
-               <Label layoutX="420.0" layoutY="57.0" text="Register">
-                  <font>
-                     <Font name="System Bold Italic" size="20.0" />
-                  </font>
-               </Label>
-               <Button fx:id="btnLogin" layoutX="69.0" layoutY="245.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="149.0" text="Login!" />
-               <Button fx:id="btnRegister" layoutX="384.0" layoutY="245.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="149.0" text="Register!" />
-               <Label fx:id="lblWrongCredentials" layoutX="69.0" layoutY="313.0" text="Incorrect Credentials" textFill="RED" visible="false" />
-               <Label layoutX="384.0" layoutY="313.0" text="Name's already in use" textFill="RED" visible="false" />
-               <Button layoutX="265.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnReturn" text="Return" />
-               <Label fx:id="lblNoDb" layoutX="184.0" layoutY="23.0" text="DATABASE NOT FOUND/DISCONNECTED" textFill="RED" visible="false">
-                  <font>
-                     <Font name="System Bold" size="12.0" />
-                  </font>
-               </Label>
-               <Label fx:id="lblNoUser" layoutX="68.0" layoutY="94.0" prefHeight="17.0" prefWidth="149.0" text="that user does not exist" textAlignment="CENTER" textFill="RED" visible="false" />
+            <AnchorPane nodeOrientation="LEFT_TO_RIGHT" stylesheets="@style.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <TextField fx:id="tbLogUser" layoutX="68.0" layoutY="120.0" />
+                  <PasswordField fx:id="tbLogPass" layoutX="68.0" layoutY="165.0" />
+                  <CheckBox fx:id="cbRemember" layoutX="68.0" layoutY="212.0" mnemonicParsing="false" text="Remember me" />
+                  <Button fx:id="btnLogin" layoutX="69.0" layoutY="245.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="149.0" text="Login!" />
+                  <Label alignment="CENTER" layoutX="386.0" layoutY="46.0" prefHeight="40.0" prefWidth="149.0" text="Register">
+                     <font>
+                        <Font name="System Bold Italic" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="264.0" layoutY="124.0" text="Username" />
+                  <Label layoutX="266.0" layoutY="169.0" text="Password" />
+                  <TextField fx:id="tbRegUser" layoutX="384.0" layoutY="120.0" />
+                  <PasswordField fx:id="tbRegPass" layoutX="384.0" layoutY="165.0" />
+                  <Button fx:id="btnRegister" layoutX="384.0" layoutY="245.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="149.0" text="Register!" />
+                  <Label fx:id="lblWrongCredentials" layoutX="69.0" layoutY="313.0" text="Incorrect Credentials" textFill="RED" visible="false" />
+                  <Label layoutX="384.0" layoutY="313.0" text="Name's already in use" textFill="RED" visible="false" />
+                  <Button layoutX="265.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnReturn" text="Return" />
+                  <Label alignment="CENTER" layoutX="94.0" layoutY="46.0" prefHeight="40.0" prefWidth="99.0" text="Login">
+                     <font>
+                        <Font name="System Bold Italic" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNoDb" layoutX="184.0" layoutY="23.0" text="DATABASE NOT FOUND/DISCONNECTED" textFill="RED" visible="false">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNoUser" layoutX="68.0" layoutY="94.0" prefHeight="17.0" prefWidth="149.0" text="that user does not exist" textAlignment="CENTER" textFill="RED" visible="false" />
+               </children>
+            </AnchorPane>
             </children>
-         </AnchorPane>
-         </children>
-      </HBox>
+         </HBox>
+      </children>
+   </VBox>
    </children>
-</VBox>
 </HBox>
