@@ -23,18 +23,19 @@ public class Board {
         if (board[x][y]!=null){ temp="impakto"; }
 
         System.out.println(temp);
-        return temp;
+        return user+" "+temp;
     }
     
     @Override
     public String toString(){
-        String temp="----- "+user+" -----"+"";
+        String temp="----- "+user+" -----"+" ";
 
         return temp;
     }
 }
 
-
+//       if(isPlayer1){brd1.checkCheck(0,0);}}
+//        else{brd2.checkCheck(0,0);}
 
 //Metodo que compruebe que haya barco, agua e impactado. -1-agua, 0-aguaImpactado, 1-barco, 2-barco impactado.
     //public boolean checkPosition(int[][] coords){
