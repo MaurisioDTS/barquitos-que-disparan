@@ -7,7 +7,11 @@ package game;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -15,6 +19,18 @@ import javafx.fxml.Initializable;
  * @author Usuario
  */
 public class FinalController implements Initializable {
+
+    @FXML
+    private Label lblWinner;
+
+    @FXML
+    private Label lblWarshipsDestroyed;
+
+    @FXML
+    private TextField tfUser;
+
+    @FXML
+    private TextField tfComments;
 
     /**
      * Initializes the controller class.

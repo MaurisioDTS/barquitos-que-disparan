@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="1022.0" stylesheets="@GlobalStyle.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.291" fx:controller="game.FinalController">
+<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="1022.0" styleClass="landscape" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.FinalController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="70.0" prefHeight="32.0" prefWidth="139.0" text="Jugador 1 ha ganado" textAlignment="CENTER" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="672.0" layoutY="70.0" prefHeight="32.0" prefWidth="139.0" text="Jugador 2 ha perdido" textAlignment="CENTER" />
+      <Label fx:id="lblWinner" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="54.0" prefHeight="32.0" prefWidth="280.0" text="Jugador 1" textAlignment="CENTER">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+      <TextField fx:id="tfComments" layoutX="549.0" layoutY="282.0" prefHeight="25.0" prefWidth="233.0" />
+      <TextField fx:id="tfUser" layoutX="508.0" layoutY="231.0" />
+      <Label layoutX="444.0" layoutY="235.0" text="Usuario" />
+      <Label layoutX="444.0" layoutY="286.0" text="Comentarios" />
+      <Label layoutX="474.0" layoutY="117.0" text="Estadisticas">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="445.0" layoutY="147.0" text="Tiempo:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="507.0" layoutY="147.0" />
+      <Label layoutX="444.0" layoutY="176.0" text="Racha de destruccion:" />
+      <Label fx:id="lblWarshipsDestroyed" layoutX="582.0" layoutY="176.0" text="3 barcos destruidos" />
+      <Label layoutX="591.0" layoutY="63.0" text="ha ganado">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

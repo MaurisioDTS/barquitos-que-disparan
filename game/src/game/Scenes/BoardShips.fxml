@@ -28,7 +28,7 @@
    <AnchorPane id="AnchorPane" onDragOver="#onDragOver" onKeyPressed="#rotateKeyPressed" onKeyReleased="#rotateKeyReleased" prefHeight="720.0" prefWidth="1280.0">
       <children>
          <Button layoutX="263.0" layoutY="572.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rtn" prefHeight="53.0" prefWidth="103.0" text="return" />
-         <GridPane fx:id="boardP1" gridLinesVisible="true" layoutX="263.0" layoutY="140.0" prefHeight="369.0" prefWidth="371.0" style="-fx-background-color: blue;" AnchorPane.leftAnchor="263.0" AnchorPane.topAnchor="140.0">
+         <GridPane fx:id="boardP1" gridLinesVisible="true" layoutX="263.0" layoutY="140.0" prefHeight="369.0" prefWidth="371.0" style="-fx-background-color: blue;" AnchorPane.leftAnchor="263.0" AnchorPane.topAnchor="140.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
            <columnConstraints>
              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -95,25 +95,25 @@
             </children>
          </Pane>
          <Button layoutX="925.0" layoutY="572.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#board" prefHeight="53.0" prefWidth="103.0" text="board" />
-         <HBox fx:id="shipLength1" layoutX="14.0" layoutY="224.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="43.0">
+         <HBox fx:id="shipLength1" layoutX="14.0" layoutY="224.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="43.0" onMousePressed="#onMousePressed" onMouseDragged="#onMouseDragged" onMouseReleased="#onMouseReleased">
             <children>
                <ImageView fx:id="ship1Part1" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
             </children>
          </HBox>
-         <HBox fx:id="shipLength2" layoutX="14.0" layoutY="278.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="86.0">
+         <HBox fx:id="shipLength2" layoutX="14.0" layoutY="278.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="86.0" onMousePressed="#onMousePressed" onMouseDragged="#onMouseDragged" onMouseReleased="#onMouseReleased">
             <children>
                <ImageView fx:id="ship2Part1" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
                <ImageView fx:id="ship2Part2" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
             </children>
          </HBox>
-         <HBox fx:id="shipLength3" layoutX="14.0" layoutY="331.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="86.0">
+         <HBox fx:id="shipLength3" layoutX="14.0" layoutY="331.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="86.0" onMousePressed="#onMousePressed" onMouseDragged="#onMouseDragged" onMouseReleased="#onMouseReleased">
             <children>
                <ImageView fx:id="ship3Part1" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
                <ImageView fx:id="ship3Part2" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
                <ImageView fx:id="ship3Part3" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
             </children>
          </HBox>
-         <HBox fx:id="shipLength4" layoutX="14.0" layoutY="383.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="86.0">
+         <HBox fx:id="shipLength4" layoutX="14.0" layoutY="383.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="86.0" onMousePressed="#onMousePressed" onMouseDragged="#onMouseDragged" onMouseReleased="#onMouseReleased">
             <children>
                <ImageView fx:id="ship4Part1" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
                <ImageView fx:id="ship4Part2" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
@@ -121,7 +121,7 @@
                <ImageView fx:id="ship4Part4" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
             </children>
          </HBox>
-         <HBox fx:id="shipLength5" layoutX="14.0" layoutY="436.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="86.0">
+         <HBox fx:id="shipLength5" layoutX="14.0" layoutY="436.0" onDragDetected="#onDragDetected" onDragOver="#onDragOver" prefHeight="0.0" prefWidth="86.0" onMousePressed="#onMousePressed" onMouseDragged="#onMouseDragged" onMouseReleased="#onMouseReleased">
             <children>
                <ImageView fx:id="ship5Part1" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
                <ImageView fx:id="ship5Part2" fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" />
