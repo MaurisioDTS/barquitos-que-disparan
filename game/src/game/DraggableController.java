@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class DraggableController{
@@ -42,25 +43,32 @@ public class DraggableController{
     @FXML
     private HBox draggedBox;
     
-    @FXML
-    private void onDragDropped(DragEvent event){
-        if (event.getGestureSource() instanceof HBox && event.getGestureTarget() instanceof GridPane){
+    
+    
+   @FXML
+    private void onDragDropped(DragEvent event) {
+        if (event.getGestureSource() instanceof HBox && event.getGestureTarget() instanceof GridPane) {
             HBox dragged = (HBox) event.getGestureSource();
             GridPane targetGrid = (GridPane) event.getGestureTarget();
-            
+        
             int column = (int) (event.getX() / (targetGrid.getWidth()/10));
             int row = (int) (event.getY() / (targetGrid.getWidth()/10));
-            
-            if (column == null){
-                column = (int) (event.getX() / targetGrid.getWidth() * targetGrid.getColumnCount())
-            }
-            
-            targetGrid.add(draggedBox, column, row);
-            
+        
+            addShipToGrid(dragged, targetGrid, column, row);
+        
             event.setDropCompleted(true);
             event.consume();
-        }
     }
+}
+
+    private void addShipToGrid(HBox ship, GridPane grid, int column, int row) {
+        grid.add(ship, column, row);
+        ship.setTranslateX(0);
+        ship.setTranslateY(0);
+    }
+
+
+
 
     @FXML
     private void onMousePressed(MouseEvent event){
