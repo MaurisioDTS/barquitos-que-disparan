@@ -39,7 +39,7 @@
              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
            </rowConstraints>
             <children>
-               <Button mnemonicParsing="false" onAction="#button" opacity="0.0" text="Button" />
+               <Button mnemonicParsing="false" onAction="#a1" opacity="0.0" text="Button" />
                <Button mnemonicParsing="false" onAction="#b1" opacity="0.0" text="Button" GridPane.rowIndex="1" />
                <Button mnemonicParsing="false" onAction="#c1" opacity="0.0" text="Button" GridPane.rowIndex="2" />
                <Button mnemonicParsing="false" onAction="#d1" opacity="0.0" text="Button" GridPane.rowIndex="3" />
