@@ -36,8 +36,7 @@ public class ProfileController implements Initializable{
     Label ratio=new Label();
 
     public static void setUser(String s){player1=s;}
-    public void setGuest(String s){player2=s;lblGuest.setText(player2);
-}
+    public static void setGuest(String s){player2=s;}
     
     public static void cqs(){ // cqs = "calienta que sales", pide los datos de la bd para ponerlos en el perfil
        
@@ -84,6 +83,10 @@ public class ProfileController implements Initializable{
         Parent root = FXMLLoader.load(getClass().getResource("Scenes/Login.fxml"));
         stage.getScene().setRoot(root);
         stage.show();
+    }
+    @FXML
+    public void history(ActionEvent a)throws Exception{//stage.setScene(title);
+        lblGuest.setText(player2);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
