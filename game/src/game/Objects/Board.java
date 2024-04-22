@@ -22,8 +22,8 @@ public class Board {
         if (board[x][y]==null){temp="agua";}
         if (board[x][y]!=null){ temp="impakto"; }
 
-        System.out.println(temp);
-        return user+" "+temp;
+        System.out.println(user+" "+temp);
+        return temp;
     }
     
     @Override
