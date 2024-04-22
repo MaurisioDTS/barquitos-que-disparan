@@ -8,8 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="game.jar" size="39611182" download="eager" />
-    <jar href="lib\apacheCommons.jar" size="365463" download="eager" />
+    <jar href="game.jar" size="39614026" download="eager" />
     <jar href="lib\api.jar" size="8341" download="eager" />
     <jar href="lib\postgresql.jar" size="1046274" download="eager" />
   </resources>
