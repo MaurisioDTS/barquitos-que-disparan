@@ -45,7 +45,6 @@ public class BoardController implements Initializable{
     @FXML
     public void button(ActionEvent e){
         Node n = (Node) e.getTarget();
-        System.out.println(((Node) e.getTarget()).getParent().);
         brd1.checkCheck(0,1);}
     
      /**

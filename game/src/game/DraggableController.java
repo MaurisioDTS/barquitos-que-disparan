@@ -10,11 +10,10 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-
-import javax.swing.text.html.ImageView;
 
 public class DraggableController{
 
@@ -23,7 +22,7 @@ public class DraggableController{
     @FXML
     private HBox currentDraggedBox;
     @FXML
-    private boolean rotateKeyPressed = false;
+    private boolean rotateKey = false;
     @FXML
     private GridPane boardP1;
     @FXML
@@ -68,6 +67,10 @@ public class DraggableController{
             draggedBox.setTranslateX(0);
             draggedBox.setTranslateY(0);
             draggedBox = null;
+            
+        }
+        if (currentDraggedBox != null){
+            currentDraggedBox = null;
         }
     }
     Board brd=new Board("elpepe");
@@ -97,36 +100,26 @@ public class DraggableController{
     
     @FXML
     private void onDragDetected(MouseEvent event) {
-        System.out.println("Drag detected");
         if (event.getSource() instanceof HBox) {
-            System.out.println("HBox detected");
             currentDraggedBox = (HBox) event.getSource();
             currentDraggedBox.startFullDrag();
         }
     }
 
     @FXML
-    private void onDragOver(DragEvent event) {
-        System.out.println("Drag over");
-        if (currentDraggedBox != null && rotateKeyPressed) {
-            System.out.println("HBox rotated");
-            currentDraggedBox.setRotate(currentDraggedBox.getRotate()+90);
-        }
-    }
-
-    @FXML
     private void rotateKeyPressed(KeyEvent event) {
-        System.out.println("Rotate key pressed");
         if (event.getCode() == KeyCode.R) {
-            rotateKeyPressed = true;
+            rotateKey = true;
+            if (currentDraggedBox != null) {
+                currentDraggedBox.setRotate(currentDraggedBox.getRotate() + 90);
+            }
         }
     }
 
     @FXML
     private void rotateKeyReleased(KeyEvent event) {
-        System.out.println("Rotate key released");
         if (event.getCode() == KeyCode.R) {
-            rotateKeyPressed = false;
+            rotateKey = false;
         }
     }
 }
