@@ -17,10 +17,15 @@ import utilidades.bbdd.Bd;
 import utilidades.bbdd.Gestor_conexion_POSTGRE;
 
 import static game.Utils.digest256;
+import javafx.scene.Node;
 
 public class LoginController implements Initializable{
 //TODO
     private static Stage stage=Game.getPrimaryStage();
+    
+    static private boolean isPlayer2=false;
+
+    static void isPlayer2(){isPlayer2=true;}
     private Scene title;
     private Scene profile;
 
@@ -69,7 +74,7 @@ public class LoginController implements Initializable{
         gestor.cerrar_Conexion(true);
     }
     @FXML
-    private void login() throws Exception{ lblWrongCredentials.setVisible(false);
+    private void login(ActionEvent a) throws Exception{ lblWrongCredentials.setVisible(false);
         Gestor_conexion_POSTGRE gestor = new Gestor_conexion_POSTGRE("mdddb", true);
         String nick=tbLogUser.getText(), pass=digest256(tbLogPass.getText());
 
@@ -79,12 +84,18 @@ public class LoginController implements Initializable{
         System.out.println(result[0][0]);
 
         try{ // If the credentials match, goes to profile. Otherwise, shows an error message
-            if (result[0][0].equals(pass)){
+            if (result[0][0].equals(pass)&&!isPlayer2){
                 ProfileController.setUser(nick);
                 clearTBs();
                 Parent root = FXMLLoader.load(getClass().getResource("Scenes/Profile.fxml"));
                 stage.getScene().setRoot(root);
                 stage.show();
+            }
+            if (result[0][0].equals(pass)&&isPlayer2){ 
+                ProfileController.setGuest(nick);
+                clearTBs();
+                ((Node)(a.getSource())).getScene().getWindow().hide();
+
             }
             else {lblWrongCredentials.setVisible(true);}
         }
@@ -97,5 +108,6 @@ public class LoginController implements Initializable{
             Bd.consultaSelect(test,"select * from usuario;");
             test.cerrar_Conexion(true);
         } catch(Exception e){noDb();}
+        btnReturn.setVisible(!isPlayer2);
     }
 }

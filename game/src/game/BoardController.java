@@ -37,15 +37,24 @@ public class BoardController implements Initializable{
     Board brd2=new Board(player2);
     
     Ship one=new Ship("portaaviones",5,0,0,false);
-    Ship two=new Ship("buque telepata de guerra",4,1,1,false);
-    Ship thr=new Ship("submarino no sumergible",3,2,2,false);
-    Ship fou=new Ship("el yate de hijacked",2,3,3,false);
-    Ship fiv=new Ship("lancha de poliester",1,4,4,false);
-
-    @FXML
-    public void button(ActionEvent e){
-        Node n = (Node) e.getTarget();
-        brd1.checkCheck(0,1);}
+    Ship two=new Ship("buque telepata de guerra",4,0,1,false);
+    Ship thr=new Ship("submarino no sumergible",3,0,2,false);
+    Ship fou=new Ship("el yate de hijacked",2,0,3,false);
+    Ship fiv=new Ship("lancha de poliester",1,0,4,false);
+    
+    Ship uno=new Ship("portaaviones",5,1,0,false);
+    Ship dos=new Ship("buque telepata de guerra",4,1,1,false);
+    Ship tre=new Ship("submarino no sumergible",3,1,2,false);
+    Ship cua=new Ship("el yate de hijacked",2,1,3,false);
+    Ship cin=new Ship("lancha de poliester",1,1,4,false);
+    
+    private void checkTurn(int x,int y){
+        if(isPlayer1){brd1.checkCheck(x,y);}
+        else{brd2.checkCheck(x,y);}
+        isPlayer1 = !isPlayer1;
+    }
+//    public void {
+//    }
     
      /**
         A
