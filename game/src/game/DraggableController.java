@@ -26,6 +26,8 @@ public class DraggableController{
     @FXML
     private GridPane boardP1;
     @FXML
+    private GridPane boardP2;
+    @FXML
     private HBox shipLength1;
     @FXML
     private HBox shipLength2;
@@ -39,6 +41,26 @@ public class DraggableController{
     private DraggableMaker draggableMaker;
     @FXML
     private HBox draggedBox;
+    
+    @FXML
+    private void onDragDropped(DragEvent event){
+        if (event.getGestureSource() instanceof HBox && event.getGestureTarget() instanceof GridPane){
+            HBox dragged = (HBox) event.getGestureSource();
+            GridPane targetGrid = (GridPane) event.getGestureTarget();
+            
+            int column = (int) (event.getX() / (targetGrid.getWidth()/10));
+            int row = (int) (event.getY() / (targetGrid.getWidth()/10));
+            
+            if (column == null){
+                column = (int) (event.getX() / targetGrid.getWidth() * targetGrid.getColumnCount())
+            }
+            
+            targetGrid.add(draggedBox, column, row);
+            
+            event.setDropCompleted(true);
+            event.consume();
+        }
+    }
 
     @FXML
     private void onMousePressed(MouseEvent event){
@@ -57,18 +79,6 @@ public class DraggableController{
 
     @FXML
     private void onMouseReleased(MouseEvent event){
-        if (draggedBox != null){
-            double x = event.getX();
-            double y = event.getY();
-            int column = (int) (x / (boardP1.getWidth()/10));
-            int row = (int) (y / (boardP1.getWidth()/10));
-            GridPane.setConstraints(draggedBox, column, row);
-            boardP1.getChildren().add(draggedBox);
-            draggedBox.setTranslateX(0);
-            draggedBox.setTranslateY(0);
-            draggedBox = null;
-            
-        }
         if (currentDraggedBox != null){
             currentDraggedBox = null;
         }
@@ -96,6 +106,16 @@ public class DraggableController{
         draggableMaker.makeDraggable(shipLength3);
         draggableMaker.makeDraggable(shipLength4);
         draggableMaker.makeDraggable(shipLength5);
+        
+        boardP1.setOnDragOver(this::onDragOver);
+        boardP2.setOnDragOver(this::onDragOver);
+    }
+    
+    private void onDragOver(DragEvent event){
+        if(event.getGestureSource() instanceof HBox && event.getGestureTarget() instanceof GridPane){
+            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+            event.consume();
+        }
     }
     
     @FXML
