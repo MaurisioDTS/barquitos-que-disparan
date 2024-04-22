@@ -11,8 +11,7 @@ public class Board {
 
     public void insertShip(Ship s){// para insertar barcos al tablero
         if (board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]==null){
-            board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]=s;
-        }
+            board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]=s;}
     }
     
     public String checkCheck(int x, int y){

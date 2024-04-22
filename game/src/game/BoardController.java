@@ -43,7 +43,7 @@ public class BoardController implements Initializable{
     Ship fou=new Ship("el yate de hijacked",2,0,3,false);
     Ship fiv=new Ship("lancha de poliester",1,0,4,false);
     
-    Ship uno=new Ship("portaaviones",5,0,0,false);
+    Ship uno=new Ship("portaaviones",5,1,0,false);
     Ship dos=new Ship("buque telepata de guerra",4,1,1,false);
     Ship tre=new Ship("submarino no sumergible",3,1,2,false);
     Ship cua=new Ship("el yate de hijacked",2,1,3,false);

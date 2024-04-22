@@ -29,7 +29,7 @@
                   <Button fx:id="btnRegister" layoutX="384.0" layoutY="245.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="149.0" text="Register!" />
                   <Label fx:id="lblWrongCredentials" layoutX="69.0" layoutY="313.0" text="Incorrect Credentials" textFill="RED" visible="false" />
                   <Label layoutX="384.0" layoutY="313.0" text="Name's already in use" textFill="RED" visible="false" />
-                  <Button layoutX="265.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnReturn" text="Return" />
+                  <Button fx:id="btnReturn" layoutX="265.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnReturn" text="Return" />
                   <Label alignment="CENTER" layoutX="94.0" layoutY="46.0" prefHeight="40.0" prefWidth="99.0" text="Login">
                      <font>
                         <Font name="System Bold Italic" size="32.0" />
