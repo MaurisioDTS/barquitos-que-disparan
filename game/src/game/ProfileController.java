@@ -36,7 +36,9 @@ public class ProfileController implements Initializable{
     Label ratio=new Label();
 
     public static void setUser(String s){player1=s;}
+    public static String getUser(){return player1;}
     public static void setGuest(String s){player2=s;}
+    public static String getGuest(){return player2;}
     
     public static void cqs(){ // cqs = "calienta que sales", pide los datos de la bd para ponerlos en el perfil
        

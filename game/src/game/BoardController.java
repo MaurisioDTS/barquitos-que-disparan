@@ -19,8 +19,8 @@ public class BoardController implements Initializable{
 
     private static Stage stage=Game.getPrimaryStage();
 
-    static String player1="elpepe";
-    static String player2="etesech";
+    static String player1=BoardShips.getPlayer1();
+    static String player2=BoardShips.getPlayer2();;
     public void setPlayer1(String s) {BoardController.player1=s;}
     public void setPlayer2(String s) {BoardController.player2=s;}
     
@@ -32,9 +32,7 @@ public class BoardController implements Initializable{
     Button btn;
 
     private boolean isPlayer1=true;
-
-
-
+    
     Board brd1 =new Board(player1);
     Board brd2=new Board(player2);
     
