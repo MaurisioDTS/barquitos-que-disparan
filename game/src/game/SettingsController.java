@@ -70,6 +70,7 @@ public class SettingsController implements Initializable{
     @FXML
     private void test(ActionEvent a){count++;
         if(count==5){count=0;
+            test.stop();
             eE.setVolume(Game.getVol());
             eE.setOnEndOfMedia(()->{eE.stop();});
             eE.play();
