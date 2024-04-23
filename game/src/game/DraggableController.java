@@ -5,8 +5,12 @@ import game.Objects.Board;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -19,11 +23,7 @@ import javafx.stage.Stage;
 public class DraggableController{
 
     private static Stage stage=Game.getPrimaryStage();
-
-    @FXML
-    private HBox currentDraggedBox;
-    @FXML
-    private boolean rotateKey = false;
+    
     @FXML
     private GridPane boardP1;
     @FXML
@@ -40,57 +40,9 @@ public class DraggableController{
     private HBox shipLength5;
     @FXML
     private DraggableMaker draggableMaker;
-    @FXML
-    private HBox draggedBox;
     
-    
-    
-   @FXML
-    private void onDragDropped(DragEvent event) {
-        if (event.getGestureSource() instanceof HBox && event.getGestureTarget() instanceof GridPane) {
-            HBox dragged = (HBox) event.getGestureSource();
-            GridPane targetGrid = (GridPane) event.getGestureTarget();
-        
-            int column = (int) (event.getX() / (targetGrid.getWidth()/10));
-            int row = (int) (event.getY() / (targetGrid.getWidth()/10));
-        
-            addShipToGrid(dragged, targetGrid, column, row);
-        
-            event.setDropCompleted(true);
-            event.consume();
-    }
-}
+    private double rotationAngle = 0.0;
 
-    private void addShipToGrid(HBox ship, GridPane grid, int column, int row) {
-        grid.add(ship, column, row);
-        ship.setTranslateX(0);
-        ship.setTranslateY(0);
-    }
-
-
-
-
-    @FXML
-    private void onMousePressed(MouseEvent event){
-        if (event.getSource() instanceof HBox){
-            draggedBox = (HBox) event.getSource();
-        }
-    }
-
-    @FXML
-    private void onMouseDragged(MouseEvent event){
-        if (draggedBox != null){
-            draggedBox.setTranslateX(event.getSceneX());
-            draggedBox.setTranslateY(event.getSceneY());
-        }
-    }
-
-    @FXML
-    private void onMouseReleased(MouseEvent event){
-        if (currentDraggedBox != null){
-            currentDraggedBox = null;
-        }
-    }
     Board brd=new Board("elpepe");
     
     // changes in scene
@@ -105,7 +57,9 @@ public class DraggableController{
         stage.getScene().setRoot(root);
         stage.show();
     }
-        
+    
+    // Ships and Grids
+    
     @FXML
     public void initialize() {
         draggableMaker = new DraggableMaker();
@@ -116,38 +70,167 @@ public class DraggableController{
         draggableMaker.makeDraggable(shipLength5);
         
         boardP1.setOnDragOver(this::onDragOver);
+        boardP1.setOnDragDropped(this::onDragDropped);
         boardP2.setOnDragOver(this::onDragOver);
-    }
-    
-    private void onDragOver(DragEvent event){
-        if(event.getGestureSource() instanceof HBox && event.getGestureTarget() instanceof GridPane){
-            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-            event.consume();
-        }
+        boardP2.setOnDragDropped(this::onDragDropped);
     }
     
     @FXML
     private void onDragDetected(MouseEvent event) {
         if (event.getSource() instanceof HBox) {
-            currentDraggedBox = (HBox) event.getSource();
-            currentDraggedBox.startFullDrag();
+            HBox dragged = (HBox) event.getSource();
+            rotationAngle = dragged.getRotate();
+            Dragboard dragboard = dragged.startDragAndDrop(TransferMode.MOVE);
+            ClipboardContent content = new ClipboardContent();
+            content.putString("HBox");
+            dragboard.setContent(content);
+            event.consume();
         }
     }
+    
+    @FXML
+    private void onMousePressed(MouseEvent event) {
+        if (event.getSource() instanceof HBox) {
+            HBox dragged = (HBox) event.getSource();
+            dragged.startFullDrag();
+            event.consume();
+        }
+    }
+    
+    @FXML
+    private void onMouseDragged(MouseEvent event) {
+        if (event.getSource() instanceof HBox) {
+            HBox dragged = (HBox) event.getSource();
+            dragged.setTranslateX(event.getSceneX());
+            dragged.setTranslateY(event.getSceneY());
+            event.consume();
+        }
+    }
+    
+    @FXML
+    private void onMouseReleased(MouseEvent event){
+        if (event.getSource() instanceof HBox && event.getTarget() instanceof GridPane) {
+            HBox dragged = (HBox) event.getSource();
+            GridPane targetGrid = (GridPane) event.getTarget();
 
+            double cellWidth = targetGrid.getWidth() / targetGrid.getColumnConstraints().size();
+            double cellHeight = targetGrid.getHeight() / targetGrid.getRowConstraints().size();
+
+            int column = (int) (event.getX() / cellWidth);
+            int row = (int) (event.getY() / cellHeight);
+
+            targetGrid.add(dragged, column, row);
+
+            event.consume();
+        }
+    }
+    
+    private void onDragOver(DragEvent event) {
+        if (event.getGestureSource() != event.getSource() && event.getDragboard().hasString()) {
+            event.acceptTransferModes(TransferMode.MOVE);
+        }
+        event.consume();
+    }
+    
+    private void onDragDropped(DragEvent event) {
+        if (event.getGestureSource() != event.getTarget() && event.getTarget() instanceof GridPane) {
+            int count=0;
+            GridPane targetGrid = (GridPane) event.getTarget();
+
+            HBox draggedHBox = (HBox) event.getGestureSource();
+
+            HBox newHBox = new HBox();
+
+            for (Node node : draggedHBox.getChildren()) {
+                count++;
+            }
+
+            double cellWidth = targetGrid.getWidth() / targetGrid.getColumnConstraints().size();
+            double cellHeight = targetGrid.getHeight() / targetGrid.getRowConstraints().size();
+
+            int column = (int) (event.getX() / cellWidth);
+            int row = (int) (event.getY() / cellHeight);
+            System.out.println("Count: " + count);
+            System.out.println(targetGrid.getHeight());
+            if(rotationAngle == 0){
+                System.out.println("1");
+                if(column+count<targetGrid.getHeight()){
+                    System.out.println("2");
+                    for (Node node : draggedHBox.getChildren()) {
+                        System.out.println("3");
+                        if (node instanceof ImageView) {
+                            System.out.println("4");
+                            ImageView imageView = (ImageView) node;
+                            ImageView newImageView = new ImageView(imageView.getImage());
+                            newImageView.setFitWidth(imageView.getFitWidth());
+                            newImageView.setFitHeight(imageView.getFitHeight());
+                            targetGrid.add(newImageView, column, row);
+                            column++;
+                        }
+                    }
+                    ((Pane) draggedHBox.getParent()).getChildren().remove(draggedHBox);
+                }
+            }
+            else{
+                if(row+count<targetGrid.getWidth()){
+                    for (Node node : draggedHBox.getChildren()) {
+                        if (node instanceof ImageView) {
+                            ImageView imageView = (ImageView) node;
+                            ImageView newImageView = new ImageView(imageView.getImage());
+                            newImageView.setFitWidth(imageView.getFitWidth());
+                            newImageView.setFitHeight(imageView.getFitHeight());
+                            newImageView.setRotate(90);
+                            targetGrid.add(newImageView, column, row);
+                            row++;
+                        }
+                    }
+                    ((Pane) draggedHBox.getParent()).getChildren().remove(draggedHBox);
+                }
+            }
+            System.out.println("5");
+            
+            event.setDropCompleted(true);
+            event.consume();
+        }
+    }
+    
     @FXML
     private void rotateKeyPressed(KeyEvent event) {
         if (event.getCode() == KeyCode.R) {
-            rotateKey = true;
-            if (currentDraggedBox != null) {
-                currentDraggedBox.setRotate(currentDraggedBox.getRotate() + 90);
+            if(shipLength1.getRotate() == 0){
+                shipLength1.setRotate(90);
             }
-        }
-    }
-
-    @FXML
-    private void rotateKeyReleased(KeyEvent event) {
-        if (event.getCode() == KeyCode.R) {
-            rotateKey = false;
+            else{
+                shipLength1.setRotate(0);
+            }
+            
+            if(shipLength2.getRotate() == 0){
+                shipLength2.setRotate(90);
+            }
+            else{
+                shipLength2.setRotate(0);
+            }
+            
+            if(shipLength3.getRotate() == 0){
+                shipLength3.setRotate(90);
+            }
+            else{
+                shipLength3.setRotate(0);
+            }
+            
+            if(shipLength4.getRotate() == 0){
+                shipLength4.setRotate(90);
+            }
+            else{
+                shipLength4.setRotate(0);
+            }
+            
+            if(shipLength5.getRotate() == 0){
+                shipLength5.setRotate(90);
+            }
+            else{
+                shipLength5.setRotate(0);
+            }
         }
     }
 }
