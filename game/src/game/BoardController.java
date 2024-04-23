@@ -12,29 +12,49 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class BoardController implements Initializable{
 
     private static Stage stage=Game.getPrimaryStage();
 
-    static String player1=BoardShips.getPlayer1();
-    static String player2=BoardShips.getPlayer2();;
+    static String player1="1";
+    static String player2="2";
     public void setPlayer1(String s) {BoardController.player1=s;}
     public void setPlayer2(String s) {BoardController.player2=s;}
     
     @FXML
+    private GridPane boardP1,boardP2;
+
+    @FXML
+    private Button Ga1,Ha2,Ga3,Ga10,Ha1,Ga2,Ha4,Ha10,Ga5,Ha3,Ga4,Ha6,Ga7,Ha5,Ga6,Ha8,Ga9,Ha9,Ha7,Ga8;
+
+
+    @FXML
     GridPane board1=new GridPane();
     @FXML
     GridPane board2=new GridPane();
-    @FXML
-    Button btn;
 
-    private boolean isPlayer1=true;
+    BackgroundImage waterImage = new BackgroundImage( new Image( getClass().getResource("img/water.png").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+    Background water = new Background(waterImage);
+    
+    BackgroundImage fireImage = new BackgroundImage( new Image( getClass().getResource("img/fire.png").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+    Background fire = new Background(fireImage);
+
+    private boolean isPlayer1=false;
     
     Board brd1 =new Board(player1);
     Board brd2=new Board(player2);
+    
+    Rectangle recPlayer1,recPlayer2;
     
     Ship one=new Ship("portaaviones",5,0,0,false);
     Ship two=new Ship("buque telepata de guerra",4,0,1,false);
@@ -42,19 +62,26 @@ public class BoardController implements Initializable{
     Ship fou=new Ship("el yate de hijacked",2,0,3,false);
     Ship fiv=new Ship("lancha de poliester",1,0,4,false);
     
-    Ship uno=new Ship("portaaviones",5,0,0,false);
+    Ship uno=new Ship("portaaviones",5,1,0,false);
     Ship dos=new Ship("buque telepata de guerra",4,1,1,false);
     Ship tre=new Ship("submarino no sumergible",3,1,2,false);
     Ship cua=new Ship("el yate de hijacked",2,1,3,false);
     Ship cin=new Ship("lancha de poliester",1,1,4,false);
     
-    private void checkTurn(int x,int y){
-        if(isPlayer1){brd1.checkCheck(x,y);}
-        else{brd2.checkCheck(x,y);}
-        isPlayer1 = !isPlayer1;
+    private void changeTurns(){
+        //if(isPlayer1){recPlayer2.setVisible(true);recPlayer1.setVisible(false);}
+        //else{recPlayer1.setVisible(true);recPlayer2.setVisible(false);}
+ 
     }
-//    public void {
-//    }
+    
+    private boolean checkTurn(int x, int y){ // gestiona los turnos
+        boolean temp=false;
+        if(isPlayer1==true){temp=brd1.checkCheck(x,y);}
+        else{temp=brd2.checkCheck(x,y);}
+        changeTurns();
+        isPlayer1 = !isPlayer1;
+        return temp;
+    }
     
      /**
         A
@@ -62,43 +89,83 @@ public class BoardController implements Initializable{
     @FXML
     public void a1(ActionEvent Event){
         int x=0,y=0;
-        checkTurn(x,y);}
+        ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     @FXML
     public void a2(ActionEvent Event){
         int x=0,y=1;
-        checkTurn(x,y);}
+        ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     @FXML
     public void a3(ActionEvent Event){
         int x=0,y=2;
-        checkTurn(x,y);}
+        ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     @FXML
     public void a4(ActionEvent Event){
         int x=0,y=3;
-        checkTurn(x,y);}
+        ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     @FXML
     public void a5(ActionEvent Event){
         int x=0,y=4;
-        checkTurn(x,y);}
+        ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     @FXML
     public void a6(ActionEvent Event){
         int x=0,y=5;
-        checkTurn(x,y);}
+        ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     @FXML
     public void a7(ActionEvent Event){
         int x=0,y=6;
-        checkTurn(x,y);}
+        ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     @FXML
     public void a8(ActionEvent Event){
         int x=0,y=7;
-        checkTurn(x,y);}
+       ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     @FXML
     public void a9(ActionEvent Event){
         int x=0,y=8;
-        checkTurn(x,y);}
+        ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     @FXML
     public void a10(ActionEvent Event){
         int x=0,y=9;
-        checkTurn(x,y);}
+        ((Button) Event.getSource()).setDisable(true);
+        if (checkTurn(x,y)){((Button) Event.getSource()).setBackground(fire);}
+        else if(!checkTurn(x,y)){((Button) Event.getSource()).setBackground(water);}
+        ((Button) Event.getSource()).setOpacity(1);
+    }
     /**
         B
     **/

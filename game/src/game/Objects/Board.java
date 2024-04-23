@@ -14,23 +14,16 @@ public class Board {
             board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]=s;}
     }
     
-    public String checkCheck(int x, int y){
-        String temp;
-        temp="sinCambio";
+    public boolean checkCheck(int x, int y){boolean impakt=false;
+        if (board[x][y]==null){impakt=false;}
+        if (board[x][y]!=null){ impakt=true; }
 
-        if (board[x][y]==null){temp="agua";}
-        if (board[x][y]!=null){ temp="impakto"; }
-
-        System.out.println(user+" "+temp);
-        return temp;
+        System.out.println(user+" on x="+x+" y="+y+impakt);
+        return impakt;
     }
     
     @Override
-    public String toString(){
-        String temp="----- "+user+" -----"+" ";
-
-        return temp;
-    }
+    public String toString(){return "----- "+user+" -----"+" ";}
 }
 
 //       if(isPlayer1){brd1.checkCheck(0,0);}}
