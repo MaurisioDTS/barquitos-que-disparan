@@ -1,12 +1,9 @@
-package game;
-
-import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.input.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
-public class DraggableMaker {
+class putamierda {
 
     private double mouseAnchorX;
     private double mouseAnchorY;
