@@ -151,10 +151,10 @@ public class DraggableController{
             int column = (int) (event.getX() / cellWidth);
             int row = (int) (event.getY() / cellHeight);
             System.out.println("Count: " + count);
-            System.out.println(targetGrid.getHeight());
+            System.out.println(targetGrid.getColumnConstraints().size());
             if(rotationAngle == 0){
                 System.out.println("1");
-                if(column+count<targetGrid.getHeight()){
+                if(column+count<=targetGrid.getRowConstraints().size()){
                     System.out.println("2");
                     for (Node node : draggedHBox.getChildren()) {
                         System.out.println("3");
@@ -172,7 +172,7 @@ public class DraggableController{
                 }
             }
             else{
-                if(row+count<targetGrid.getWidth()){
+                if(row+count<=targetGrid.getRowConstraints().size()){
                     for (Node node : draggedHBox.getChildren()) {
                         if (node instanceof ImageView) {
                             ImageView imageView = (ImageView) node;
