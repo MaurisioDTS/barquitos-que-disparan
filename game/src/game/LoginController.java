@@ -92,7 +92,7 @@ public class LoginController implements Initializable{
                 stage.show();
             }
             if (result[0][0].equals(pass)&&isPlayer2){ 
-                ProfileController.setGuest(nick);
+                //ProfileController.setGuest(nick);
                 clearTBs();
                 ((Node)(a.getSource())).getScene().getWindow().hide();
 
