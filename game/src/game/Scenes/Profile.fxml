@@ -63,7 +63,7 @@
                         <Font size="24.0" />
                      </font>
                      </Button>
-                  <Button alignment="CENTER" layoutX="546.0" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="158.0" text="Historial">
+                  <Button alignment="CENTER" layoutX="546.0" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#history" prefHeight="80.0" prefWidth="158.0" text="Historial">
                      <font>
                         <Font size="24.0" />
                      </font>

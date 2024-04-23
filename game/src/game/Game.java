@@ -52,7 +52,7 @@ public class Game extends Application{
         
         defaultAudio.setVolume(globalVolume);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
         defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);}); // expresion lambda que loopea el audio hasta el infinito
-        defaultAudio.play();
+        //defaultAudio.play();
     }
     //public static void changeScene(Scene){};
     public static void main(String[] args) {launch(args);}

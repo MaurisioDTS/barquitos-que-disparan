@@ -12,8 +12,8 @@ public class hash {
     public static void main(String[] args){
     String password="1234";
     
-    String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(password);  
+    //String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(password);  
     
-    System.out.println(sha256hex);
+    //System.out.println(sha256hex);
     }
 }
