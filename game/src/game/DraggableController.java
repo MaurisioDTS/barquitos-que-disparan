@@ -135,11 +135,11 @@ public class DraggableController{
     private void onDragDropped(DragEvent event) {
         if (event.getGestureSource() != event.getTarget() && event.getTarget() instanceof GridPane) {
             int count=0;
+            int nullCount = 0;
+           
             GridPane targetGrid = (GridPane) event.getTarget();
 
             HBox draggedHBox = (HBox) event.getGestureSource();
-
-            HBox newHBox = new HBox();
 
             for (Node node : draggedHBox.getChildren()) {
                 count++;
@@ -147,19 +147,21 @@ public class DraggableController{
 
             double cellWidth = targetGrid.getWidth() / targetGrid.getColumnConstraints().size();
             double cellHeight = targetGrid.getHeight() / targetGrid.getRowConstraints().size();
-
+            
             int column = (int) (event.getX() / cellWidth);
             int row = (int) (event.getY() / cellHeight);
-            System.out.println("Count: " + count);
-            System.out.println(targetGrid.getColumnConstraints().size());
+            
+//            for(int i=column; i<targetGrid.getColumnConstraints().size();i++){
+//                if(targetGrid.getLayoutX() == i && targetGrid.getLayoutY() == row){
+//                    
+//                }
+//            }
+            
+            
             if(rotationAngle == 0){
-                System.out.println("1");
                 if(column+count<=targetGrid.getRowConstraints().size()){
-                    System.out.println("2");
                     for (Node node : draggedHBox.getChildren()) {
-                        System.out.println("3");
                         if (node instanceof ImageView) {
-                            System.out.println("4");
                             ImageView imageView = (ImageView) node;
                             ImageView newImageView = new ImageView(imageView.getImage());
                             newImageView.setFitWidth(imageView.getFitWidth());
@@ -187,7 +189,6 @@ public class DraggableController{
                     ((Pane) draggedHBox.getParent()).getChildren().remove(draggedHBox);
                 }
             }
-            System.out.println("5");
             
             event.setDropCompleted(true);
             event.consume();
