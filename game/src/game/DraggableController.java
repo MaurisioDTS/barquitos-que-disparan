@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 
 public class DraggableController{
 
-    private static Stage stage=Game.getPrimaryStage();
+    private static Stage stage = Game.getPrimaryStage();
     
     @FXML
     private GridPane boardP1;
@@ -40,6 +40,10 @@ public class DraggableController{
     private HBox shipLength5;
     @FXML
     private DraggableMaker draggableMaker;
+    
+    private boolean [][] boardCheckP1 = new boolean[10][10];
+    
+    private boolean [][] boardCheckP2 = new boolean[10][10];
     
     private double rotationAngle = 0.0;
 
@@ -134,15 +138,15 @@ public class DraggableController{
     
     private void onDragDropped(DragEvent event) {
         if (event.getGestureSource() != event.getTarget() && event.getTarget() instanceof GridPane) {
-            int count=0;
-            int nullCount = 0;
-           
+            int shipLengthCount=0;
+            boolean empty = true;
+            
             GridPane targetGrid = (GridPane) event.getTarget();
 
             HBox draggedHBox = (HBox) event.getGestureSource();
 
             for (Node node : draggedHBox.getChildren()) {
-                count++;
+                shipLengthCount++;
             }
 
             double cellWidth = targetGrid.getWidth() / targetGrid.getColumnConstraints().size();
@@ -151,6 +155,7 @@ public class DraggableController{
             int column = (int) (event.getX() / cellWidth);
             int row = (int) (event.getY() / cellHeight);
             
+            for(int i=column;;i++)
 //            for(int i=column; i<targetGrid.getColumnConstraints().size();i++){
 //                if(targetGrid.getLayoutX() == i && targetGrid.getLayoutY() == row){
 //                    
@@ -159,7 +164,7 @@ public class DraggableController{
             
             
             if(rotationAngle == 0){
-                if(column+count<=targetGrid.getRowConstraints().size()){
+                if(column+shipLengthCount<=targetGrid.getRowConstraints().size()){
                     for (Node node : draggedHBox.getChildren()) {
                         if (node instanceof ImageView) {
                             ImageView imageView = (ImageView) node;
@@ -174,7 +179,7 @@ public class DraggableController{
                 }
             }
             else{
-                if(row+count<=targetGrid.getRowConstraints().size()){
+                if(row+shipLengthCount<=targetGrid.getRowConstraints().size()){
                     for (Node node : draggedHBox.getChildren()) {
                         if (node instanceof ImageView) {
                             ImageView imageView = (ImageView) node;
@@ -190,8 +195,8 @@ public class DraggableController{
                 }
             }
             
-            event.setDropCompleted(true);
-            event.consume();
+           // event.setDropCompleted(true);
+           // event.consume();
         }
     }
     
