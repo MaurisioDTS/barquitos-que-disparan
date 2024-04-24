@@ -35,6 +35,13 @@ public class ViewController implements Initializable{
         stage.show();
     }
     
+    @FXML
+    private void ffinal(ActionEvent a) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/Final.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb){
         // TODO metodo que se burle del jugar más malo, aunque puede ser no haga falta que sea en esta escena

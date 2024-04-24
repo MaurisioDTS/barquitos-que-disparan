@@ -5,13 +5,18 @@
  */
 package game;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -19,6 +24,8 @@ import javafx.scene.control.TextField;
  * @author Usuario
  */
 public class FinalController implements Initializable {
+    
+    private static Stage stage=Game.getPrimaryStage();
 
     @FXML
     private Label lblWinner;
@@ -38,6 +45,13 @@ public class FinalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+    
+    @FXML
+    public void btnFinish(ActionEvent a) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/View.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
     
 }
