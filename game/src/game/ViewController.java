@@ -37,7 +37,6 @@ public class ViewController implements Initializable{
     
     @FXML
     private void ffinal(ActionEvent a) throws Exception {
-        System.out.println("Botón final clickeado");
         Parent root = FXMLLoader.load(getClass().getResource("Scenes/Final.fxml"));
         stage.getScene().setRoot(root);
         stage.show();
