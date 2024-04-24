@@ -17,12 +17,12 @@
       <children>
          <Pane prefHeight="99.0" prefWidth="1280.0">
             <children>
-               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="54.0" prefHeight="53.0" prefWidth="523.0" text="JUGADOR 1" textAlignment="CENTER">
+               <Label fx:id="player1" alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="54.0" prefHeight="53.0" prefWidth="523.0" text="JUGADOR 1" textAlignment="CENTER">
                   <font>
                      <Font size="36.0" />
                   </font>
                </Label>
-               <Label alignment="CENTER" layoutX="698.0" layoutY="54.0" prefHeight="53.0" prefWidth="523.0" text="JUGADOR 2" textAlignment="CENTER">
+               <Label fx:id="player2" alignment="CENTER" layoutX="698.0" layoutY="54.0" prefHeight="53.0" prefWidth="523.0" text="JUGADOR 2" textAlignment="CENTER">
                   <font>
                      <Font size="36.0" />
                   </font>

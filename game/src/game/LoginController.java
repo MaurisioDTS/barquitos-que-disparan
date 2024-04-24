@@ -81,7 +81,7 @@ public class LoginController implements Initializable{
         String consulta="SELECT passinsha256 FROM usuario where nick='"+nick+"';";
         String[][] result = Bd.consultaSelect(gestor,consulta);
 
-        System.out.println(result[0][0]);
+         System.out.println(result[0][0]);
 
         try{ // If the credentials match, goes to profile. Otherwise, shows an error message
             if (result[0][0].equals(pass)&&!isPlayer2){

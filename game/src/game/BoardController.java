@@ -1,4 +1,3 @@
-
 package game;
 
 import game.Objects.Board;
@@ -7,10 +6,8 @@ import java.util.ResourceBundle;
 
 import game.Objects.Ship;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
@@ -28,8 +25,8 @@ public class BoardController implements Initializable{
 
     static String player1="1";
     static String player2="2";
-    public void setPlayer1(String s) {BoardController.player1=s;}
-    public void setPlayer2(String s) {BoardController.player2=s;}
+    public void setPlayer1(String s){player1=s;}
+    public void setPlayer2(String s){player2=s;}
     
     @FXML
     private GridPane boardP1,boardP2;
@@ -44,9 +41,10 @@ public class BoardController implements Initializable{
     BackgroundImage fireImage = new BackgroundImage( new Image( getClass().getResource("img/fire.png").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
     Background fire = new Background(fireImage);
 
-    private boolean isPlayer1=true;
+    private boolean isPlayer1,isRandom,isVsCpu;
+    public void setRandom(boolean b){isRandom=b;}
     
-    Board brd1 =new Board(player1);
+    Board brd1=new Board(player1);
     Board brd2=new Board(player2);
 
     @FXML
@@ -81,8 +79,7 @@ public class BoardController implements Initializable{
         if (temp){((Button) Event.getSource()).setBackground(fire);}
         else if(!temp){((Button) Event.getSource()).setBackground(water);changeTurns();}
         ((Button) Event.getSource()).setOpacity(1);
-    }
-    
+    } 
      /**
         A
     **/
