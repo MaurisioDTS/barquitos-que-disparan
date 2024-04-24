@@ -44,7 +44,7 @@ public class Game extends Application{
         
         pStage.setScene(scene);
         pStage.setTitle("Barquitos que disparan!!!11!11");
-        pStage.getIcons().add(new Image(Game.class.getResourceAsStream("Scenes/jerma.jpg")));
+        pStage.getIcons().add(new Image(Game.class.getResourceAsStream("img/icon.png")));
         pStage.setFullScreen(fullScreen);
         pStage.setWidth(1280);
         pStage.setHeight(720);
