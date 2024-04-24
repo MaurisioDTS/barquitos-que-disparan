@@ -57,7 +57,26 @@ public class ProfileController implements Initializable{
         stage.getScene().setRoot(root);
         stage.show();
     }
-    
+    @FXML
+    public void playVsCpu(ActionEvent a) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/BoardShips.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
+    @FXML
+    public void random(ActionEvent a) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/BoardShips.fxml"));
+        //BoardController.setRandom(true);
+        
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
+    @FXML
+    public void randomVsCpu(ActionEvent a) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/BoardShips.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
     @FXML
     public void player2Login(ActionEvent a)throws Exception{//stage.setScene(title);
         FXMLLoader fxmlLoader = new FXMLLoader();
