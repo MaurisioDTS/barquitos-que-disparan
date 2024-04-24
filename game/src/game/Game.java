@@ -17,18 +17,18 @@ public class Game extends Application{
     private static Stage pStage;
     public static Stage getPrimaryStage(){return pStage;}
     private void setPrimaryStage(Stage pStage){Game.pStage = pStage;}
-//    private static Media defaultMedia=new Media(Paths.get("").toUri().toString());
-//    private static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
+    private static Media defaultMedia=new Media(Paths.get("res/audio/explosion.wav").toUri().toString());
+    private static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
 
 // Settings
 
     private static double globalVolume=0.5;
     private static boolean fullScreen=false;
     public static void setFs(boolean b){fullScreen=b; pStage.setFullScreen(b);}
-//    public static void setVol(double d){globalVolume=d;defaultAudio.setVolume(globalVolume);}
+    public static void setVol(double d){globalVolume=d;defaultAudio.setVolume(globalVolume);}
     public static double getVol(){return globalVolume;}
     public static boolean getFs(){return fullScreen;}
-//    public static void toggleMute(){defaultAudio.setMute(!defaultAudio.isMute());/** probablemente la linea de código más inteligente que ha salido de mi mente**/}
+    public static void toggleMute(){defaultAudio.setMute(!defaultAudio.isMute());/** probablemente la linea de código más inteligente que ha salido de mi mente**/}
 
     @Override
     public void start(Stage s) throws Exception {
@@ -44,7 +44,7 @@ public class Game extends Application{
         
         pStage.setScene(scene);
         pStage.setTitle("Barquitos que disparan!!!11!11");
-        pStage.getIcons().add(new Image(Game.class.getResourceAsStream("Scenes/jerma.jpg")));
+        pStage.getIcons().add(new Image(Game.class.getResourceAsStream("img/icon.png")));
         pStage.setFullScreen(fullScreen);
         pStage.setWidth(1280);
         pStage.setHeight(720);
@@ -52,8 +52,9 @@ public class Game extends Application{
         
     // audio setup
         
-//        defaultAudio.setVolume(globalVolume);
+        defaultAudio.setVolume(globalVolume);
 //        defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);}); // expresion lambda que loopea el audio hasta el infinito
+        defaultAudio.play();
     }
     //public static void changeScene(Scene){};
     public static void main(String[] args) {launch(args);}
