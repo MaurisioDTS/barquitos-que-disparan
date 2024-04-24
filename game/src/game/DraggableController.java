@@ -157,8 +157,39 @@ public class DraggableController{
             if(event.getTarget()==boardP1){
                 if(rotationAngle == 0){
                     for(int i=column;i<boardCheckP1.length && i<column+shipLengthCount;i++){
-                        if(boardCheckP1[i][row] == true){
-                            notEmpty=true;
+                        if(i==column){
+                            if(i-1>=0){
+                                if(boardCheckP1[i-1][row] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row-1>=0){
+                                if(boardCheckP1[i][row-1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP1[i][row+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                        }
+                        else if(i==column+shipLengthCount){
+System.out.println("Fin");
+                            if(i+1<targetGrid.getColumnConstraints().size() || row-1>=0 && row+1<targetGrid.getRowConstraints().size()){
+System.out.println("Fin 1");
+                                if(boardCheckP1[i][row] == true || boardCheckP1[i+1][row] == true || boardCheckP1[i][row-1] == true || boardCheckP1[i][row+1] == true){
+System.out.println("Fin 2");
+                                    notEmpty=true;
+                                }
+                            }
+                        }
+                        else if(row-1>=0 && row+1<targetGrid.getRowConstraints().size()){
+System.out.println("Medio");
+                            if(boardCheckP1[i][row] == true || boardCheckP1[i][row-1] == true || boardCheckP1[i][row+1] == true){
+System.out.println("Medio 1");
+                                notEmpty=true;
+                            }
                         }
                     }
                 }
