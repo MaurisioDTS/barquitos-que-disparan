@@ -155,7 +155,38 @@ public class DraggableController{
             int column = (int) (event.getX() / cellWidth);
             int row = (int) (event.getY() / cellHeight);
             
-            for(int i=column;;i++)
+            if(event.getTarget()==boardP1){
+                if(rotationAngle == 0){
+                    for(int i=column;i<boardCheckP1.length && i<column+shipLengthCount;i++){
+                        if(boardCheckP1[i][row]!=false){
+                            empty=true;
+                        }
+                    }
+                }
+                else{
+                    for(int i=row;i<boardCheckP1.length && i<row+shipLengthCount;i++){
+                        if(boardCheckP1[column][i]!=false){
+                            empty=true;
+                        }
+                    }
+                }
+            }
+            else{
+                if(rotationAngle == 0){
+                    for(int i=column;i<boardCheckP2.length && i<column+shipLengthCount;i++){
+                        if(boardCheckP2[i][row]!=false){
+                            empty=true;
+                        }
+                    }
+                }
+                else{
+                    for(int i=row;i<boardCheckP2.length && i<row+shipLengthCount;i++){
+                        if(boardCheckP2[column][i]!=false){
+                            empty=true;
+                        }
+                    }
+                }
+            }
 //            for(int i=column; i<targetGrid.getColumnConstraints().size();i++){
 //                if(targetGrid.getLayoutX() == i && targetGrid.getLayoutY() == row){
 //                    
@@ -164,7 +195,7 @@ public class DraggableController{
             
             
             if(rotationAngle == 0){
-                if(column+shipLengthCount<=targetGrid.getRowConstraints().size()){
+                if(column+shipLengthCount<=targetGrid.getRowConstraints().size() && !empty){
                     for (Node node : draggedHBox.getChildren()) {
                         if (node instanceof ImageView) {
                             ImageView imageView = (ImageView) node;
@@ -179,7 +210,7 @@ public class DraggableController{
                 }
             }
             else{
-                if(row+shipLengthCount<=targetGrid.getRowConstraints().size()){
+                if(row+shipLengthCount<=targetGrid.getRowConstraints().size() && !empty){
                     for (Node node : draggedHBox.getChildren()) {
                         if (node instanceof ImageView) {
                             ImageView imageView = (ImageView) node;
@@ -195,8 +226,8 @@ public class DraggableController{
                 }
             }
             
-           // event.setDropCompleted(true);
-           // event.consume();
+            event.setDropCompleted(true);
+            event.consume();
         }
     }
     
