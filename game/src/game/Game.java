@@ -17,7 +17,7 @@ public class Game extends Application{
     private static Stage pStage;
     public static Stage getPrimaryStage(){return pStage;}
     private void setPrimaryStage(Stage pStage){Game.pStage = pStage;}
-    private static Media defaultMedia=new Media(Paths.get("src/game/Scenes/Sin_titulo.wav").toUri().toString());
+    private static Media defaultMedia=new Media(Paths.get("").toUri().toString());
     private static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
 
 // Settings
@@ -50,9 +50,10 @@ public class Game extends Application{
         pStage.setHeight(720);
         pStage.show();
         
-        defaultAudio.setVolume(globalVolume);/**pastkeysAudio.setVolume(0.5);metalAudio.setVolume(0.5);**/
+    // audio setup
+        
+        defaultAudio.setVolume(globalVolume);
         defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);}); // expresion lambda que loopea el audio hasta el infinito
-        //defaultAudio.play();
     }
     //public static void changeScene(Scene){};
     public static void main(String[] args) {launch(args);}
