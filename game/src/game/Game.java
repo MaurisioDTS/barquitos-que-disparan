@@ -50,6 +50,8 @@ public class Game extends Application{
         pStage.setHeight(720);
         pStage.show();
         
+    // audio setup
+        
         defaultAudio.setVolume(globalVolume);
         defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);}); // expresion lambda que loopea el audio hasta el infinito
     }
