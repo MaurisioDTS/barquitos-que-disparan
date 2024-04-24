@@ -157,8 +157,60 @@ public class DraggableController{
             if(event.getTarget()==boardP1){
                 if(rotationAngle == 0){
                     for(int i=column;i<boardCheckP1.length && i<column+shipLengthCount;i++){
-                        if(boardCheckP1[i][row] == true){
-                            notEmpty=true;
+                        if(i==column){
+                            if(i-1>=0){
+                                if(boardCheckP1[i-1][row] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row-1>=0){
+                                if(boardCheckP1[i][row-1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP1[i][row+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP1[i][row] == true){
+                                notEmpty=true;
+                            }
+                        }
+                        else if(i==column+shipLengthCount-1){
+                            if(i+1<targetGrid.getColumnConstraints().size()-1){
+                                if(boardCheckP1[i+1][row] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row-1>=0){
+                                if(boardCheckP1[i][row-1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP1[i][row+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP1[i][row] == true){
+                                notEmpty=true;
+                            }
+                        }
+                        else{
+                            if(row-1>=0){
+                                if(boardCheckP1[i][row-1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP1[i][row+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP1[i][row] == true){
+                                notEmpty=true;
+                            }
                         }
                     }
                 }
