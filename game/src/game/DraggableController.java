@@ -139,7 +139,7 @@ public class DraggableController{
     private void onDragDropped(DragEvent event) {
         if (event.getGestureSource() != event.getTarget() && event.getTarget() instanceof GridPane) {
             int shipLengthCount=0;
-            boolean empty = true;
+            boolean notEmpty = false;
             
             GridPane targetGrid = (GridPane) event.getTarget();
 
@@ -154,19 +154,18 @@ public class DraggableController{
             
             int column = (int) (event.getX() / cellWidth);
             int row = (int) (event.getY() / cellHeight);
-            
             if(event.getTarget()==boardP1){
                 if(rotationAngle == 0){
                     for(int i=column;i<boardCheckP1.length && i<column+shipLengthCount;i++){
-                        if(boardCheckP1[i][row]!=false){
-                            empty=true;
+                        if(boardCheckP1[i][row] == true){
+                            notEmpty=true;
                         }
                     }
                 }
                 else{
                     for(int i=row;i<boardCheckP1.length && i<row+shipLengthCount;i++){
-                        if(boardCheckP1[column][i]!=false){
-                            empty=true;
+                        if(boardCheckP1[column][i] == true){
+                            notEmpty=true;
                         }
                     }
                 }
@@ -174,28 +173,23 @@ public class DraggableController{
             else{
                 if(rotationAngle == 0){
                     for(int i=column;i<boardCheckP2.length && i<column+shipLengthCount;i++){
-                        if(boardCheckP2[i][row]!=false){
-                            empty=true;
+                        if(boardCheckP2[i][row] == true){
+                            notEmpty=true;
                         }
                     }
                 }
                 else{
                     for(int i=row;i<boardCheckP2.length && i<row+shipLengthCount;i++){
-                        if(boardCheckP2[column][i]!=false){
-                            empty=true;
+                        if(boardCheckP2[column][i] == true){
+                            notEmpty=true;
                         }
                     }
                 }
             }
-//            for(int i=column; i<targetGrid.getColumnConstraints().size();i++){
-//                if(targetGrid.getLayoutX() == i && targetGrid.getLayoutY() == row){
-//                    
-//                }
-//            }
             
             
             if(rotationAngle == 0){
-                if(column+shipLengthCount<=targetGrid.getRowConstraints().size() && !empty){
+                if(column+shipLengthCount<=targetGrid.getRowConstraints().size() && !notEmpty){
                     for (Node node : draggedHBox.getChildren()) {
                         if (node instanceof ImageView) {
                             ImageView imageView = (ImageView) node;
@@ -204,13 +198,14 @@ public class DraggableController{
                             newImageView.setFitHeight(imageView.getFitHeight());
                             targetGrid.add(newImageView, column, row);
                             column++;
+                            
                         }
                     }
                     ((Pane) draggedHBox.getParent()).getChildren().remove(draggedHBox);
                 }
             }
             else{
-                if(row+shipLengthCount<=targetGrid.getRowConstraints().size() && !empty){
+                if(row+shipLengthCount<=targetGrid.getRowConstraints().size() && !notEmpty){
                     for (Node node : draggedHBox.getChildren()) {
                         if (node instanceof ImageView) {
                             ImageView imageView = (ImageView) node;

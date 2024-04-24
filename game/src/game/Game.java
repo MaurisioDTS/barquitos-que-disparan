@@ -17,18 +17,18 @@ public class Game extends Application{
     private static Stage pStage;
     public static Stage getPrimaryStage(){return pStage;}
     private void setPrimaryStage(Stage pStage){Game.pStage = pStage;}
-    private static Media defaultMedia=new Media(Paths.get("").toUri().toString());
-    private static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
+//    private static Media defaultMedia=new Media(Paths.get("").toUri().toString());
+//    private static MediaPlayer defaultAudio=new MediaPlayer(defaultMedia);
 
 // Settings
 
     private static double globalVolume=0.5;
     private static boolean fullScreen=false;
     public static void setFs(boolean b){fullScreen=b; pStage.setFullScreen(b);}
-    public static void setVol(double d){globalVolume=d;defaultAudio.setVolume(globalVolume);}
+//    public static void setVol(double d){globalVolume=d;defaultAudio.setVolume(globalVolume);}
     public static double getVol(){return globalVolume;}
     public static boolean getFs(){return fullScreen;}
-    public static void toggleMute(){defaultAudio.setMute(!defaultAudio.isMute());/** probablemente la linea de código más inteligente que ha salido de mi mente**/}
+//    public static void toggleMute(){defaultAudio.setMute(!defaultAudio.isMute());/** probablemente la linea de código más inteligente que ha salido de mi mente**/}
 
     @Override
     public void start(Stage s) throws Exception {
@@ -52,8 +52,8 @@ public class Game extends Application{
         
     // audio setup
         
-        defaultAudio.setVolume(globalVolume);
-        defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);}); // expresion lambda que loopea el audio hasta el infinito
+//        defaultAudio.setVolume(globalVolume);
+//        defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);}); // expresion lambda que loopea el audio hasta el infinito
     }
     //public static void changeScene(Scene){};
     public static void main(String[] args) {launch(args);}
