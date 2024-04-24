@@ -27,36 +27,26 @@ public class ProfileController implements Initializable{
     @FXML
     private Label lblGuest;
     @FXML
-    static Label totalBattles=new Label();
-    @FXML
-    Label loses=new Label();
-    @FXML
-    Label wins=new Label();
-    @FXML
-    Label ratio=new Label();
+    private Label loses,wins,ratio,totalBattles;
 
     public static void setUser(String s){player1=s;}
     public static String getUser(){return player1;}
     public static void setGuest(String s){player2=s;}
     public static String getGuest(){return player2;}
     
-    public static void cqs(){ // cqs = "calienta que sales", pide los datos de la bd para ponerlos en el perfil
+    public void cqs(){ // cqs = "calienta que sales", pide los datos de la bd para ponerlos en el perfil
        
         
         Gestor_conexion_POSTGRE gestor = new Gestor_conexion_POSTGRE("mdddb", true);
         String consulta="SELECT * FROM usuario where nick='"+player1+"';";
         String[][] result = Bd.consultaSelect(gestor,consulta);
-        for(int i=0;i<result.length;i++){
-          
-                 System.out.println("lvl="+result[0][2]);
-                 System.out.println("elo="+result[0][3]);
-                 System.out.println("wins="+result[0][4]);
-                 System.out.println("loses="+result[0][5]);
-            
-        }
+//                 System.out.println("lvl="+result[0][2]);
+//                 System.out.println("elo="+result[0][3]);
+//                 System.out.println("wins="+result[0][4]);
+//                 System.out.println("loses="+result[0][5]);
         //totalBattles.setText("Batallas totales: "+Integer.parseInt(result[0][1])+Integer.parseInt(result[0][2]));
-        //loses.setText("loses="+result[0][5]);
-        //wins.setText("wins="+result[0][4]);
+        loses.setText("loses="+result[0][5]);
+        wins.setText("wins="+result[0][4]);
         gestor.cerrar_Conexion(true);
     }
     
