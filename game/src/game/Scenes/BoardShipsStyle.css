@@ -1,4 +1,9 @@
 
+/*Arrow*/
+#shipDirection{
+    -fx-image: url('../img/arrow.png');
+}
+
 /*Ship 1*/
 #ship1Part1{
     -fx-image: url('jerma.jpg');

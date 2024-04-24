@@ -29,17 +29,69 @@ public class DraggableController{
     @FXML
     private GridPane boardP2;
     @FXML
-    private HBox shipLength1;
+    private HBox shipLength1T1of5P1;
     @FXML
-    private HBox shipLength2;
+    private HBox shipLength1T1of5P2;
     @FXML
-    private HBox shipLength3;
+    private HBox shipLength1T2of5P1;
     @FXML
-    private HBox shipLength4;
+    private HBox shipLength1T2of5P2;
     @FXML
-    private HBox shipLength5;
+    private HBox shipLength1T3of5P1;
+    @FXML
+    private HBox shipLength1T3of5P2;
+    @FXML
+    private HBox shipLength1T4of5P1;
+    @FXML
+    private HBox shipLength1T4of5P2;
+    @FXML
+    private HBox shipLength1T5of5P1;
+    @FXML
+    private HBox shipLength1T5of5P2;
+    @FXML
+    private HBox shipLength2T1of4P1;
+    @FXML
+    private HBox shipLength2T1of4P2;
+    @FXML
+    private HBox shipLength2T2of4P1;
+    @FXML
+    private HBox shipLength2T2of4P2;
+    @FXML
+    private HBox shipLength2T3of4P1;
+    @FXML
+    private HBox shipLength2T3of4P2;
+    @FXML
+    private HBox shipLength2T4of4P1;
+    @FXML
+    private HBox shipLength2T4of4P2;
+    @FXML
+    private HBox shipLength3T1of3P1;
+    @FXML
+    private HBox shipLength3T1of3P2;
+    @FXML
+    private HBox shipLength3T2of3P1;
+    @FXML
+    private HBox shipLength3T2of3P2;
+    @FXML
+    private HBox shipLength3T3of3P1;
+    @FXML
+    private HBox shipLength3T3of3P2;
+    @FXML
+    private HBox shipLength4T1of2P1;
+    @FXML
+    private HBox shipLength4T1of2P2;
+    @FXML
+    private HBox shipLength4T2of2P1;
+    @FXML
+    private HBox shipLength4T2of2P2;
+    @FXML
+    private HBox shipLength5T1of1P1;
+    @FXML
+    private HBox shipLength5T1of1P2;
     @FXML
     private DraggableMaker draggableMaker;
+    @FXML
+    private ImageView shipDirection;
     
     private boolean [][] boardCheckP1 = new boolean[10][10];
     
@@ -67,11 +119,36 @@ public class DraggableController{
     @FXML
     public void initialize() {
         draggableMaker = new DraggableMaker();
-        draggableMaker.makeDraggable(shipLength1);
-        draggableMaker.makeDraggable(shipLength2);
-        draggableMaker.makeDraggable(shipLength3);
-        draggableMaker.makeDraggable(shipLength4);
-        draggableMaker.makeDraggable(shipLength5);
+        draggableMaker.makeDraggable(shipLength1T1of5P1);
+        draggableMaker.makeDraggable(shipLength1T1of5P2);
+        draggableMaker.makeDraggable(shipLength1T2of5P1);
+        draggableMaker.makeDraggable(shipLength1T2of5P2);
+        draggableMaker.makeDraggable(shipLength1T3of5P1);
+        draggableMaker.makeDraggable(shipLength1T3of5P2);
+        draggableMaker.makeDraggable(shipLength1T4of5P1);
+        draggableMaker.makeDraggable(shipLength1T4of5P2);
+        draggableMaker.makeDraggable(shipLength1T5of5P1);
+        draggableMaker.makeDraggable(shipLength1T5of5P2);
+        draggableMaker.makeDraggable(shipLength2T1of4P1);
+        draggableMaker.makeDraggable(shipLength2T1of4P2);
+        draggableMaker.makeDraggable(shipLength2T2of4P1);
+        draggableMaker.makeDraggable(shipLength2T2of4P2);
+        draggableMaker.makeDraggable(shipLength2T3of4P1);
+        draggableMaker.makeDraggable(shipLength2T3of4P2);
+        draggableMaker.makeDraggable(shipLength2T4of4P1);
+        draggableMaker.makeDraggable(shipLength2T4of4P2);
+        draggableMaker.makeDraggable(shipLength3T1of3P1);
+        draggableMaker.makeDraggable(shipLength3T1of3P2);
+        draggableMaker.makeDraggable(shipLength3T2of3P1);
+        draggableMaker.makeDraggable(shipLength3T2of3P2);
+        draggableMaker.makeDraggable(shipLength3T3of3P1);
+        draggableMaker.makeDraggable(shipLength3T3of3P2);
+        draggableMaker.makeDraggable(shipLength4T1of2P1);
+        draggableMaker.makeDraggable(shipLength4T1of2P2);
+        draggableMaker.makeDraggable(shipLength4T2of2P1);
+        draggableMaker.makeDraggable(shipLength4T2of2P2);
+        draggableMaker.makeDraggable(shipLength5T1of1P1);
+        draggableMaker.makeDraggable(shipLength5T1of1P2);
         
         boardP1.setOnDragOver(this::onDragOver);
         boardP1.setOnDragDropped(this::onDragDropped);
@@ -154,9 +231,19 @@ public class DraggableController{
             
             int column = (int) (event.getX() / cellWidth);
             int row = (int) (event.getY() / cellHeight);
+            
+            //Check ship colisions and positions
+            //Player 1
+            
             if(event.getTarget()==boardP1){
-                if(rotationAngle == 0){
+                
+                //Horizontal
+                
+                if(shipDirection.getRotate() == 0){
                     for(int i=column;i<boardCheckP1.length && i<column+shipLengthCount;i++){
+                        
+                        //First ship part
+                        
                         if(i==column){
                             if(i-1>=0){
                                 if(boardCheckP1[i-1][row] == true){
@@ -176,7 +263,15 @@ public class DraggableController{
                             if(boardCheckP1[i][row] == true){
                                 notEmpty=true;
                             }
+                            if(shipLengthCount==1 && i+1<=targetGrid.getColumnConstraints().size()-1){
+                                if(boardCheckP1[i+1][row] == true){
+                                    notEmpty=true;
+                                }
+                            }
                         }
+                        
+                        //Last ship part
+                        
                         else if(i==column+shipLengthCount-1){
                             if(i+1<targetGrid.getColumnConstraints().size()-1){
                                 if(boardCheckP1[i+1][row] == true){
@@ -197,6 +292,9 @@ public class DraggableController{
                                 notEmpty=true;
                             }
                         }
+                        
+                        //Midle ship part
+                        
                         else{
                             if(row-1>=0){
                                 if(boardCheckP1[i][row-1] == true){
@@ -214,33 +312,244 @@ public class DraggableController{
                         }
                     }
                 }
+                
+                //Vertical
+                
                 else{
                     for(int i=row;i<boardCheckP1.length && i<row+shipLengthCount;i++){
-                        if(boardCheckP1[column][i] == true){
-                            notEmpty=true;
+                        
+                        //First ship part
+                        
+                        if(i==row){
+                            if(i-1>=0){
+                                if(boardCheckP1[column][i-1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column-1>=0){
+                                if(boardCheckP1[column-1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP1[column+1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP1[column][i] == true){
+                                notEmpty=true;
+                            }
+                            if(shipLengthCount==1 && i+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP1[column][i+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                        }
+                        
+                        //Last ship part
+                        
+                        else if(i==row+shipLengthCount-1){
+                            if(i+1<targetGrid.getColumnConstraints().size()-1){
+                                if(boardCheckP1[column][i+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column-1>=0){
+                                if(boardCheckP1[column-1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP1[column+1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP1[column][i] == true){
+                                notEmpty=true;
+                            }
+                        }
+                        
+                        //Midle ship part
+                        
+                        else{
+                            if(column-1>=0){
+                                if(boardCheckP1[column-1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP1[column+1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP1[column][i] == true){
+                                notEmpty=true;
+                            }
                         }
                     }
                 }
             }
+            
+            //Player 2
+            
             else{
-                if(rotationAngle == 0){
+                
+                //Horizontal
+                
+                if(shipDirection.getRotate() == 0){
                     for(int i=column;i<boardCheckP2.length && i<column+shipLengthCount;i++){
-                        if(boardCheckP2[i][row] == true){
-                            notEmpty=true;
+                        
+                        //First ship part
+                        
+                        if(i==column){
+                            if(i-1>=0){
+                                if(boardCheckP2[i-1][row] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row-1>=0){
+                                if(boardCheckP2[i][row-1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP2[i][row+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP2[i][row] == true){
+                                notEmpty=true;
+                            }
+                            if(shipLengthCount==1 && i+1<=targetGrid.getColumnConstraints().size()-1){
+                                if(boardCheckP2[i+1][row] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                        }
+                        
+                        //Last ship part
+                        
+                        else if(i==column+shipLengthCount-1){
+                            if(i+1<targetGrid.getColumnConstraints().size()-1){
+                                if(boardCheckP2[i+1][row] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row-1>=0){
+                                if(boardCheckP2[i][row-1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP2[i][row+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP2[i][row] == true){
+                                notEmpty=true;
+                            }
+                        }
+                        
+                        //Midle ship part
+                        
+                        else{
+                            if(row-1>=0){
+                                if(boardCheckP2[i][row-1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(row+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP2[i][row+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP2[i][row] == true){
+                                notEmpty=true;
+                            }
                         }
                     }
                 }
+                
+                //Vertical
+                
                 else{
                     for(int i=row;i<boardCheckP2.length && i<row+shipLengthCount;i++){
-                        if(boardCheckP2[column][i] == true){
-                            notEmpty=true;
+                        
+                        //First ship part
+                        
+                        if(i==row){
+                            if(i-1>=0){
+                                if(boardCheckP2[column][i-1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column-1>=0){
+                                if(boardCheckP2[column-1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP2[column+1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP2[column][i] == true){
+                                notEmpty=true;
+                            }
+                            if(shipLengthCount==1 && i+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP2[column][i+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                        }
+                        
+                        //Last ship part
+                        
+                        else if(i==row+shipLengthCount-1){
+                            if(i+1<targetGrid.getColumnConstraints().size()-1){
+                                if(boardCheckP2[column][i+1] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column-1>=0){
+                                if(boardCheckP2[column-1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP2[column+1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP2[column][i] == true){
+                                notEmpty=true;
+                            }
+                        }
+                        
+                        //Midle ship part
+                        
+                        else{
+                            if(column-1>=0){
+                                if(boardCheckP2[column-1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(column+1<=targetGrid.getRowConstraints().size()-1){
+                                if(boardCheckP1[column+1][i] == true){
+                                    notEmpty=true;
+                                }
+                            }
+                            if(boardCheckP2[column][1] == true){
+                                notEmpty=true;
+                            }
                         }
                     }
                 }
             }
             
+            //Moves ships between gridpanes
             
-            if(rotationAngle == 0){
+            if(shipDirection.getRotate() == 0){
                 if(column+shipLengthCount<=targetGrid.getRowConstraints().size() && !notEmpty){
                     for (Node node : draggedHBox.getChildren()) {
                         if (node instanceof ImageView) {
@@ -292,39 +601,11 @@ public class DraggableController{
     @FXML
     private void rotateKeyPressed(KeyEvent event) {
         if (event.getCode() == KeyCode.R) {
-            if(shipLength1.getRotate() == 0){
-                shipLength1.setRotate(90);
+            if(shipDirection.getRotate() == 0){
+                shipDirection.setRotate(90);
             }
             else{
-                shipLength1.setRotate(0);
-            }
-            
-            if(shipLength2.getRotate() == 0){
-                shipLength2.setRotate(90);
-            }
-            else{
-                shipLength2.setRotate(0);
-            }
-            
-            if(shipLength3.getRotate() == 0){
-                shipLength3.setRotate(90);
-            }
-            else{
-                shipLength3.setRotate(0);
-            }
-            
-            if(shipLength4.getRotate() == 0){
-                shipLength4.setRotate(90);
-            }
-            else{
-                shipLength4.setRotate(0);
-            }
-            
-            if(shipLength5.getRotate() == 0){
-                shipLength5.setRotate(90);
-            }
-            else{
-                shipLength5.setRotate(0);
+                shipDirection.setRotate(0);
             }
         }
     }
