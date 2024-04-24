@@ -197,8 +197,13 @@ public class DraggableController{
                             newImageView.setFitWidth(imageView.getFitWidth());
                             newImageView.setFitHeight(imageView.getFitHeight());
                             targetGrid.add(newImageView, column, row);
+                            if(event.getTarget()==boardP1){
+                                boardCheckP1[column][row]=true;
+                            }
+                            else{
+                                boardCheckP2[column][row]=true;
+                            }
                             column++;
-                            
                         }
                     }
                     ((Pane) draggedHBox.getParent()).getChildren().remove(draggedHBox);
@@ -214,6 +219,12 @@ public class DraggableController{
                             newImageView.setFitHeight(imageView.getFitHeight());
                             newImageView.setRotate(90);
                             targetGrid.add(newImageView, column, row);
+                            if(event.getTarget()==boardP1){
+                                boardCheckP1[column][row]=true;
+                            }
+                            else{
+                                boardCheckP2[column][row]=true;
+                            }
                             row++;
                         }
                     }
