@@ -65,6 +65,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
        </Button>
-      <Button layoutX="131.0" layoutY="564.0" mnemonicParsing="false" text="Boton prueba" />
+      <Button layoutX="131.0" layoutY="564.0" mnemonicParsing="false" onAction="#ffinal" text="Boton prueba" />
    </children>
 </AnchorPane>
