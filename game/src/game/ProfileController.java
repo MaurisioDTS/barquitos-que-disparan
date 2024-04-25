@@ -1,5 +1,6 @@
 package game;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -105,5 +106,11 @@ public class ProfileController implements Initializable{
         cqs();
         lblUsername.setText(player1);
         
+    }
+    
+    public void btnRecord(ActionEvent a) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/Record.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
     }
 }
