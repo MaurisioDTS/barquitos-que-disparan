@@ -6,65 +6,65 @@
 
 /*Ship 1*/
 #ship1Part1{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship1part1.png');
 }
 
 /*Ship 2*/
 #ship2Part1{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship2part1.png');
 }
 
 #ship2Part2{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship2part2.png');
 }
 
 /*Ship 3*/
 #ship3Part1{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship3part1.png');
 }
 
 #ship3Part2{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship3part2.png');
 }
 
 #ship3Part3{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship3part3.png');
 }
 
 /*Ship 4*/
 #ship4Part1{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship4part1.png');
 }
 
 #ship4Part2{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship4part2.png');
 }
 
 #ship4Part3{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship4part3.png');
 }
 
 #ship4Part4{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship4part4.png');
 }
 
 /*Ship 5*/
 #ship5Part1{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship5part1.png');
 }
 
 #ship5Part2{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship5part2.png');
 }
 
 #ship5Part3{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship5part3.png');
 }
 
 #ship5Part4{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship5part4.png');
 }
 
 #ship5Part5{
-    -fx-image: url('jerma.jpg');
+    -fx-image: url('../img/ship5part5.png');
 }
