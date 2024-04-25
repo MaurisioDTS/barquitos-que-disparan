@@ -1,17 +1,31 @@
 package game.Objects;
 
-public class Board {
+import java.util.Random;
+
+public class Board {Random rng=new Random();
     
-    private final Ship[][] board = new Ship[10][10];//he hecho que el array guarde barcos en lugar de ints, estoy probando una forma de estructurarlo 
+    private final ShipChunk[][] board = new ShipChunk[10][10];//he hecho que el array guarde barcos en lugar de ints, estoy probando una forma de estructurarlo 
     String user;
     
     public Board(String nick){ //de momento solo esto. no puede ser que no tenga constructor, de otra forma no podríamos sacarle partido a la poo
         user=nick;
     }
-
-    public void insertShip(Ship s){// para insertar barcos al tablero
+    public void gen(Ship s){
+        if(s.getHorizontal()){
+            for(int i=1;i<s.getLength();i++){
+                board[s.getInitialHorizontalCoordinate()+i][s.getInitialVerticalCoordinate()]= new ShipChunk(s.getInitialHorizontalCoordinate()+i,s.getInitialVerticalCoordinate());
+            }
+        }else{
+        for(int i=1;i<s.getLength();i++){
+                board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()+i]= new ShipChunk(s.getInitialHorizontalCoordinate(),s.getInitialVerticalCoordinate()+i);
+            }
+        }
+    }
+    public void insertShip(Ship s){// para insertar barcos al tablero, si esa casilla ya está ocupada, no genera nada
         if (board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]==null){
-            board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]=s;}
+            board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]=s;
+            gen(s);
+        }
     }
     
     public boolean checkCheck(int x, int y){boolean impakt=false;
