@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
@@ -18,6 +19,7 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class DraggableController{
@@ -92,16 +94,54 @@ public class DraggableController{
     private DraggableMaker draggableMaker;
     @FXML
     private ImageView shipDirection;
+    @FXML
+    private Button readyP1;
+    @FXML
+    private Button readyP2;
+    @FXML
+    private Button playButton;
+    @FXML
+    private Rectangle player1R;
+    @FXML
+    private Rectangle player2R;
     
     private boolean [][] boardCheckP1 = new boolean[10][10];
     
     private boolean [][] boardCheckP2 = new boolean[10][10];
+    
+    private boolean p1Ready=false;
+    
+    private boolean p2Ready=false;
     
     private double rotationAngle = 0.0;
 
     Board brd=new Board("elpepe");
     
     // changes in scene
+    
+    public void reset(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/BoardShips.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
+    
+    public void readyP1(ActionEvent event){
+        player1R.setVisible(true);
+        readyP1.setVisible(false);
+        p1Ready=true;
+        if(p1Ready && p2Ready){
+            playButton.setVisible(true);
+        }
+    }
+    
+    public void readyP2(ActionEvent event){
+        player2R.setVisible(true);
+        readyP2.setVisible(false);
+        p2Ready=true;
+        if(p1Ready && p2Ready){
+            playButton.setVisible(true);
+        }
+    }
     
     public void rtn(ActionEvent a) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Scenes/Profile.fxml"));
@@ -154,6 +194,8 @@ public class DraggableController{
         boardP1.setOnDragDropped(this::onDragDropped);
         boardP2.setOnDragOver(this::onDragOver);
         boardP2.setOnDragDropped(this::onDragDropped);
+        
+        
     }
     
     @FXML
