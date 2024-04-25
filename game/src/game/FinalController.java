@@ -54,4 +54,9 @@ public class FinalController implements Initializable {
         stage.show();
     }
     
+    public void btnRematch(ActionEvent a) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("Scenes/BoardShips.fxml"));
+        stage.getScene().setRoot(root);
+        stage.show();
+    }
 }

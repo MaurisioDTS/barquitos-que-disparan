@@ -34,7 +34,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="79.0" layoutY="464.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="98.0" text="Rematch" />
+      <Button layoutX="79.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnRematch" prefHeight="27.0" prefWidth="98.0" text="Rematch" />
       <Button layoutX="808.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnFinish" prefHeight="27.0" prefWidth="98.0" text="Finish" />
    </children>
 </AnchorPane>
