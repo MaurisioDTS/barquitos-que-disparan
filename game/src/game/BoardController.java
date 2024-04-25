@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import game.Objects.Ship;
+import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -54,13 +55,13 @@ public class BoardController implements Initializable{
     Ship two=new Ship("buque telepata de guerra",4,0,1,false);
     Ship thr=new Ship("submarino no sumergible",3,0,2,false);
     Ship fou=new Ship("el yate de hijacked",2,0,3,false);
-    Ship fiv=new Ship("lancha de poliester",1,0,4,false);
+    Ship fiv=new Ship("lancha de poliester",5,5,5,false);
     
     Ship uno=new Ship("portaaviones",5,0,5,false);
     Ship dos=new Ship("buque telepata de guerra",4,0,6,false);
     Ship tre=new Ship("submarino no sumergible",3,0,7,false);
     Ship cua=new Ship("el yate de hijacked",2,0,8,false);
-    Ship cin=new Ship("lancha de poliester",1,0,9,false);
+    Ship cin=new Ship("lancha de poliester",5,5,5,true);
     
     private void changeTurns(){
         if(isPlayer1){recPlayer2.setVisible(true);recPlayer1.setVisible(false);}
@@ -686,14 +687,12 @@ public class BoardController implements Initializable{
     public void j6(ActionEvent Event){
         int x=9,y=5;
         boolean temp=checkTurn(x,y);
-        ((Button) Event.getSource()).setDisable(true);
         buttonCopy(Event,temp);
     }
     @FXML
     public void j7(ActionEvent Event){
         int x=9,y=6;
         boolean temp=checkTurn(x,y);
-        ((Button) Event.getSource()).setDisable(true);
         buttonCopy(Event,temp);
     }
     @FXML
@@ -714,21 +713,30 @@ public class BoardController implements Initializable{
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
-    
+    private void genAllRandom() {
+    if(isRandom){ Random rng=new Random();
+            for(int i=1;i<6;i++){
+                brd1.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
+            }
+            for(int i=1;i<6;i++){
+                brd2.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
+            }}}
     @Override
-    public void initialize(URL url, ResourceBundle rb){
+    public void initialize(URL url, ResourceBundle rb){isRandom=true;
+        genAllRandom();
+       
         //System.out.println(player1.);
-        brd1.insertShip(one);
-        brd1.insertShip(two);
-        brd1.insertShip(thr);
-        brd1.insertShip(fou);
-        brd1.insertShip(fiv);
+//        brd1.insertShip(one);
+//        brd1.insertShip(two);
+//        brd1.insertShip(thr);
+//        brd1.insertShip(fou);
+//        brd1.insertShip(fiv);
         
-        brd2.insertShip(uno);
-        brd2.insertShip(dos);
-        brd2.insertShip(tre);
-        brd2.insertShip(cua);
-        brd2.insertShip(cin);
+//        brd2.insertShip(uno);
+//        brd2.insertShip(dos);
+//        brd2.insertShip(tre);
+//        brd2.insertShip(cua);
+//        brd2.insertShip(cin);
 
         changeTurns();
     }
