@@ -42,7 +42,7 @@ public class BoardController implements Initializable{
     BackgroundImage fireImage = new BackgroundImage( new Image( getClass().getResource("img/fire.png").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
     Background fire = new Background(fireImage);
 
-    private boolean isPlayer1,isRandom,isVsCpu;
+    private boolean isPlayer1,isRandom=false,isVsCpu=false;
     public void setRandom(boolean b){isRandom=b;}
     
     Board brd1=new Board(player1);
@@ -70,14 +70,14 @@ public class BoardController implements Initializable{
     }
     
     private boolean checkTurn(int x, int y){ // gestiona los turnos
-        boolean temp=false;
-        if(isPlayer1){temp=brd1.checkCheck(x,y);}
+        boolean temp;
+        if(isPlayer1)temp=brd1.checkCheck(x,y);
         else{temp=brd2.checkCheck(x,y);}
         return temp;
     }
     private void buttonCopy(ActionEvent Event,boolean temp){
         ((Button) Event.getSource()).setDisable(true);
-        if (temp){((Button) Event.getSource()).setBackground(fire);}
+        if(temp){((Button) Event.getSource()).setBackground(fire);}
         else if(!temp){((Button) Event.getSource()).setBackground(water);changeTurns();}
         ((Button) Event.getSource()).setOpacity(1);
     } 
@@ -714,16 +714,17 @@ public class BoardController implements Initializable{
         buttonCopy(Event,temp);
     }
     private void genAllRandom() {
-    if(isRandom){ Random rng=new Random();
+        if(isRandom){ Random rng=new Random();
             for(int i=1;i<6;i++){
                 brd1.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
             }
             for(int i=1;i<6;i++){
                 brd2.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
-            }}}
+    }   }   }
+    
     @Override
-    public void initialize(URL url, ResourceBundle rb){isRandom=true;
-        genAllRandom();
+    public void initialize(URL url, ResourceBundle rb){
+        if(isRandom)genAllRandom();
        
         //System.out.println(player1.);
 //        brd1.insertShip(one);

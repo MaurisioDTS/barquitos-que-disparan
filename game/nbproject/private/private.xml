@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/Scenes/BoardShipsStyle.css</file>
-            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/DraggableController.java</file>
-            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/Scenes/BoardShips.fxml</file>
+            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/BoardController.java</file>
+            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/Objects/Board.java</file>
+            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/Objects/Ship.java</file>
+            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/ProfileController.java</file>
+            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/Objects/ShipChunk.java</file>
+            <file>file:/Z:/NetBeansProjects/barquitos-que-disparan/game/src/game/LoginController.java</file>
         </group>
     </open-files>
 </project-private>
