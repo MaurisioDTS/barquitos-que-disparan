@@ -150,6 +150,8 @@ public class DraggableController{
     }
     public void board(ActionEvent a) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Scenes/Board.fxml"));
+        BoardController.setBoard1(boardCheckP1);
+        BoardController.setBoard2(boardCheckP2);
         stage.getScene().setRoot(root);
         stage.show();
     }

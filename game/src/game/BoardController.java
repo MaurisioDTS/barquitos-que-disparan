@@ -26,6 +26,15 @@ public class BoardController implements Initializable{
 
     static String player1="1";
     static String player2="2";
+
+    
+    static void setBoard1(boolean[][] boardCheckP1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static void setBoard2(boolean[][] boardCheckP2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public void setPlayer1(String s){player1=s;}
     public void setPlayer2(String s){player2=s;}
     
@@ -722,8 +731,8 @@ public class BoardController implements Initializable{
                 brd2.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
             }}}
     @Override
-    public void initialize(URL url, ResourceBundle rb){isRandom=true;
-        genAllRandom();
+    public void initialize(URL url, ResourceBundle rb){isRandom=false;
+        if(isRandom)genAllRandom();
        
         //System.out.println(player1.);
 //        brd1.insertShip(one);
