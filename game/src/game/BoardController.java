@@ -46,9 +46,9 @@ public class BoardController implements Initializable{
     private boolean isPlayer1,isRandom=false;
     public void setRandom(boolean b){isRandom=b;}
     
-    Board brd1=new Board(player1);
+    public static Board brd1=new Board(player1);
     private static int brd1Ships=0;
-    Board brd2=new Board(player2);
+    public static Board brd2=new Board(player2);
     private static int brd2Ships=0;
 
     @FXML
@@ -710,10 +710,10 @@ public class BoardController implements Initializable{
     private void genAllRandom() {
         if(isRandom){ Random rng=new Random();
             for(int i=1;i<6;i++){
-                brd1.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
+                brd1.insertShipRnd(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
             }
             for(int i=1;i<6;i++){
-                brd2.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
+                brd2.insertShipRnd(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
     }   }   }
     
     @Override
