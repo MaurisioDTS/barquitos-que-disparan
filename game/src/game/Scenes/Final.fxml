@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="1022.0" styleClass="landscape" stylesheets="@GlobalStyle.css" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.FinalController">
@@ -36,5 +37,7 @@
       </Label>
       <Button layoutX="79.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnRematch" prefHeight="27.0" prefWidth="98.0" text="Rematch" />
       <Button layoutX="808.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnFinish" prefHeight="27.0" prefWidth="98.0" text="Finish" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="125.0" layoutX="411.0" layoutY="207.0" opacity="0.48" stroke="BLACK" strokeType="INSIDE" width="406.0" />
+      <Label alignment="CENTER" contentDisplay="TOP" layoutX="502.0" layoutY="261.0" prefHeight="17.0" prefWidth="206.0" text="COMING SOON" textOverrun="CLIP" />
    </children>
 </AnchorPane>

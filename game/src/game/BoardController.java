@@ -5,10 +5,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import game.Objects.Ship;
+import java.io.IOException;
 import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
@@ -74,7 +77,21 @@ public class BoardController implements Initializable{
         }
         else if(!temp){((Button) Event.getSource()).setBackground(water);changeTurns();}
         ((Button) Event.getSource()).setOpacity(1);
-    } 
+    }
+    
+    public void checkWin() throws Exception{
+        if(brd1Ships==0){
+            Parent root = FXMLLoader.load(getClass().getResource("Scenes/Final.fxml"));
+            stage.getScene().setRoot(root);
+            stage.show();
+        }
+        
+        if(brd2Ships==0){
+            Parent root = FXMLLoader.load(getClass().getResource("Scenes/Final.fxml"));
+            stage.getScene().setRoot(root);
+            stage.show();
+        }
+    }
      /**
         A
     **/
