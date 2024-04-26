@@ -116,6 +116,10 @@ public class DraggableController{
     
     private String shipType;
     
+    private int totalP1=0;
+    
+    private int totalP2=0;
+    
     private double rotationAngle = 0.0;
 
     Board brd=new Board("elpepe");
@@ -153,6 +157,9 @@ public class DraggableController{
     }
     public void board(ActionEvent a) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Scenes/Board.fxml"));
+        
+        BoardController.brd1Ships=totalP2;
+        BoardController.brd2Ships=totalP1;
         stage.getScene().setRoot(root);
         stage.show();
     }
@@ -333,6 +340,7 @@ public class DraggableController{
                                 }
                             }
                             BoardController.brd1.insertShip(shipType,shipLengthCount,column,row,true);
+                            totalP1++;
                         }
                         
                         //Last ship part
@@ -356,6 +364,7 @@ public class DraggableController{
                             if(boardCheckP1[i][row] == true){
                                 notEmpty=true;
                             }
+                            totalP1++;
                         }
                         
                         //Midle ship part
@@ -374,6 +383,7 @@ public class DraggableController{
                             if(boardCheckP1[i][row] == true){
                                 notEmpty=true;
                             }
+                            totalP1++;
                         }
                     }
                 }
@@ -410,6 +420,7 @@ public class DraggableController{
                                 }
                             }
                             BoardController.brd1.insertShip(shipType,shipLengthCount,column,row,false);
+                            totalP1++;
                         }
                         
                         //Last ship part
@@ -433,6 +444,7 @@ public class DraggableController{
                             if(boardCheckP1[column][i] == true){
                                 notEmpty=true;
                             }
+                            totalP1++;
                         }
                         
                         //Midle ship part
@@ -451,6 +463,7 @@ public class DraggableController{
                             if(boardCheckP1[column][i] == true){
                                 notEmpty=true;
                             }
+                            totalP1++;
                         }
                     }
                 }
@@ -492,6 +505,7 @@ public class DraggableController{
                                 }
                             }
                             BoardController.brd2.insertShip(shipType,shipLengthCount,column,row,true);
+                            totalP2++;
                         }
                         
                         //Last ship part
@@ -515,6 +529,7 @@ public class DraggableController{
                             if(boardCheckP2[i][row] == true){
                                 notEmpty=true;
                             }
+                            totalP2++;
                         }
                         
                         //Midle ship part
@@ -533,6 +548,7 @@ public class DraggableController{
                             if(boardCheckP2[i][row] == true){
                                 notEmpty=true;
                             }
+                            totalP2++;
                         }
                     }
                 }
@@ -569,6 +585,7 @@ public class DraggableController{
                                 }
                             }
                             BoardController.brd2.insertShip(shipType,shipLengthCount,column,row,false);
+                            totalP2++;
                         }
                         
                         //Last ship part
@@ -592,6 +609,7 @@ public class DraggableController{
                             if(boardCheckP2[column][i] == true){
                                 notEmpty=true;
                             }
+                            totalP2++;
                         }
                         
                         //Midle ship part
@@ -610,6 +628,7 @@ public class DraggableController{
                             if(boardCheckP2[column][1] == true){
                                 notEmpty=true;
                             }
+                            totalP2++;
                         }
                     }
                 }

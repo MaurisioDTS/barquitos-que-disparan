@@ -54,15 +54,15 @@ public class Board {Random rng=new Random();
         System.out.println(user+" on x="+x+" y="+y+impakt);
         return impakt;
     }
-    public int getAllPos(){int temp=0;
-        
-        for(int i=0;i<board.length-1;i++){
-            for(int j=0;j<board.length-1;j++){
-                System.out.println(board[i][j]);
-                if(board[i][j]!=null)temp++;
-        }   }
-        return temp;
-    }
+//    public int getAllPos(){int temp=0;
+//        
+//        for(int i=0;i<board.length-1;i++){
+//            for(int j=0;j<board.length-1;j++){
+//                System.out.println(board[i][j]);
+//                if(board[i][j]!=null)temp++;
+//        }   }
+//        return temp;
+//    }
     
     @Override
     public String toString(){return "----- "+user+" -----"+" ";}
