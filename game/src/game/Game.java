@@ -52,43 +52,9 @@ public class Game extends Application{
         
     // audio setup
         
-        defaultAudio.setVolume(globalVolume);
+//        defaultAudio.setVolume(globalVolume);
 //        defaultAudio.setOnEndOfMedia(()->{defaultAudio.seek(Duration.ZERO);}); // expresion lambda que loopea el audio hasta el infinito
-        defaultAudio.play();
+//        defaultAudio.play();
     }
-    //public static void changeScene(Scene){};
     public static void main(String[] args) {launch(args);}
 }
-
-//    static Media pastkeys=new Media(Paths.get("game/res/audio/past keys.wav").toUri().toString());
-//    static MediaPlayer pastkeysAudio=new MediaPlayer(defaultMedia);
-//
-//    static Media metal=new Media(Paths.get("game/res/audio/metal.wav").toUri().toString());
-//    static MediaPlayer metalAudio=new MediaPlayer(defaultMedia);
-
-/**public static void changeMusic(int i){
- defaultAudio.stop();
- pastkeysAudio.stop();
- metalAudio.stop();
-
- switch (i) {
- case 1:
- defaultAudio.play();
- case 2:
- pastkeysAudio.play();
- case 3:
- metalAudio.play();
- default:
- defaultAudio.play();
- }
-}**/
-
-/**pastkeysAudio.setOnEndOfMedia(new Runnable() {
- public void run() {
- pastkeysAudio.seek(Duration.ZERO);
- }
- });metalAudio.setOnEndOfMedia(new Runnable() {
- public void run() {
- metalAudio.seek(Duration.ZERO);
- }
- });**/

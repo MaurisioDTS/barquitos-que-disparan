@@ -16,7 +16,6 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -28,16 +27,15 @@ public class BoardController implements Initializable{
     static String player2="2";
 
     
-    
+    static void setBoard1(boolean[][] boardCheckP1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static void setBoard2(boolean[][] boardCheckP2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public void setPlayer1(String s){player1=s;}
     public void setPlayer2(String s){player2=s;}
-    
-    @FXML
-    private GridPane boardP1,boardP2;
-
-    @FXML
-    private Button Ga1,Ha2,Ga3,Ga10,Ha1,Ga2,Ha4,Ha10,Ga5,Ha3,Ga4,Ha6,Ga7,Ha5,Ga6,Ha8,Ga9,Ha9,Ha7,Ga8;
-
 
     BackgroundImage waterImage = new BackgroundImage( new Image( getClass().getResource("img/water.png").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
     Background water = new Background(waterImage);
@@ -45,16 +43,18 @@ public class BoardController implements Initializable{
     BackgroundImage fireImage = new BackgroundImage( new Image( getClass().getResource("img/fire.png").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
     Background fire = new Background(fireImage);
 
-    private boolean isPlayer1,isRandom=false,isVsCpu=false;
+    private boolean isPlayer1,isRandom=false;
     public void setRandom(boolean b){isRandom=b;}
     
-    public static Board brd1=new Board(player1);
-    public static Board brd2=new Board(player2);
+    Board brd1=new Board(player1);
+    private static int brd1Ships=0;
+    Board brd2=new Board(player2);
+    private static int brd2Ships=0;
 
     @FXML
-    Rectangle recPlayer1,recPlayer2;
+    Rectangle recPlayer1,recPlayer2;//para tapar los tableros
     
-    private void changeTurns(){
+    private void changeTurns(){ //cambio de turno
         if(isPlayer1){recPlayer2.setVisible(true);recPlayer1.setVisible(false);}
         else{recPlayer1.setVisible(true);recPlayer2.setVisible(false);}
         isPlayer1 = !isPlayer1;
@@ -66,9 +66,12 @@ public class BoardController implements Initializable{
         else{temp=brd2.checkCheck(x,y);}
         return temp;
     }
-    private void buttonCopy(ActionEvent Event,boolean temp){
+    private void buttonCopy(ActionEvent Event,boolean temp){//aplica imagen y deshabilita boton al ser pulsadod
         ((Button) Event.getSource()).setDisable(true);
-        if(temp){((Button) Event.getSource()).setBackground(fire);}
+        if(temp){((Button) Event.getSource()).setBackground(fire);
+            if(isPlayer1)brd2Ships--;
+            else if(!isPlayer1)brd1Ships--;
+        }
         else if(!temp){((Button) Event.getSource()).setBackground(water);changeTurns();}
         ((Button) Event.getSource()).setOpacity(1);
     } 
@@ -707,18 +710,21 @@ public class BoardController implements Initializable{
     private void genAllRandom() {
         if(isRandom){ Random rng=new Random();
             for(int i=1;i<6;i++){
-                brd1.insertShipRnd(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
+                brd1.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
             }
             for(int i=1;i<6;i++){
-                brd2.insertShipRnd(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
-            }
-        }
-    }
+                brd2.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
+    }   }   }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb){isRandom=false;
+    public void initialize(URL url, ResourceBundle rb){
+        isRandom=true;
         if(isRandom)genAllRandom();
-
+        
+        
+        
+        brd1Ships=brd1.getAllPos();
+        brd2Ships=brd2.getAllPos();
         changeTurns();
     }
 }

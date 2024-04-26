@@ -1,6 +1,5 @@
 package game;
 
-import java.net.ConnectException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
@@ -68,7 +67,7 @@ public class LoginController implements Initializable{
 
         String user = tbRegUser.getText(), pass=digest256(tbRegPass.getText());
 
-        String consulta ="insert into usuario (nick,passinsha256,lvl,elo) values ('"+user+"','"+pass+"',0,0);";
+        String consulta ="insert into usuario (nick,passinsha256,lvl,elo,wins,loses) values ('"+user+"','"+pass+"',0,0,0,0);";
         Bd.consultaModificacion(gestor,consulta);
         clearTBs();
         gestor.cerrar_Conexion(true);
@@ -102,6 +101,7 @@ public class LoginController implements Initializable{
         catch(java.lang.NullPointerException n) {lblWrongCredentials.setVisible(true);}
         gestor.cerrar_Conexion(true);
     }
+    @Override
     public void initialize(URL url, ResourceBundle rb){ // Checks if dB is up
         try{
             Gestor_conexion_POSTGRE test=new Gestor_conexion_POSTGRE("mdddb",true);
