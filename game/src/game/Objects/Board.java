@@ -7,7 +7,7 @@ public class Board {Random rng=new Random();
     private final ShipChunk[][] board = new ShipChunk[10][10];//he hecho que el array guarde barcos en lugar de ints, estoy probando una forma de estructurarlo 
     String user;
     
-    public Board(String nick){ //de momento solo esto. no puede ser que no tenga constructor, de otra forma no podríamos sacarle partido a la poo
+    public Board(String nick){ //de momento solo esto. no puede ser que no tenga constructor, de otra forma no podríamos hacer nada con ella
         user=nick;
     }
     public void gen(Ship s){
@@ -34,6 +34,15 @@ public class Board {Random rng=new Random();
 
         System.out.println(user+" on x="+x+" y="+y+impakt);
         return impakt;
+    }
+    public int getAllPos(){int temp=0;
+        
+        for(int i=0;i<board.length-1;i++){
+            for(int j=0;i<board.length-1;j++){
+                System.out.println(board[i][j]);
+                if(board[i][j]!=null)temp++;
+        }   }
+        return temp;
     }
     
     @Override

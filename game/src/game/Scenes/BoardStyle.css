@@ -1,0 +1,36 @@
+@font-face {
+    src: url('sans-font.ttf');
+}
+#danger:hover{
+    -fx-fill: #dc3d3d;
+    -fx-background-color: radial-gradient(center 80% 20%, radius 60%, rgb(255, 10, 10) 0%, rgb(255, 96, 136) 100%);;
+    -fx-font-family: 'Pixel Comic Sans (Undertale Sans Font)';
+    -fx-text-fill: #ffffff;
+    -fx-border-color: black;
+    -fx-border-width: 5;
+    -fx-border-style: solid;
+}
+#danger:focused{
+    -fx-background-color: radial-gradient(center 80% 20%, radius 80%, rgb(194, 18, 85) 0%, rgb(255, 96, 136) 100%);
+    -fx-border-width: 5;
+}
+.root{
+    -fx-background-color:  #b3f0ff;
+    -fx-alignment: center;
+    -fx-focus-color: #aa00ff;
+    -fx-faint-focus-color: rgba(170, 0, 255, 0);
+    -fx-border-width: 5;
+    -fx-border-style: solid;
+}
+.landscape{
+    -fx-background-image: url("sea.png");
+    -fx-background-size: 100% 100%;
+}
+.label{
+    -fx-font-family: 'Pixel Comic Sans (Undertale Sans Font)';
+    -fx-font-style: normal;
+}
+.button:focused{
+    -fx-background-color: radial-gradient(center 80% 20%, radius 80%, rgb(200, 97, 255) 0%, rgb(104, 162, 192) 100%);
+    -fx-border-width: 5;
+}

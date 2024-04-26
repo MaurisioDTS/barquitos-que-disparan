@@ -16,7 +16,6 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -37,13 +36,6 @@ public class BoardController implements Initializable{
     }
     public void setPlayer1(String s){player1=s;}
     public void setPlayer2(String s){player2=s;}
-    
-    @FXML
-    private GridPane boardP1,boardP2;
-
-    @FXML
-    private Button Ga1,Ha2,Ga3,Ga10,Ha1,Ga2,Ha4,Ha10,Ga5,Ha3,Ga4,Ha6,Ga7,Ha5,Ga6,Ha8,Ga9,Ha9,Ha7,Ga8;
-
 
     BackgroundImage waterImage = new BackgroundImage( new Image( getClass().getResource("img/water.png").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
     Background water = new Background(waterImage);
@@ -51,28 +43,18 @@ public class BoardController implements Initializable{
     BackgroundImage fireImage = new BackgroundImage( new Image( getClass().getResource("img/fire.png").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
     Background fire = new Background(fireImage);
 
-    private boolean isPlayer1,isRandom=false,isVsCpu=false;
+    private boolean isPlayer1,isRandom=false;
     public void setRandom(boolean b){isRandom=b;}
     
     Board brd1=new Board(player1);
+    private static int brd1Ships=0;
     Board brd2=new Board(player2);
+    private static int brd2Ships=0;
 
     @FXML
-    Rectangle recPlayer1,recPlayer2;
+    Rectangle recPlayer1,recPlayer2;//para tapar los tableros
     
-    Ship one=new Ship("portaaviones",5,0,0,false);
-    Ship two=new Ship("buque telepata de guerra",4,0,1,false);
-    Ship thr=new Ship("submarino no sumergible",3,0,2,false);
-    Ship fou=new Ship("el yate de hijacked",2,0,3,false);
-    Ship fiv=new Ship("lancha de poliester",5,5,5,false);
-    
-    Ship uno=new Ship("portaaviones",5,0,5,false);
-    Ship dos=new Ship("buque telepata de guerra",4,0,6,false);
-    Ship tre=new Ship("submarino no sumergible",3,0,7,false);
-    Ship cua=new Ship("el yate de hijacked",2,0,8,false);
-    Ship cin=new Ship("lancha de poliester",5,5,5,true);
-    
-    private void changeTurns(){
+    private void changeTurns(){ //cambio de turno
         if(isPlayer1){recPlayer2.setVisible(true);recPlayer1.setVisible(false);}
         else{recPlayer1.setVisible(true);recPlayer2.setVisible(false);}
         isPlayer1 = !isPlayer1;
@@ -84,9 +66,12 @@ public class BoardController implements Initializable{
         else{temp=brd2.checkCheck(x,y);}
         return temp;
     }
-    private void buttonCopy(ActionEvent Event,boolean temp){
+    private void buttonCopy(ActionEvent Event,boolean temp){//aplica imagen y deshabilita boton al ser pulsadod
         ((Button) Event.getSource()).setDisable(true);
-        if(temp){((Button) Event.getSource()).setBackground(fire);}
+        if(temp){((Button) Event.getSource()).setBackground(fire);
+            if(isPlayer1)brd2Ships--;
+            else if(!isPlayer1)brd1Ships--;
+        }
         else if(!temp){((Button) Event.getSource()).setBackground(water);changeTurns();}
         ((Button) Event.getSource()).setOpacity(1);
     } 
@@ -732,22 +717,14 @@ public class BoardController implements Initializable{
     }   }   }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb){isRandom=false;
+    public void initialize(URL url, ResourceBundle rb){
+        isRandom=true;
         if(isRandom)genAllRandom();
-       
-        //System.out.println(player1.);
-//        brd1.insertShip(one);
-//        brd1.insertShip(two);
-//        brd1.insertShip(thr);
-//        brd1.insertShip(fou);
-//        brd1.insertShip(fiv);
         
-//        brd2.insertShip(uno);
-//        brd2.insertShip(dos);
-//        brd2.insertShip(tre);
-//        brd2.insertShip(cua);
-//        brd2.insertShip(cin);
-
+        
+        
+        brd1Ships=brd1.getAllPos();
+        brd2Ships=brd2.getAllPos();
         changeTurns();
     }
 }

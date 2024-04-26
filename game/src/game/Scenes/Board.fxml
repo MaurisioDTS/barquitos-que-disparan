@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.BoardController">
+<HBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" stylesheets="@BoardStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.BoardController">
    <children>
        <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0">
           <children>
@@ -39,7 +39,7 @@
                </Label>
             </children>
          </Pane>
-         <GridPane fx:id="boardP2" gridLinesVisible="true" layoutX="690.0" layoutY="140.0" prefHeight="520.0" prefWidth="523.0" style="-fx-background-color: red;" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="140.0">
+         <GridPane fx:id="boardP2" gridLinesVisible="true" layoutX="690.0" layoutY="140.0" prefHeight="520.0" prefWidth="523.0" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="140.0">
             <columnConstraints>
                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
