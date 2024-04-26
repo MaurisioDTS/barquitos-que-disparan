@@ -12,20 +12,32 @@ public class Board {Random rng=new Random();
     }
     public void gen(Ship s){
         if(s.getHorizontal()){
-            for(int i=1;i<s.getLength();i++){
+            for(int i=0;i<s.getLength();i++){
                 board[s.getInitialHorizontalCoordinate()+i][s.getInitialVerticalCoordinate()]= new ShipChunk(s.getInitialHorizontalCoordinate()+i,s.getInitialVerticalCoordinate());
             }
         }else{
-            for(int i=1;i<s.getLength();i++){
+            for(int i=0;i<s.getLength();i++){
                 board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()+i]= new ShipChunk(s.getInitialHorizontalCoordinate(),s.getInitialVerticalCoordinate()+i);
             }
         }
     }
     
     public void insertShipRnd(Ship s){// para insertar barcos al tablero (random), si esa casilla ya está ocupada, no genera nada
-        if (board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]==null){
-            board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]=s;
-            gen(s);
+        if(s.getHorizontal()){
+            if(s.getInitialHorizontalCoordinate()+s.getLength()-1<board.length){
+                if (board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]==null){
+                    board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]=s;
+                    gen(s);
+                }
+            }
+        }
+        else{
+            if(s.getInitialVerticalCoordinate()+s.getLength()-1<board.length){
+                if (board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]==null){
+                    board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]=s;
+                    gen(s);
+                }
+            }
         }
     }
     
@@ -45,7 +57,7 @@ public class Board {Random rng=new Random();
     public int getAllPos(){int temp=0;
         
         for(int i=0;i<board.length-1;i++){
-            for(int j=0;i<board.length-1;j++){
+            for(int j=0;j<board.length-1;j++){
                 System.out.println(board[i][j]);
                 if(board[i][j]!=null)temp++;
         }   }

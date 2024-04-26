@@ -714,7 +714,9 @@ public class BoardController implements Initializable{
             }
             for(int i=1;i<6;i++){
                 brd2.insertShipRnd(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
-    }   }   }
+            }
+        }
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb){
