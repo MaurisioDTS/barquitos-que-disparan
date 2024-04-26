@@ -46,7 +46,8 @@ public class BoardController implements Initializable{
     BackgroundImage fireImage = new BackgroundImage( new Image( getClass().getResource("img/fire.png").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
     Background fire = new Background(fireImage);
 
-    private boolean isPlayer1,isRandom=false;
+    private boolean isPlayer1;
+    public static boolean isRandom=false;
     public void setRandom(boolean b){isRandom=b;}
     
     public static Board brd1=new Board(player1);
@@ -81,6 +82,7 @@ public class BoardController implements Initializable{
     
     public void checkWin() throws Exception{
         if(brd1Ships==0){
+            brd1.clear();
             Parent root = FXMLLoader.load(getClass().getResource("Scenes/Final.fxml"));
             stage.getScene().setRoot(root);
             stage.show();
@@ -737,7 +739,6 @@ public class BoardController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        isRandom=true;
         if(isRandom)genAllRandom();
         
         

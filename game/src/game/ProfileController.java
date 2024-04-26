@@ -62,7 +62,7 @@ public class ProfileController implements Initializable{
     @FXML
     public void random(ActionEvent a) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Scenes/BoardShips.fxml"));
-        //BoardController.setRandom(true);
+        BoardController.isRandom=true;
         
         stage.getScene().setRoot(root);
         stage.show();

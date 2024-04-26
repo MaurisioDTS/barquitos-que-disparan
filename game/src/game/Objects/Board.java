@@ -66,6 +66,14 @@ public class Board {Random rng=new Random();
     
     @Override
     public String toString(){return "----- "+user+" -----"+" ";}
+
+    public void clear() {
+        for(int i=0;i<board.length;i++){
+            for(int j=0;j<board.length-1;j++){
+                board[i][j]=null;
+            }
+        }
+    }
 }
 
 //       if(isPlayer1){brd1.checkCheck(0,0);}}
