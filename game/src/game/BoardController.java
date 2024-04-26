@@ -28,13 +28,7 @@ public class BoardController implements Initializable{
     static String player2="2";
 
     
-    static void setBoard1(boolean[][] boardCheckP1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    static void setBoard2(boolean[][] boardCheckP2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     public void setPlayer1(String s){player1=s;}
     public void setPlayer2(String s){player2=s;}
     
@@ -54,23 +48,11 @@ public class BoardController implements Initializable{
     private boolean isPlayer1,isRandom=false,isVsCpu=false;
     public void setRandom(boolean b){isRandom=b;}
     
-    Board brd1=new Board(player1);
-    Board brd2=new Board(player2);
+    public static Board brd1=new Board(player1);
+    public static Board brd2=new Board(player2);
 
     @FXML
     Rectangle recPlayer1,recPlayer2;
-    
-    Ship one=new Ship("portaaviones",5,0,0,false);
-    Ship two=new Ship("buque telepata de guerra",4,0,1,false);
-    Ship thr=new Ship("submarino no sumergible",3,0,2,false);
-    Ship fou=new Ship("el yate de hijacked",2,0,3,false);
-    Ship fiv=new Ship("lancha de poliester",5,5,5,false);
-    
-    Ship uno=new Ship("portaaviones",5,0,5,false);
-    Ship dos=new Ship("buque telepata de guerra",4,0,6,false);
-    Ship tre=new Ship("submarino no sumergible",3,0,7,false);
-    Ship cua=new Ship("el yate de hijacked",2,0,8,false);
-    Ship cin=new Ship("lancha de poliester",5,5,5,true);
     
     private void changeTurns(){
         if(isPlayer1){recPlayer2.setVisible(true);recPlayer1.setVisible(false);}
@@ -725,28 +707,17 @@ public class BoardController implements Initializable{
     private void genAllRandom() {
         if(isRandom){ Random rng=new Random();
             for(int i=1;i<6;i++){
-                brd1.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
+                brd1.insertShipRnd(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
             }
             for(int i=1;i<6;i++){
-                brd2.insertShip(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
-    }   }   }
+                brd2.insertShipRnd(new Ship("rnd",i,rng.nextInt(9),rng.nextInt(9),rng.nextBoolean()));
+            }
+        }
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb){isRandom=false;
         if(isRandom)genAllRandom();
-       
-        //System.out.println(player1.);
-//        brd1.insertShip(one);
-//        brd1.insertShip(two);
-//        brd1.insertShip(thr);
-//        brd1.insertShip(fou);
-//        brd1.insertShip(fiv);
-        
-//        brd2.insertShip(uno);
-//        brd2.insertShip(dos);
-//        brd2.insertShip(tre);
-//        brd2.insertShip(cua);
-//        brd2.insertShip(cin);
 
         changeTurns();
     }

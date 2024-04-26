@@ -2,6 +2,7 @@
 package game;
 
 import game.Objects.Board;
+import game.Objects.Ship;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -113,6 +114,8 @@ public class DraggableController{
     
     private boolean p2Ready=false;
     
+    private String shipType;
+    
     private double rotationAngle = 0.0;
 
     Board brd=new Board("elpepe");
@@ -150,8 +153,6 @@ public class DraggableController{
     }
     public void board(ActionEvent a) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Scenes/Board.fxml"));
-        BoardController.setBoard1(boardCheckP1);
-        BoardController.setBoard2(boardCheckP2);
         stage.getScene().setRoot(root);
         stage.show();
     }
@@ -276,6 +277,24 @@ public class DraggableController{
             int column = (int) (event.getX() / cellWidth);
             int row = (int) (event.getY() / cellHeight);
             
+            //Type of ship
+            
+            if(shipLengthCount==1){
+                shipType="boat";
+            }
+            else if(shipLengthCount==2){
+                shipType="armored boat";
+            }
+            else if(shipLengthCount==3){
+                shipType="armed ship";
+            }
+            else if(shipLengthCount==4){
+                shipType="battleship";
+            }
+            else{
+                shipType="aircraft carrier";
+            }
+            
             //Check ship colisions and positions
             //Player 1
             
@@ -289,6 +308,7 @@ public class DraggableController{
                         //First ship part
                         
                         if(i==column){
+                            
                             if(i-1>=0){
                                 if(boardCheckP1[i-1][row] == true){
                                     notEmpty=true;
@@ -312,6 +332,7 @@ public class DraggableController{
                                     notEmpty=true;
                                 }
                             }
+                            BoardController.brd1.insertShip(shipType,shipLengthCount,column,row,true);
                         }
                         
                         //Last ship part
@@ -388,6 +409,7 @@ public class DraggableController{
                                     notEmpty=true;
                                 }
                             }
+                            BoardController.brd1.insertShip(shipType,shipLengthCount,column,row,false);
                         }
                         
                         //Last ship part
@@ -469,6 +491,7 @@ public class DraggableController{
                                     notEmpty=true;
                                 }
                             }
+                            BoardController.brd2.insertShip(shipType,shipLengthCount,column,row,true);
                         }
                         
                         //Last ship part
@@ -545,6 +568,7 @@ public class DraggableController{
                                     notEmpty=true;
                                 }
                             }
+                            BoardController.brd2.insertShip(shipType,shipLengthCount,column,row,false);
                         }
                         
                         //Last ship part

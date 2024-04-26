@@ -16,16 +16,23 @@ public class Board {Random rng=new Random();
                 board[s.getInitialHorizontalCoordinate()+i][s.getInitialVerticalCoordinate()]= new ShipChunk(s.getInitialHorizontalCoordinate()+i,s.getInitialVerticalCoordinate());
             }
         }else{
-        for(int i=1;i<s.getLength();i++){
+            for(int i=1;i<s.getLength();i++){
                 board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()+i]= new ShipChunk(s.getInitialHorizontalCoordinate(),s.getInitialVerticalCoordinate()+i);
             }
         }
     }
-    public void insertShip(Ship s){// para insertar barcos al tablero, si esa casilla ya está ocupada, no genera nada
+    
+    public void insertShipRnd(Ship s){// para insertar barcos al tablero (random), si esa casilla ya está ocupada, no genera nada
         if (board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]==null){
             board[s.getInitialHorizontalCoordinate()][s.getInitialVerticalCoordinate()]=s;
             gen(s);
         }
+    }
+    
+    public void insertShip(String sT,int l,int initialHorizontalCoordinate,int initialVerticalCoordinate,boolean horizontal){// para insertar barcos al tablero, si esa casilla ya está ocupada, no genera nada
+            Ship ship=new Ship(sT, l, initialHorizontalCoordinate, initialVerticalCoordinate, horizontal);
+            board[initialHorizontalCoordinate][initialVerticalCoordinate]=ship;
+            gen(ship);
     }
     
     public boolean checkCheck(int x, int y){boolean impakt=false;
