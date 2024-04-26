@@ -397,31 +397,31 @@ public class BoardController implements Initializable{
     **/
     @FXML
     public void f1(ActionEvent Event){
-        int x=5,y=0;
+        int x=0,y=5;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void f2(ActionEvent Event){
-        int x=5,y=1;
+        int x=1,y=5;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void f3(ActionEvent Event){
-        int x=5,y=2;
+        int x=2,y=5;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void f4(ActionEvent Event){
-        int x=5,y=3;
+        int x=3,y=5;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void f5(ActionEvent Event){
-        int x=5,y=4;
+        int x=4,y=5;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
@@ -433,25 +433,25 @@ public class BoardController implements Initializable{
     }
     @FXML
     public void f7(ActionEvent Event){
-        int x=5,y=6;
+        int x=6,y=5;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void f8(ActionEvent Event){
-        int x=5,y=7;
+        int x=7,y=5;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void f9(ActionEvent Event){
-        int x=5,y=8;
+        int x=8,y=5;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void f10(ActionEvent Event){
-        int x=5,y=9;
+        int x=9,y=5;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
@@ -460,37 +460,37 @@ public class BoardController implements Initializable{
     **/
     @FXML
     public void g1(ActionEvent Event){
-        int x=6,y=0;
+        int x=0,y=6;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void g2(ActionEvent Event){
-        int x=6,y=1;
+        int x=1,y=6;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void g3(ActionEvent Event){
-        int x=6,y=2;
+        int x=2,y=6;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void g4(ActionEvent Event){
-        int x=6,y=3;
+        int x=3,y=6;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void g5(ActionEvent Event){
-        int x=6,y=4;
+        int x=4,y=6;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void g6(ActionEvent Event){
-        int x=6,y=5;
+        int x=5,y=6;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
@@ -502,19 +502,19 @@ public class BoardController implements Initializable{
     }
     @FXML
     public void g8(ActionEvent Event){
-        int x=6,y=7;
+        int x=7,y=6;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void g9(ActionEvent Event){
-        int x=6,y=8;
+        int x=8,y=6;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void g10(ActionEvent Event){
-        int x=6,y=9;
+        int x=9,y=6;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
@@ -523,43 +523,43 @@ public class BoardController implements Initializable{
     **/
     @FXML
     public void h1(ActionEvent Event){
-        int x=7,y=0;
+        int x=0,y=7;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void h2(ActionEvent Event){
-        int x=7,y=1;
+        int x=1,y=7;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void h3(ActionEvent Event){
-        int x=7,y=2;
+        int x=2,y=7;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void h4(ActionEvent Event){
-        int x=7,y=3;
+        int x=3,y=7;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void h5(ActionEvent Event){
-        int x=7,y=4;
+        int x=4,y=7;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void h6(ActionEvent Event){
-        int x=7,y=5;
+        int x=5,y=7;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void h7(ActionEvent Event){
-        int x=7,y=6;
+        int x=6,y=7;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
@@ -571,13 +571,13 @@ public class BoardController implements Initializable{
     }
     @FXML
     public void h9(ActionEvent Event){
-        int x=7,y=8;
+        int x=8,y=7;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void h10(ActionEvent Event){
-        int x=7,y=9;
+        int x=9,y=7;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
@@ -586,49 +586,49 @@ public class BoardController implements Initializable{
     **/
     @FXML
     public void i1(ActionEvent Event){
-        int x=8,y=0;
+        int x=0,y=8;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void i2(ActionEvent Event){
-        int x=8,y=1;
+        int x=1,y=8;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void i3(ActionEvent Event){
-        int x=8,y=2;
+        int x=2,y=8;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void i4(ActionEvent Event){
-        int x=8,y=3;
+        int x=3,y=8;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void i5(ActionEvent Event){
-        int x=8,y=4;
+        int x=4,y=8;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void i6(ActionEvent Event){
-        int x=8,y=5;
+        int x=5,y=8;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void i7(ActionEvent Event){
-        int x=8,y=6;
+        int x=6,y=8;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void i8(ActionEvent Event){
-        int x=8,y=7;
+        int x=7,y=8;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
@@ -640,7 +640,7 @@ public class BoardController implements Initializable{
     }
      @FXML
     public void i10(ActionEvent Event){
-        int x=8,y=9;
+        int x=9,y=8;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
@@ -649,55 +649,55 @@ public class BoardController implements Initializable{
     **/
     @FXML
     public void j1(ActionEvent Event){
-        int x=9,y=0;
+        int x=0,y=9;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void j2(ActionEvent Event){
-        int x=9,y=1;
+        int x=1,y=9;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void j3(ActionEvent Event){
-        int x=9,y=2;
+        int x=2,y=9;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void j4(ActionEvent Event){
-        int x=9,y=3;
+        int x=3,y=9;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void j5(ActionEvent Event){
-        int x=9,y=4;
+        int x=4,y=9;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void j6(ActionEvent Event){
-        int x=9,y=5;
+        int x=5,y=9;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void j7(ActionEvent Event){
-        int x=9,y=6;
+        int x=6,y=9;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void j8(ActionEvent Event){
-        int x=9,y=7;
+        int x=7,y=9;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
     @FXML
     public void j9(ActionEvent Event){
-        int x=9,y=8;
+        int x=8,y=9;
         boolean temp=checkTurn(x,y);
         buttonCopy(Event,temp);
     }
