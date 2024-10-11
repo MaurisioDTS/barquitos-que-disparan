@@ -1,4 +1,4 @@
-# Barquitos que disparan
+# Barquitos que disparan 🚢🚢🚢
 
 Proyecto full palero que hicimos como "Aprendizaje basado en projecto".
 
