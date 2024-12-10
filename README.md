@@ -1,6 +1,8 @@
 # Barquitos que disparan 🚢🚢🚢
 
 Proyecto full palero que hicimos como "Aprendizaje basado en projecto".
+![image](https://github.com/user-attachments/assets/7b03821b-2b16-4403-be35-bc29befee5c6)
+
 
 ## Getting Started
 
